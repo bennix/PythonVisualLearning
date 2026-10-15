@@ -1,0 +1,5104 @@
+{
+ "python": "3.10.21",
+ "examples": [
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "s[0]",
+   "note": "字符串是字符的序列，正索引从 0 开始。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取 s[0] = 'H'"
+    }
+   ],
+   "result": "'H'",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "s[-1]",
+   "note": "负索引从末尾倒数，-1 是最后一个字符。",
+   "steps": [
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取 s[-1] = 'n'"
+    }
+   ],
+   "result": "'n'",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "s[3:]",
+   "note": "切片 [start:stop] 包含 start、不包含 stop；省略 stop 表示一直取到末尾。",
+   "steps": [
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制第 3 个字符"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P",
+      "y"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制第 4 个字符"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P",
+      "y",
+      "t"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制第 5 个字符"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P",
+      "y",
+      "t",
+      "h"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制第 6 个字符"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P",
+      "y",
+      "t",
+      "h",
+      "o"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制第 7 个字符"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制第 8 个字符"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "切片得到新字符串 'Python'"
+    }
+   ],
+   "result": "'Python'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "s[::-1]",
+   "note": "步长为 -1 时倒着取，得到反转的字符串，是最常用的反转写法。",
+   "steps": [
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 8 个字符"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 7 个字符"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 6 个字符"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 5 个字符"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t",
+      "y"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 4 个字符"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t",
+      "y",
+      "P"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 3 个字符"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t",
+      "y",
+      "P",
+      "␣"
+     ],
+     "outLit": [
+      6
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 2 个字符"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t",
+      "y",
+      "P",
+      "␣",
+      "i"
+     ],
+     "outLit": [
+      7
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 1 个字符"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t",
+      "y",
+      "P",
+      "␣",
+      "i",
+      "H"
+     ],
+     "outLit": [
+      8
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "倒着取第 0 个字符"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "n",
+      "o",
+      "h",
+      "t",
+      "y",
+      "P",
+      "␣",
+      "i",
+      "H"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "得到反转后的新字符串"
+    }
+   ],
+   "result": "'nohtyP iH'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "len(s)",
+   "note": "len() 返回字符个数，空格也算一个字符。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 3 个字符 'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 4 个字符 'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 5 个字符 't'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 6 个字符 'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 7 个字符 'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 8 个字符 'n'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "共 9 个字符（含 1 个空格）"
+    }
+   ],
+   "result": "9",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "s[0] = 'h'",
+   "note": "字符串和元组一样不可变：不能修改其中某个字符。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "定位第 0 个字符"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": false,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "封条锁定 · 拒绝写入 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: 'str' object does not support item assignment",
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "s[:2] + '!'",
+   "note": "+ 拼接、* 重复都会生成新字符串；想“修改”字符串，就是生成一个新的再重新赋值。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i"
+     ],
+     "outLit": [
+      0,
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "取出 s[:2]"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "!"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "拼接 '!' · 得到新字符串"
+    }
+   ],
+   "result": "'Hi!'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "basic",
+   "setup": "s = 'Hi Python'",
+   "code": "'Py' in s",
+   "note": "in 检查子串是否出现在字符串中，返回 True 或 False。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 3 个字符 'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      3,
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "在第 3 位找到 'Py' · True"
+    }
+   ],
+   "result": "True",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "basic",
+   "setup": "",
+   "code": "'42' + 1",
+   "note": "字符串不能直接和数字相加，要先转换：int('42') + 1 或 '42' + str(1)。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "4",
+      "2"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": false,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "类型不同 · 不能相加 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: can only concatenate str (not \"int\") to str",
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "basic",
+   "setup": "name = '小明'\nage = 12",
+   "code": "f'{name}今年{age}岁'",
+   "note": "f-string 在字符串前加 f，花括号里的表达式会被计算并转成文本。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取变量 name"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 0 位：'小'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 1 位：'明'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明",
+      "今"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 2 位：'今'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明",
+      "今",
+      "年"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 3 位：'年'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明",
+      "今",
+      "年",
+      "1"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 4 位：'1'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明",
+      "今",
+      "年",
+      "1",
+      "2"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 5 位：'2'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明",
+      "今",
+      "年",
+      "1",
+      "2",
+      "岁"
+     ],
+     "outLit": [
+      6
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 6 位：'岁'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "小",
+      "明"
+     ],
+     "seal": true,
+     "out": [
+      "小",
+      "明",
+      "今",
+      "年",
+      "1",
+      "2",
+      "岁"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "f-string 生成新字符串"
+    }
+   ],
+   "result": "'小明今年12岁'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.upper()",
+   "note": "upper() 返回全部大写的新字符串，lower() 返回全部小写的新字符串。原字符串不变。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'H' → 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'i' → 'I'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "' ' → ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'P' → 'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P",
+      "Y"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'y' → 'Y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P",
+      "Y",
+      "T"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'t' → 'T'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P",
+      "Y",
+      "T",
+      "H"
+     ],
+     "outLit": [
+      6
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'h' → 'H'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P",
+      "Y",
+      "T",
+      "H",
+      "O"
+     ],
+     "outLit": [
+      7
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'o' → 'O'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P",
+      "Y",
+      "T",
+      "H",
+      "O",
+      "N"
+     ],
+     "outLit": [
+      8
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'n' → 'N'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "I",
+      "␣",
+      "P",
+      "Y",
+      "T",
+      "H",
+      "O",
+      "N"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回新字符串 · s 仍是 'Hi Python'"
+    }
+   ],
+   "result": "'HI PYTHON'",
+   "error": null,
+   "identity": "s 仍然是 'Hi Python'",
+   "check": "out"
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.lower()",
+   "note": "比较时常先统一大小写，例如 answer.lower() == 'yes'。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'H' → 'h'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'i' → 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "' ' → ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'P' → 'p'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'y' → 'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'t' → 't'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h"
+     ],
+     "outLit": [
+      6
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'h' → 'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o"
+     ],
+     "outLit": [
+      7
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'o' → 'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [
+      8
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "'n' → 'n'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回新字符串"
+    }
+   ],
+   "result": "'hi python'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.find('P')",
+   "note": "find(sub) 返回子串第一次出现的位置。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 3 个字符 'P'"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "在第 3 位找到 'P' · 返回 3"
+    }
+   ],
+   "result": "3",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.find('z')",
+   "note": "find 找不到时返回 -1，不会报错。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 3 个字符 'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 4 个字符 'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 5 个字符 't'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 6 个字符 'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 7 个字符 'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 8 个字符 'n'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描完毕没找到 · 返回 -1"
+    }
+   ],
+   "result": "-1",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.index('z')",
+   "note": "index 和 find 作用相同，但找不到时抛出 ValueError。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 3 个字符 'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 4 个字符 'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 5 个字符 't'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 6 个字符 'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 7 个字符 'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 8 个字符 'n'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": false,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描完毕没找到 · ValueError"
+    }
+   ],
+   "result": null,
+   "error": "ValueError: substring not found",
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.count('o')",
+   "note": "count(sub) 统计子串出现的次数。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 3 个字符 'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 4 个字符 'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 5 个字符 't'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 6 个字符 'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 7 个字符 'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 8 个字符 'n'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "共找到 1 个 'o'"
+    }
+   ],
+   "result": "1",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.replace('Hi', 'Yo')",
+   "note": "replace(old, new) 把所有 old 替换为 new，返回新字符串。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "找到 'Hi'"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 0 位：'Y'"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 1 位：'o'"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 2 位：' '"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 3 位：'P'"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P",
+      "y"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 4 位：'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P",
+      "y",
+      "t"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 5 位：'t'"
+    },
+    {
+     "slot": 6,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h"
+     ],
+     "outLit": [
+      6
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 6 位：'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o"
+     ],
+     "outLit": [
+      7
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 7 位：'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [
+      8
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 8 位：'n'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "Y",
+      "o",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "替换结果是新字符串 · s 不变"
+    }
+   ],
+   "result": "'Yo Python'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.startswith('Hi')",
+   "note": "startswith / endswith 检查开头和结尾，返回布尔值。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "比较开头 2 个字符 · True"
+    }
+   ],
+   "result": "True",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "method",
+   "setup": "t = '  hi  '",
+   "code": "t.strip()",
+   "note": "strip() 去掉两端的空白字符；lstrip() / rstrip() 只去一端。处理输入时很常用。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "␣",
+      "␣",
+      "h",
+      "i",
+      "␣",
+      "␣"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "跳过开头空格"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      4,
+      5
+     ],
+     "src": [
+      "␣",
+      "␣",
+      "h",
+      "i",
+      "␣",
+      "␣"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "跳过结尾空格"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "␣",
+      "␣",
+      "h",
+      "i",
+      "␣",
+      "␣"
+     ],
+     "seal": true,
+     "out": [
+      "h"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 0 位：'h'"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "␣",
+      "␣",
+      "h",
+      "i",
+      "␣",
+      "␣"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "写入新字符串第 1 位：'i'"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "␣",
+      "␣",
+      "h",
+      "i",
+      "␣",
+      "␣"
+     ],
+     "seal": true,
+     "out": [
+      "h",
+      "i"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "去掉两端空白 · 中间的空格会保留"
+    }
+   ],
+   "result": "'hi'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "method",
+   "setup": "s = 'Hi Python'",
+   "code": "s.isalpha()",
+   "note": "isalpha() 判断是否全是字母；空格不是字母，所以这里是 False。isdigit() 判断是否全是数字。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 0 个字符 'H'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 1 个字符 'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查第 2 个字符 ' '"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "第 2 个是空格 · 返回 False"
+    }
+   ],
+   "result": "False",
+   "error": null,
+   "identity": null,
+   "check": null
+  },
+  {
+   "mode": "method",
+   "setup": "u = 'hi python'",
+   "code": "u.title()",
+   "note": "title() 让每个单词首字母大写；capitalize() 只让整个字符串的第一个字母大写。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "单词首字母大写：'h'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：'i'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：' '"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P"
+     ],
+     "outLit": [
+      3
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "单词首字母大写：'p'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y"
+     ],
+     "outLit": [
+      4
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：'y'"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t"
+     ],
+     "outLit": [
+      5
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：'t'"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      6
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h"
+     ],
+     "outLit": [
+      6
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：'h'"
+    },
+    {
+     "slot": 7,
+     "lit": [
+      7
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o"
+     ],
+     "outLit": [
+      7
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：'o'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      8
+     ],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [
+      8
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "保持小写：'n'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "h",
+      "i",
+      "␣",
+      "p",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回新字符串"
+    }
+   ],
+   "result": "'Hi Python'",
+   "error": null,
+   "identity": null,
+   "check": "out"
+  },
+  {
+   "mode": "split",
+   "setup": "s = 'Hi Python'",
+   "code": "s.split()",
+   "note": "split() 不带参数时按空白切分，返回一个字符串列表。",
+   "steps": [
+    {
+     "slot": 2,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'Hi'"
+      ]
+     ],
+     "rowSeal": [
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "切出 'Hi'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'Hi'"
+      ],
+      [
+       "'Python'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "切出 'Python'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'Hi'"
+      ],
+      [
+       "'Python'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 1,
+     "col": 0,
+     "say": "得到一个列表，每一段都是新字符串"
+    }
+   ],
+   "result": "['Hi', 'Python']",
+   "error": null,
+   "identity": null,
+   "check": "grid"
+  },
+  {
+   "mode": "split",
+   "setup": "",
+   "code": "'a,b,c'.split(',')",
+   "note": "split(sep) 按指定分隔符切分，常用于处理 CSV 这类数据。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0
+     ],
+     "src": [
+      "a",
+      ",",
+      "b",
+      ",",
+      "c"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ]
+     ],
+     "rowSeal": [
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "切出 'a'"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      2
+     ],
+     "src": [
+      "a",
+      ",",
+      "b",
+      ",",
+      "c"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "切出 'b'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "a",
+      ",",
+      "b",
+      ",",
+      "c"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ],
+      [
+       "'c'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       2,
+       0
+      ]
+     ],
+     "row": 2,
+     "col": 0,
+     "say": "切出 'c'"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "a",
+      ",",
+      "b",
+      ",",
+      "c"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ],
+      [
+       "'c'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 2,
+     "col": 0,
+     "say": "得到一个列表，每一段都是新字符串"
+    }
+   ],
+   "result": "['a', 'b', 'c']",
+   "error": null,
+   "identity": null,
+   "check": "grid"
+  },
+  {
+   "mode": "split",
+   "setup": "",
+   "code": "'-'.join(['a', 'b', 'c'])",
+   "note": "join 是分隔符字符串的方法：'分隔符'.join(列表)。列表里的元素必须都是字符串。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "a"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ],
+      [
+       "'c'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "取出 'a'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "a",
+      "-",
+      "b"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ],
+      [
+       "'c'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "取出 'b'，前面加分隔符 '-'"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "a",
+      "-",
+      "b",
+      "-",
+      "c"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ],
+      [
+       "'c'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       2,
+       0
+      ]
+     ],
+     "row": 2,
+     "col": 0,
+     "say": "取出 'c'，前面加分隔符 '-'"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "a",
+      "-",
+      "b",
+      "-",
+      "c"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "'b'"
+      ],
+      [
+       "'c'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 2,
+     "col": 0,
+     "say": "连接成一个新字符串"
+    }
+   ],
+   "result": "'a-b-c'",
+   "error": null,
+   "identity": null,
+   "check": "src"
+  },
+  {
+   "mode": "split",
+   "setup": "s = 'Hi Python'",
+   "code": "' '.join(s.split())",
+   "note": "split 和 join 是一对：先拆成列表，处理后再拼回字符串。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "H",
+      "i"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'Hi'"
+      ],
+      [
+       "'Python'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "取出 'Hi'"
+    },
+    {
+     "slot": 8,
+     "lit": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'Hi'"
+      ],
+      [
+       "'Python'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "加 '␣' 再取出 'Python'"
+    },
+    {
+     "slot": 8,
+     "lit": [],
+     "src": [
+      "H",
+      "i",
+      "␣",
+      "P",
+      "y",
+      "t",
+      "h",
+      "o",
+      "n"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'Hi'"
+      ],
+      [
+       "'Python'"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 1,
+     "col": 0,
+     "say": "拆开再拼回原样"
+    }
+   ],
+   "result": "'Hi Python'",
+   "error": null,
+   "identity": null,
+   "check": "src"
+  },
+  {
+   "mode": "split",
+   "setup": "",
+   "code": "'-'.join(['a', 1])",
+   "note": "join 只能连接字符串；列表里有数字时会报 TypeError，可以先用 str() 转换。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "a"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "1"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "取出 'a'"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "a"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": false,
+     "grid": [
+      [
+       "'a'"
+      ],
+      [
+       "1"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "1 不是字符串 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: sequence item 1: expected str instance, int found",
+   "identity": null,
+   "check": null
+  }
+ ]
+}

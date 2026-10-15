@@ -1,0 +1,52 @@
+[
+  {
+    "title": "变量与数据类型",
+    "folder": "Python变量与数据类型实验室",
+    "category": "基础"
+  },
+  {
+    "title": "列表与生成式",
+    "folder": "Python列表与生成式实验室",
+    "category": "容器"
+  },
+  {
+    "title": "元组",
+    "folder": "Python元组实验室",
+    "category": "容器"
+  },
+  {
+    "title": "字符串",
+    "folder": "Python字符串实验室",
+    "category": "基础"
+  },
+  {
+    "title": "正则表达式",
+    "folder": "Python正则表达式实验室",
+    "category": "应用"
+  },
+  {
+    "title": "流程控制",
+    "folder": "Python流程控制实验室",
+    "category": "基础"
+  },
+  {
+    "title": "函数",
+    "folder": "Python函数实验室",
+    "category": "基础"
+  },
+  {
+    "title": "异常与断言",
+    "folder": "Python异常与断言实验室",
+    "category": "应用"
+  },
+  {
+    "title": "文件读写",
+    "folder": "Python文件读写实验室",
+    "category": "应用"
+  },
+  {
+    "title": "数据分析与可视化",
+    "folder": "Python数据分析与可视化实验室",
+    "category": "数据"
+  }
+]

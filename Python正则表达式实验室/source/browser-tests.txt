@@ -1,0 +1,12 @@
+eval: {"pass":true,"cases":39,"variants":328,"matches":568,"overflow":false}
+eval: "next passed"
+eval: "key passed"
+eval: "replay passed"
+eval: "pause passed"
+line ends: 0 of 108 ends on 15 lines float
+shot /Users/nellertcai/Desktop/Python 互动教学/Python正则表达式实验室/screenshots/light-detail.png · readout "1 / 3 · [0, 0) 零宽"
+line ends: 0 of 108 ends on 15 lines float
+shot /Users/nellertcai/Desktop/Python 互动教学/Python正则表达式实验室/screenshots/dark-detail.png · readout "1 / 3 · [0, 0) 零宽"
+eval: "log case"
+shot /Users/nellertcai/Desktop/Python 互动教学/Python正则表达式实验室/screenshots/log-case.png · readout "1 / 2 · [11, 29)"
+console: clean

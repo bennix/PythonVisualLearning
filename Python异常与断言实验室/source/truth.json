@@ -1,0 +1,3455 @@
+{
+ "python": "3.10.21",
+ "examples": [
+  {
+   "mode": "errors",
+   "title": "ZeroDivisionError：除以零",
+   "code": [
+    "a = 10",
+    "b = 0",
+    "print(a / b)",
+    "print('这一行不会执行')"
+   ],
+   "note": "异常一旦发生而没人处理，程序立即终止，后面的代码都不会运行，并打印 Traceback 说明错误类型和位置。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "a": "10"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "a": "10",
+      "b": "0"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "a": "10",
+      "b": "0"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": null,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "a": "10",
+     "b": "0"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "ZeroDivisionError: division by zero",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 3, in <module>\nZeroDivisionError: division by zero\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "errors",
+   "title": "ValueError：值不合适",
+   "code": [
+    "text = '12a'",
+    "n = int(text)",
+    "print(n)"
+   ],
+   "note": "类型对但值不合适：int() 能接收字符串，但 '12a' 不是数字。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "text": "'12a'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "text": "'12a'"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "invalid literal for int() with base 10: '12a'",
+     "next": null,
+     "kind": "raise",
+     "detail": "ValueError: invalid literal for int() with base 10: '12a' · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "text": "'12a'"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "ValueError: invalid literal for int() with base 10: '12a'",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nValueError: invalid literal for int() with base 10: '12a'\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "errors",
+   "title": "TypeError：类型不对",
+   "code": [
+    "age = 12",
+    "msg = '年龄：' + age"
+   ],
+   "note": "运算或函数收到了不支持的类型：字符串不能直接和整数相加，应写 str(age)。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "age": "12"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "age": "12"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "TypeError",
+     "msg": "can only concatenate str (not \"int\") to str",
+     "next": null,
+     "kind": "raise",
+     "detail": "TypeError: can only concatenate str (not \"int\") to str · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "age": "12"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "TypeError: can only concatenate str (not \"int\") to str",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nTypeError: can only concatenate str (not \"int\") to str\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "errors",
+   "title": "IndexError：索引越界",
+   "code": [
+    "nums = [1, 2, 3]",
+    "print(nums[3])"
+   ],
+   "note": "列表只有索引 0、1、2，访问 3 越界。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "nums": "[1, 2, 3]"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "nums": "[1, 2, 3]"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "IndexError",
+     "msg": "list index out of range",
+     "next": null,
+     "kind": "raise",
+     "detail": "IndexError: list index out of range · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "nums": "[1, 2, 3]"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "IndexError: list index out of range",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nIndexError: list index out of range\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "errors",
+   "title": "KeyError：字典没有这个键",
+   "code": [
+    "scores = {'小明': 90}",
+    "print(scores['小红'])"
+   ],
+   "note": "字典里没有这个键。可以用 scores.get('小红') 返回 None，或先用 in 判断。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "scores": "{'小明': 90}"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "scores": "{'小明': 90}"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "KeyError",
+     "msg": "'小红'",
+     "next": null,
+     "kind": "raise",
+     "detail": "KeyError: '小红' · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "scores": "{'小明': 90}"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "KeyError: '小红'",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nKeyError: '小红'\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "errors",
+   "title": "NameError：名字未定义",
+   "code": [
+    "total = 5",
+    "print(totl)"
+   ],
+   "note": "使用了没有定义的名字，常见原因是拼写错误。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "total": "5"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "total": "5"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "NameError",
+     "msg": "name 'totl' is not defined",
+     "next": null,
+     "kind": "raise",
+     "detail": "NameError: name 'totl' is not defined · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "total": "5"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "NameError: name 'totl' is not defined",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nNameError: name 'totl' is not defined\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "errors",
+   "title": "AttributeError：没有这个属性",
+   "code": [
+    "nums = (1, 2)",
+    "nums.append(3)"
+   ],
+   "note": "对象没有这个属性或方法：元组没有 append。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "nums": "(1, 2)"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "nums": "(1, 2)"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "AttributeError",
+     "msg": "'tuple' object has no attribute 'append'",
+     "next": null,
+     "kind": "raise",
+     "detail": "AttributeError: 'tuple' object has no attribute 'append' · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "nums": "(1, 2)"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "AttributeError: 'tuple' object has no attribute 'append'",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nAttributeError: 'tuple' object has no attribute 'append'\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "try / except 捕获异常",
+   "code": [
+    "try:",
+    "    n = int('abc')",
+    "    print('转换成功')",
+    "except ValueError:",
+    "    print('输入的不是数字')",
+    "print('程序继续')"
+   ],
+   "note": "try 块中出错，立刻跳到匹配的 except，try 里剩下的语句被跳过。处理完后程序继续往下走，不会崩溃。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "invalid literal for int() with base 10: 'abc'",
+     "next": 4,
+     "kind": "raise",
+     "detail": "ValueError: invalid literal for int() with base 10: 'abc' · 主程序第 2 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "except",
+     "detail": "except ValueError · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "输入的不是数字\n",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "输入的不是数字\n程序继续\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "输入的不是数字\n程序继续\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "as e 取得异常对象",
+   "code": [
+    "try:",
+    "    x = 1 / 0",
+    "except ZeroDivisionError as e:",
+    "    print('出错了:', e)",
+    "    print('类型:', type(e).__name__)"
+   ],
+   "note": "except 类型 as e 把异常对象绑定到 e，可以读出错误信息。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": 3,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 主程序第 2 行出错 · 跳到第 3 行，逐个检查 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 4,
+     "kind": "except",
+     "detail": "except ZeroDivisionError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "ZeroDivisionError('division by zero')"
+     },
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "ZeroDivisionError('division by zero')"
+     },
+     "out": "出错了: division by zero\n",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "出错了: division by zero\n类型: ZeroDivisionError\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "e": "ZeroDivisionError('division by zero')"
+    },
+    "out": "出错了: division by zero\n类型: ZeroDivisionError\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "多个 except：从上往下匹配",
+   "code": [
+    "data = {'a': 1}",
+    "try:",
+    "    print(data['b'])",
+    "except ValueError:",
+    "    print('值错误')",
+    "except KeyError as e:",
+    "    print('缺少键', e)"
+   ],
+   "note": "按顺序检查每个 except，第一个类型匹配的被执行，其余跳过。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "data": "{'a': 1}"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "data": "{'a': 1}"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "data": "{'a': 1}"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "KeyError",
+     "msg": "'b'",
+     "next": 4,
+     "kind": "raise",
+     "detail": "KeyError: 'b' · 主程序第 3 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "data": "{'a': 1}"
+     },
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "except",
+     "detail": "except ValueError · 类型不匹配，检查下一个 except"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "data": "{'a': 1}"
+     },
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "except",
+     "detail": "except KeyError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "data": "{'a': 1}",
+      "e": "KeyError('b')"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "缺少键 'b'\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "data": "{'a': 1}",
+     "e": "KeyError('b')"
+    },
+    "out": "缺少键 'b'\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "一个 except 捕获多种类型",
+   "code": [
+    "for item in ['5', 'x', None]:",
+    "    try:",
+    "        print(int(item) * 2)",
+    "    except (ValueError, TypeError):",
+    "        print('跳过', item)"
+   ],
+   "note": "把多种异常写成元组：except (ValueError, TypeError):。循环中捕获异常，可以跳过坏数据继续处理。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "for",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'5'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'5'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 1,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'5'"
+     },
+     "out": "10\n",
+     "event": "line",
+     "next": 2,
+     "kind": "for",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'x'"
+     },
+     "out": "10\n",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'x'"
+     },
+     "out": "10\n",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'x'"
+     },
+     "out": "10\n",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "invalid literal for int() with base 10: 'x'",
+     "next": 4,
+     "kind": "raise",
+     "detail": "ValueError: invalid literal for int() with base 10: 'x' · 主程序第 3 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'x'"
+     },
+     "out": "10\n",
+     "event": "line",
+     "next": 5,
+     "kind": "except",
+     "detail": "except (ValueError, TypeError) · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'x'"
+     },
+     "out": "10\n",
+     "event": "line",
+     "next": 1,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "'x'"
+     },
+     "out": "10\n跳过 x\n",
+     "event": "line",
+     "next": 2,
+     "kind": "for",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "None"
+     },
+     "out": "10\n跳过 x\n",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "None"
+     },
+     "out": "10\n跳过 x\n",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "None"
+     },
+     "out": "10\n跳过 x\n",
+     "event": "exception",
+     "exc": "TypeError",
+     "msg": "int() argument must be a string, a bytes-like object or a real number, not 'NoneType'",
+     "next": 4,
+     "kind": "raise",
+     "detail": "TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType' · 主程序第 3 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "None"
+     },
+     "out": "10\n跳过 x\n",
+     "event": "line",
+     "next": 5,
+     "kind": "except",
+     "detail": "except (ValueError, TypeError) · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "None"
+     },
+     "out": "10\n跳过 x\n",
+     "event": "line",
+     "next": 1,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "item": "None"
+     },
+     "out": "10\n跳过 x\n跳过 None\n",
+     "event": "line",
+     "next": null,
+     "kind": "for",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "10\n跳过 x\n跳过 None\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "item": "None"
+    },
+    "out": "10\n跳过 x\n跳过 None\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "else：没出错才执行",
+   "code": [
+    "try:",
+    "    n = int('42')",
+    "except ValueError:",
+    "    print('不是数字')",
+    "else:",
+    "    print('成功，n =', n)"
+   ],
+   "note": "else 块在 try 没有抛出异常时执行。把“成功后才做的事”放在 else，而不是塞进 try，能避免误捕获。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "n": "42"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "进入 else 块 · try 没有出错才会执行（Python 不单独停在 else: 这一行）"
+    }
+   ],
+   "out": "成功，n = 42\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "42"
+    },
+    "out": "成功，n = 42\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "finally：无论如何都执行",
+   "code": [
+    "try:",
+    "    print('打开文件')",
+    "    x = 1 / 0",
+    "except ZeroDivisionError:",
+    "    print('处理错误')",
+    "finally:",
+    "    print('关闭文件')"
+   ],
+   "note": "finally 不管有没有异常、有没有被捕获都会执行，常用于释放资源（关闭文件、断开连接）。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "打开文件\n",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "打开文件\n",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": 4,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 主程序第 3 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "打开文件\n",
+     "event": "line",
+     "next": 5,
+     "kind": "except",
+     "detail": "except ZeroDivisionError · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "打开文件\n",
+     "event": "line",
+     "next": 7,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "打开文件\n处理错误\n",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "进入 finally 块 · 无论是否出错都会执行（Python 不单独停在 finally: 这一行）"
+    }
+   ],
+   "out": "打开文件\n处理错误\n关闭文件\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "打开文件\n处理错误\n关闭文件\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "except 类型不匹配时",
+   "code": [
+    "try:",
+    "    print([1, 2][5])",
+    "except KeyError:",
+    "    print('键错误')",
+    "finally:",
+    "    print('清理')"
+   ],
+   "note": "IndexError 不是 KeyError，except 不会捕获它。finally 照常执行，之后异常继续向外抛，程序终止。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "IndexError",
+     "msg": "list index out of range",
+     "next": 3,
+     "kind": "raise",
+     "detail": "IndexError: list index out of range · 主程序第 2 行出错 · 跳到第 3 行，逐个检查 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "except",
+     "detail": "except KeyError · 类型不匹配，也没有别的 except · 先执行 finally，之后异常继续向外抛"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "进入 finally 块 · 无论是否出错都会执行（Python 不单独停在 finally: 这一行）"
+    }
+   ],
+   "out": "清理\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "清理\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "IndexError: list index out of range",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nIndexError: list index out of range\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "try",
+   "title": "父类 Exception 能捕获子类",
+   "code": [
+    "try:",
+    "    print({}['x'])",
+    "except LookupError as e:",
+    "    print('查找失败:', type(e).__name__)"
+   ],
+   "note": "KeyError 和 IndexError 都是 LookupError 的子类；except 父类会捕获所有子类。except Exception 能捕获几乎所有错误，但太宽泛会掩盖问题。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "KeyError",
+     "msg": "'x'",
+     "next": 3,
+     "kind": "raise",
+     "detail": "KeyError: 'x' · 主程序第 2 行出错 · 跳到第 3 行，逐个检查 except"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 4,
+     "kind": "except",
+     "detail": "except LookupError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "KeyError('x')"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "查找失败: KeyError\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "e": "KeyError('x')"
+    },
+    "out": "查找失败: KeyError\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "raise",
+   "title": "raise 主动抛出",
+   "code": [
+    "def set_age(age):",
+    "    if age < 0:",
+    "        raise ValueError('年龄不能为负数')",
+    "    return age",
+    "",
+    "try:",
+    "    set_age(-3)",
+    "except ValueError as e:",
+    "    print('拒绝:', e)"
+   ],
+   "note": "raise 异常类型('说明') 主动抛出异常，让调用者知道参数不合法。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "def",
+     "detail": "定义函数 set_age（此时不执行函数体）"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 set_age() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "set_age",
+     "stack": [
+      "<module>",
+      "set_age"
+     ],
+     "vars": {
+      "age": "-3"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "if",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "set_age",
+     "stack": [
+      "<module>",
+      "set_age"
+     ],
+     "vars": {
+      "age": "-3"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "raise",
+     "detail": "raise ValueError('年龄不能为负数') · 主动抛出异常"
+    },
+    {
+     "line": 3,
+     "frame": "set_age",
+     "stack": [
+      "<module>",
+      "set_age"
+     ],
+     "vars": {
+      "age": "-3"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "年龄不能为负数",
+     "next": 7,
+     "kind": "raise",
+     "detail": "ValueError: 年龄不能为负数 · 函数 set_age()里没有处理它 · 向上抛给调用者 主程序"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "年龄不能为负数",
+     "next": 8,
+     "kind": "raise",
+     "detail": "ValueError: 年龄不能为负数 · 主程序第 7 行出错 · 跳到第 8 行，逐个检查 except"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 9,
+     "kind": "except",
+     "detail": "except ValueError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "ValueError('年龄不能为负数')"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "拒绝: 年龄不能为负数\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "e": "ValueError('年龄不能为负数')"
+    },
+    "out": "拒绝: 年龄不能为负数\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "raise",
+   "title": "异常沿调用栈向上传播",
+   "code": [
+    "def divide(a, b):",
+    "    return a / b",
+    "",
+    "def average(nums):",
+    "    return divide(sum(nums), len(nums))",
+    "",
+    "try:",
+    "    average([])",
+    "except ZeroDivisionError:",
+    "    print('列表不能为空')"
+   ],
+   "note": "divide 里出错，它自己没处理，就抛给调用它的 average；average 也没处理，再抛给主程序，最终被 except 捕获。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 4,
+     "kind": "def",
+     "detail": "定义函数 divide（此时不执行函数体）"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "def",
+     "detail": "定义函数 average（此时不执行函数体）"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 8,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "stmt",
+     "detail": "调用函数 average() · 进入它的函数体"
+    },
+    {
+     "line": 5,
+     "frame": "average",
+     "stack": [
+      "<module>",
+      "average"
+     ],
+     "vars": {
+      "nums": "[]"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "return",
+     "detail": "return divide(sum(nums), len(nums)) · 先调用 divide() 计算返回值"
+    },
+    {
+     "line": 2,
+     "frame": "divide",
+     "stack": [
+      "<module>",
+      "average",
+      "divide"
+     ],
+     "vars": {
+      "a": "0",
+      "b": "0"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "return",
+     "detail": "return a / b · 计算返回值时出错"
+    },
+    {
+     "line": 2,
+     "frame": "divide",
+     "stack": [
+      "<module>",
+      "average",
+      "divide"
+     ],
+     "vars": {
+      "a": "0",
+      "b": "0"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": 5,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 函数 divide()里没有处理它 · 向上抛给调用者 average"
+    },
+    {
+     "line": 5,
+     "frame": "average",
+     "stack": [
+      "<module>",
+      "average"
+     ],
+     "vars": {
+      "nums": "[]"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": 8,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 函数 average()里没有处理它 · 向上抛给调用者 主程序"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": 9,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 主程序第 8 行出错 · 跳到第 9 行，逐个检查 except"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 10,
+     "kind": "except",
+     "detail": "except ZeroDivisionError · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 10,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "列表不能为空\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "列表不能为空\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "raise",
+   "title": "在函数内部处理",
+   "code": [
+    "def safe_div(a, b):",
+    "    try:",
+    "        return a / b",
+    "    except ZeroDivisionError:",
+    "        return None",
+    "",
+    "print(safe_div(6, 3))",
+    "print(safe_div(1, 0))"
+   ],
+   "note": "异常在函数内部就被捕获，调用者完全不会看到它。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "def",
+     "detail": "定义函数 safe_div（此时不执行函数体）"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 safe_div() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "6",
+      "b": "3"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "6",
+      "b": "3"
+     },
+     "out": "",
+     "event": "line",
+     "next": 8,
+     "kind": "return",
+     "detail": "return a / b · 返回给调用者"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "2.0\n",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 safe_div() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "2.0\n",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "2.0\n",
+     "event": "line",
+     "next": 3,
+     "kind": "return",
+     "detail": "return a / b · 计算返回值时出错"
+    },
+    {
+     "line": 3,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "2.0\n",
+     "event": "exception",
+     "exc": "ZeroDivisionError",
+     "msg": "division by zero",
+     "next": 4,
+     "kind": "raise",
+     "detail": "ZeroDivisionError: division by zero · 函数 safe_div() 的第 3 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "2.0\n",
+     "event": "line",
+     "next": 5,
+     "kind": "except",
+     "detail": "except ZeroDivisionError · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 5,
+     "frame": "safe_div",
+     "stack": [
+      "<module>",
+      "safe_div"
+     ],
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "2.0\n",
+     "event": "line",
+     "next": null,
+     "kind": "return",
+     "detail": "return None · 返回给调用者"
+    }
+   ],
+   "out": "2.0\nNone\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "2.0\nNone\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "raise",
+   "title": "finally 在 return 之前执行",
+   "code": [
+    "def check():",
+    "    try:",
+    "        return '来自 try'",
+    "    finally:",
+    "        print('finally 先执行')",
+    "",
+    "print(check())"
+   ],
+   "note": "即使 try 里已经 return，finally 也会在函数真正返回前执行。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "def",
+     "detail": "定义函数 check（此时不执行函数体）"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 check() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "check",
+     "stack": [
+      "<module>",
+      "check"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "check",
+     "stack": [
+      "<module>",
+      "check"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "return",
+     "detail": "return '来自 try' · 准备返回，但先要执行 finally"
+    },
+    {
+     "line": 5,
+     "frame": "check",
+     "stack": [
+      "<module>",
+      "check"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "进入 finally 块 · 无论是否出错都会执行（Python 不单独停在 finally: 这一行）"
+    }
+   ],
+   "out": "finally 先执行\n来自 try\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "finally 先执行\n来自 try\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "raise",
+   "title": "except 中再次 raise",
+   "code": [
+    "def load(text):",
+    "    try:",
+    "        return int(text)",
+    "    except ValueError:",
+    "        print('记录日志')",
+    "        raise",
+    "",
+    "try:",
+    "    load('?')",
+    "except ValueError as e:",
+    "    print('外层处理:', e)"
+   ],
+   "note": "单独写 raise 会把当前异常原样再抛出：先在内层做点记录，再交给外层处理。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 8,
+     "kind": "def",
+     "detail": "定义函数 load（此时不执行函数体）"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 9,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 load() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "load",
+     "stack": [
+      "<module>",
+      "load"
+     ],
+     "vars": {
+      "text": "'?'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 3,
+     "frame": "load",
+     "stack": [
+      "<module>",
+      "load"
+     ],
+     "vars": {
+      "text": "'?'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "return",
+     "detail": "return int(text) · 计算返回值时出错"
+    },
+    {
+     "line": 3,
+     "frame": "load",
+     "stack": [
+      "<module>",
+      "load"
+     ],
+     "vars": {
+      "text": "'?'"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "invalid literal for int() with base 10: '?'",
+     "next": 4,
+     "kind": "raise",
+     "detail": "ValueError: invalid literal for int() with base 10: '?' · 函数 load() 的第 3 行出错 · 跳到第 4 行，逐个检查 except"
+    },
+    {
+     "line": 4,
+     "frame": "load",
+     "stack": [
+      "<module>",
+      "load"
+     ],
+     "vars": {
+      "text": "'?'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "except",
+     "detail": "except ValueError · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 5,
+     "frame": "load",
+     "stack": [
+      "<module>",
+      "load"
+     ],
+     "vars": {
+      "text": "'?'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "frame": "load",
+     "stack": [
+      "<module>",
+      "load"
+     ],
+     "vars": {
+      "text": "'?'"
+     },
+     "out": "记录日志\n",
+     "event": "line",
+     "next": 9,
+     "kind": "raise",
+     "detail": "raise · 把刚才捕获的异常原样再抛出"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "记录日志\n",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "invalid literal for int() with base 10: '?'",
+     "next": 10,
+     "kind": "raise",
+     "detail": "ValueError: invalid literal for int() with base 10: '?' · 主程序第 9 行出错 · 跳到第 10 行，逐个检查 except"
+    },
+    {
+     "line": 10,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "记录日志\n",
+     "event": "line",
+     "next": 11,
+     "kind": "except",
+     "detail": "except ValueError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 11,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "ValueError(\"invalid literal for int() with base 10: '?'\")"
+     },
+     "out": "记录日志\n",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "记录日志\n外层处理: invalid literal for int() with base 10: '?'\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "e": "ValueError(\"invalid literal for int() with base 10: '?'\")"
+    },
+    "out": "记录日志\n外层处理: invalid literal for int() with base 10: '?'\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "raise",
+   "title": "自定义异常类",
+   "code": [
+    "class ScoreError(Exception):",
+    "    pass",
+    "",
+    "def check(score):",
+    "    if not 0 <= score <= 100:",
+    "        raise ScoreError(f'分数 {score} 超出范围')",
+    "",
+    "try:",
+    "    check(120)",
+    "except ScoreError as e:",
+    "    print('自定义异常:', e)"
+   ],
+   "note": "继承 Exception 就能定义自己的异常类型，让错误含义更清楚，也能被精确捕获。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 1,
+     "kind": "stmt",
+     "detail": "定义异常类 ScoreError，继承自 Exception"
+    },
+    {
+     "line": 1,
+     "frame": "ScoreError",
+     "stack": [
+      "<module>",
+      "ScoreError"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "定义异常类 ScoreError，继承自 Exception"
+    },
+    {
+     "line": 2,
+     "frame": "ScoreError",
+     "stack": [
+      "<module>",
+      "ScoreError"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 4,
+     "kind": "stmt",
+     "detail": "执行类体（定义类时运行一次）"
+    },
+    {
+     "line": 4,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 8,
+     "kind": "def",
+     "detail": "定义函数 check（此时不执行函数体）"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 9,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "stmt",
+     "detail": "调用函数 check() · 进入它的函数体"
+    },
+    {
+     "line": 5,
+     "frame": "check",
+     "stack": [
+      "<module>",
+      "check"
+     ],
+     "vars": {
+      "score": "120"
+     },
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "if",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "frame": "check",
+     "stack": [
+      "<module>",
+      "check"
+     ],
+     "vars": {
+      "score": "120"
+     },
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "raise",
+     "detail": "raise ScoreError(f'分数 {score} 超出范围') · 主动抛出异常"
+    },
+    {
+     "line": 6,
+     "frame": "check",
+     "stack": [
+      "<module>",
+      "check"
+     ],
+     "vars": {
+      "score": "120"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ScoreError",
+     "msg": "分数 120 超出范围",
+     "next": 9,
+     "kind": "raise",
+     "detail": "ScoreError: 分数 120 超出范围 · 函数 check()里没有处理它 · 向上抛给调用者 主程序"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "ScoreError",
+     "msg": "分数 120 超出范围",
+     "next": 10,
+     "kind": "raise",
+     "detail": "ScoreError: 分数 120 超出范围 · 主程序第 9 行出错 · 跳到第 10 行，逐个检查 except"
+    },
+    {
+     "line": 10,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 11,
+     "kind": "except",
+     "detail": "except ScoreError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 11,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "ScoreError('分数 120 超出范围')"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "自定义异常: 分数 120 超出范围\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "e": "ScoreError('分数 120 超出范围')"
+    },
+    "out": "自定义异常: 分数 120 超出范围\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "assert",
+   "title": "assert 条件成立",
+   "code": [
+    "x = 5",
+    "assert x > 0, 'x 必须为正数'",
+    "print('通过检查')"
+   ],
+   "note": "assert 条件, 说明：条件为 True 时什么都不做，程序继续。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "5"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "assert",
+     "detail": "assert x > 0, 'x 必须为正数' · 条件为 True · 什么都不发生，继续"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "5"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "通过检查\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "x": "5"
+    },
+    "out": "通过检查\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "assert",
+   "title": "assert 条件不成立",
+   "code": [
+    "x = -2",
+    "assert x > 0, 'x 必须为正数'",
+    "print('通过检查')"
+   ],
+   "note": "条件为 False 时抛出 AssertionError，逗号后面的说明成为错误信息。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "-2"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "assert",
+     "detail": "assert x > 0, 'x 必须为正数' · 条件为 False · 抛出 AssertionError"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "-2"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "AssertionError",
+     "msg": "x 必须为正数",
+     "next": null,
+     "kind": "raise",
+     "detail": "AssertionError: x 必须为正数 · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "",
+   "final": {
+    "line": 0,
+    "vars": {
+     "x": "-2"
+    },
+    "out": "",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "AssertionError: x 必须为正数",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 2, in <module>\nAssertionError: x 必须为正数\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "assert",
+   "title": "在函数中检查前提",
+   "code": [
+    "def average(nums):",
+    "    assert len(nums) > 0, '列表不能为空'",
+    "    return sum(nums) / len(nums)",
+    "",
+    "print(average([2, 4]))",
+    "print(average([]))"
+   ],
+   "note": "assert 适合在开发时检查“按理说一定成立”的前提，帮助尽早发现程序自身的错误。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "def",
+     "detail": "定义函数 average（此时不执行函数体）"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 average() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "average",
+     "stack": [
+      "<module>",
+      "average"
+     ],
+     "vars": {
+      "nums": "[2, 4]"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "assert",
+     "detail": "assert len(nums) > 0, '列表不能为空' · 条件为 True · 什么都不发生，继续"
+    },
+    {
+     "line": 3,
+     "frame": "average",
+     "stack": [
+      "<module>",
+      "average"
+     ],
+     "vars": {
+      "nums": "[2, 4]"
+     },
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "return",
+     "detail": "return sum(nums) / len(nums) · 返回给调用者"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "3.0\n",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 average() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "average",
+     "stack": [
+      "<module>",
+      "average"
+     ],
+     "vars": {
+      "nums": "[]"
+     },
+     "out": "3.0\n",
+     "event": "line",
+     "next": 2,
+     "kind": "assert",
+     "detail": "assert len(nums) > 0, '列表不能为空' · 条件为 False · 抛出 AssertionError"
+    },
+    {
+     "line": 2,
+     "frame": "average",
+     "stack": [
+      "<module>",
+      "average"
+     ],
+     "vars": {
+      "nums": "[]"
+     },
+     "out": "3.0\n",
+     "event": "exception",
+     "exc": "AssertionError",
+     "msg": "列表不能为空",
+     "next": 6,
+     "kind": "raise",
+     "detail": "AssertionError: 列表不能为空 · 函数 average()里没有处理它 · 向上抛给调用者 主程序"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "3.0\n",
+     "event": "exception",
+     "exc": "AssertionError",
+     "msg": "列表不能为空",
+     "next": null,
+     "kind": "raise",
+     "detail": "AssertionError: 列表不能为空 · 没有人处理 · 程序终止，打印 Traceback"
+    }
+   ],
+   "out": "3.0\n",
+   "final": {
+    "line": 0,
+    "vars": {},
+    "out": "3.0\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": "AssertionError: 列表不能为空",
+   "traceback": "Traceback (most recent call last):\n  File \"/Users/nellertcai/Desktop/Python 互动教学/Python异常与断言实验室/source/truth.py\", line 65, in trace\n    exec(compiled, {})\n  line 6, in <module>\n  line 2, in average\nAssertionError: 列表不能为空\n",
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "assert",
+   "title": "捕获 AssertionError",
+   "code": [
+    "def check_score(s):",
+    "    assert 0 <= s <= 100, f'分数 {s} 不合法'",
+    "    return s",
+    "",
+    "for s in [88, 130]:",
+    "    try:",
+    "        print('有效', check_score(s))",
+    "    except AssertionError as e:",
+    "        print('无效:', e)"
+   ],
+   "note": "AssertionError 也是异常，可以用 try / except 捕获。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "def",
+     "detail": "定义函数 check_score（此时不执行函数体）"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "for",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "88"
+     },
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "88"
+     },
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 check_score() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "check_score",
+     "stack": [
+      "<module>",
+      "check_score"
+     ],
+     "vars": {
+      "s": "88"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "assert",
+     "detail": "assert 0 <= s <= 100, f'分数 {s} 不合法' · 条件为 True · 什么都不发生，继续"
+    },
+    {
+     "line": 3,
+     "frame": "check_score",
+     "stack": [
+      "<module>",
+      "check_score"
+     ],
+     "vars": {
+      "s": "88"
+     },
+     "out": "",
+     "event": "line",
+     "next": 5,
+     "kind": "return",
+     "detail": "return s · 返回给调用者"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "88"
+     },
+     "out": "有效 88\n",
+     "event": "line",
+     "next": 6,
+     "kind": "for",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n",
+     "event": "line",
+     "next": 7,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 check_score() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "check_score",
+     "stack": [
+      "<module>",
+      "check_score"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n",
+     "event": "line",
+     "next": 2,
+     "kind": "assert",
+     "detail": "assert 0 <= s <= 100, f'分数 {s} 不合法' · 条件为 False · 抛出 AssertionError"
+    },
+    {
+     "line": 2,
+     "frame": "check_score",
+     "stack": [
+      "<module>",
+      "check_score"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n",
+     "event": "exception",
+     "exc": "AssertionError",
+     "msg": "分数 130 不合法",
+     "next": 7,
+     "kind": "raise",
+     "detail": "AssertionError: 分数 130 不合法 · 函数 check_score()里没有处理它 · 向上抛给调用者 主程序"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n",
+     "event": "exception",
+     "exc": "AssertionError",
+     "msg": "分数 130 不合法",
+     "next": 8,
+     "kind": "raise",
+     "detail": "AssertionError: 分数 130 不合法 · 主程序第 7 行出错 · 跳到第 8 行，逐个检查 except"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n",
+     "event": "line",
+     "next": 9,
+     "kind": "except",
+     "detail": "except AssertionError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "130",
+      "e": "AssertionError('分数 130 不合法')"
+     },
+     "out": "有效 88\n",
+     "event": "line",
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "s": "130"
+     },
+     "out": "有效 88\n无效: 分数 130 不合法\n",
+     "event": "line",
+     "next": null,
+     "kind": "for",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "有效 88\n无效: 分数 130 不合法\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "s": "130"
+    },
+    "out": "有效 88\n无效: 分数 130 不合法\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  },
+  {
+   "mode": "assert",
+   "title": "陷阱：assert 加括号永远成立",
+   "code": [
+    "x = -1",
+    "assert (x > 0, 'x 必须为正数')",
+    "print('居然通过了')"
+   ],
+   "note": "括号把条件和说明合成了一个非空元组，非空元组永远为 True，断言形同虚设。Python 编译时会给出 SyntaxWarning。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "-1"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "assert",
+     "detail": "assert (x > 0, 'x 必须为正数') · 条件为 True · 什么都不发生，继续"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "-1"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "居然通过了\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "x": "-1"
+    },
+    "out": "居然通过了\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [
+    "assertion is always true, perhaps remove parentheses?"
+   ],
+   "optimize": false
+  },
+  {
+   "mode": "assert",
+   "title": "python -O 会删除 assert",
+   "code": [
+    "x = -2",
+    "assert x > 0, 'x 必须为正数'",
+    "print('assert 被跳过了')"
+   ],
+   "note": "用 python -O 运行时，所有 assert 语句都被去掉。所以不能用 assert 检查用户输入或做安全校验，那些要用 if + raise。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "x": "-2"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "assert 被跳过了\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "x": "-2"
+    },
+    "out": "assert 被跳过了\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": true
+  },
+  {
+   "mode": "assert",
+   "title": "用户输入应该用 if + raise",
+   "code": [
+    "def set_age(age):",
+    "    if not isinstance(age, int) or age < 0:",
+    "        raise ValueError('年龄必须是非负整数')",
+    "    return age",
+    "",
+    "try:",
+    "    set_age('十二')",
+    "except ValueError as e:",
+    "    print(e)"
+   ],
+   "note": "对外部数据的校验用 if + raise，不会被 -O 去掉；assert 留给检查程序内部的逻辑。",
+   "steps": [
+    {
+     "line": 1,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 6,
+     "kind": "def",
+     "detail": "定义函数 set_age（此时不执行函数体）"
+    },
+    {
+     "line": 6,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 7,
+     "kind": "try",
+     "detail": "try · 开始监视下面缩进的代码，出错就跳去 except"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 2,
+     "kind": "stmt",
+     "detail": "调用函数 set_age() · 进入它的函数体"
+    },
+    {
+     "line": 2,
+     "frame": "set_age",
+     "stack": [
+      "<module>",
+      "set_age"
+     ],
+     "vars": {
+      "age": "'十二'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "if",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "frame": "set_age",
+     "stack": [
+      "<module>",
+      "set_age"
+     ],
+     "vars": {
+      "age": "'十二'"
+     },
+     "out": "",
+     "event": "line",
+     "next": 3,
+     "kind": "raise",
+     "detail": "raise ValueError('年龄必须是非负整数') · 主动抛出异常"
+    },
+    {
+     "line": 3,
+     "frame": "set_age",
+     "stack": [
+      "<module>",
+      "set_age"
+     ],
+     "vars": {
+      "age": "'十二'"
+     },
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "年龄必须是非负整数",
+     "next": 7,
+     "kind": "raise",
+     "detail": "ValueError: 年龄必须是非负整数 · 函数 set_age()里没有处理它 · 向上抛给调用者 主程序"
+    },
+    {
+     "line": 7,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "exception",
+     "exc": "ValueError",
+     "msg": "年龄必须是非负整数",
+     "next": 8,
+     "kind": "raise",
+     "detail": "ValueError: 年龄必须是非负整数 · 主程序第 7 行出错 · 跳到第 8 行，逐个检查 except"
+    },
+    {
+     "line": 8,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {},
+     "out": "",
+     "event": "line",
+     "next": 9,
+     "kind": "except",
+     "detail": "except ValueError as e · 类型匹配，进入这个 except 块"
+    },
+    {
+     "line": 9,
+     "frame": "<module>",
+     "stack": [
+      "<module>"
+     ],
+     "vars": {
+      "e": "ValueError('年龄必须是非负整数')"
+     },
+     "out": "",
+     "event": "line",
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "年龄必须是非负整数\n",
+   "final": {
+    "line": 0,
+    "vars": {
+     "e": "ValueError('年龄必须是非负整数')"
+    },
+    "out": "年龄必须是非负整数\n",
+    "stack": [
+     "<module>"
+    ]
+   },
+   "error": null,
+   "traceback": null,
+   "warnings": [],
+   "optimize": false
+  }
+ ]
+}

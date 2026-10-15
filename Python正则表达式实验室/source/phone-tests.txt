@@ -1,0 +1,6 @@
+eval: {"pass":true,"cases":39,"variants":328,"matches":568,"overflow":false}
+eval: "reduced preference passed"
+eval: "reduced step instant"
+shot /Users/nellertcai/Desktop/Python 互动教学/Python正则表达式实验室/screenshots/phone.png · readout "2 / 2 · [41, 64)"
+eval: {"overflow":false,"width":390}
+console: clean

@@ -1,0 +1,4002 @@
+{
+ "python": "3.10.21",
+ "examples": [
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t[0]",
+   "note": "元组和列表一样按位置取值，正索引从 0 开始。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取 t[0] = 3"
+    }
+   ],
+   "result": "3",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t[-1]",
+   "note": "负索引从末尾倒数，-1 是最后一个元素。",
+   "steps": [
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取 t[-1] = 5"
+    }
+   ],
+   "result": "5",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t[1:4]",
+   "note": "切片同样包含 start、不包含 stop，结果是一个新的元组。",
+   "steps": [
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取槽位 1"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取槽位 2"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "读取槽位 3"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      1,
+      2,
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "切片得到新元组 (1, 4, 1)"
+    }
+   ],
+   "result": "(1, 4, 1)",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t.count(1)",
+   "note": "元组只有两个方法：count 统计出现次数，index 查找第一次出现的位置。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 0：3"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 1：1 ✓"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 2：4"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 3：1 ✓"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 4：5"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      1,
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "共找到 2 个 1"
+    }
+   ],
+   "result": "2",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t.index(4)",
+   "note": "index(x) 返回第一个等于 x 的索引；找不到会抛出 ValueError。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 0"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 1"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "检查槽位 2：找到 4"
+    }
+   ],
+   "result": "2",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t[0] = 9",
+   "note": "元组是不可变的：创建后不能修改、增加或删除元素。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "定位槽位 0"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": false,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "封条锁定 · 拒绝写入 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: 'tuple' object does not support item assignment",
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t.append(2)",
+   "note": "元组没有 append、insert、remove、pop、sort 这些会修改自身的方法。",
+   "steps": [
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "移到末尾"
+    },
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": false,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "元组没有 append · AttributeError"
+    }
+   ],
+   "result": null,
+   "error": "AttributeError: 'tuple' object has no attribute 'append'",
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "t + (9, 2)",
+   "note": "+ 不会修改 t，而是生成一个新元组；* 重复也一样。",
+   "steps": [
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "原元组 t"
+    },
+    {
+     "slot": 6,
+     "lit": [
+      5,
+      6
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5",
+      "9",
+      "2"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "拼接成新元组 · 原 t 不变"
+    }
+   ],
+   "result": "(3, 1, 4, 1, 5, 9, 2)",
+   "error": null,
+   "identity": "t 仍然是 (3, 1, 4, 1, 5)",
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "a, b, *rest = t\n(a, b, rest)",
+   "note": "解包：按位置把元素分给多个变量。带 * 的变量收集剩余元素，而且它是一个列表。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "a ← t[0] = 3"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "b ← t[1] = 1"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      2,
+      3,
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      0,
+      1,
+      2
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "rest ← 剩余元素，装进列表"
+    }
+   ],
+   "result": "(3, 1, [4, 1, 5])",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "",
+   "code": "type((5))",
+   "note": "只有括号不是元组：(5) 就是整数 5，括号只起分组作用。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "5"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "括号只是分组 · 没有封条 · 得到 int"
+    }
+   ],
+   "result": "<class 'int'>",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "",
+   "code": "type((5,))",
+   "note": "单元素元组必须写逗号：(5,)。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "有逗号 · 得到 tuple"
+    }
+   ],
+   "result": "<class 'tuple'>",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "tuple",
+   "setup": "",
+   "code": "x = 1, 2, 3\nx",
+   "note": "真正创建元组的是逗号，括号常常可以省略；空元组写作 ()。",
+   "steps": [
+    {
+     "slot": 2,
+     "lit": [
+      0,
+      1,
+      2
+     ],
+     "src": [
+      "1",
+      "2",
+      "3"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "逗号把三个值封装成元组"
+    }
+   ],
+   "result": "(1, 2, 3)",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "n[1]",
+   "note": "嵌套元组的元素本身也是元组。n[1] 取出第 1 个内层元组。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "选第 1 行 · 得到 (3, 4)"
+    }
+   ],
+   "result": "(3, 4)",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "n[1][0]",
+   "note": "n[i][j]：先选第 i 个内层元组，再选其中第 j 个元素。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "第 1 行第 0 列 · 得到 3"
+    }
+   ],
+   "result": "3",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "n[-1][-1]",
+   "note": "负索引在每一层都可以用。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       2,
+       1
+      ]
+     ],
+     "row": 2,
+     "col": 1,
+     "say": "最后一行最后一列 · 得到 6"
+    }
+   ],
+   "result": "6",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "tuple(x for p in n for x in p)",
+   "note": "展开：生成器表达式逐个取出元素，再交给 tuple() 封装。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "1"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "p = (1, 2) · 取出 1"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "1",
+      "2"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "p = (1, 2) · 取出 2"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "1",
+      "2",
+      "3"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "p = (3, 4) · 取出 3"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 1,
+     "say": "p = (3, 4) · 取出 4"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       2,
+       0
+      ]
+     ],
+     "row": 2,
+     "col": 0,
+     "say": "p = (5, 6) · 取出 5"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       2,
+       1
+      ]
+     ],
+     "row": 2,
+     "col": 1,
+     "say": "p = (5, 6) · 取出 6"
+    },
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 2,
+     "col": 1,
+     "say": "封装为新元组"
+    }
+   ],
+   "result": "(1, 2, 3, 4, 5, 6)",
+   "error": null,
+   "identity": null,
+   "loop": "items = []\nfor p in n:\n    for x in p:\n        items.append(x)\nresult = tuple(items)"
+  },
+  {
+   "mode": "nest",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "n[0][0] = 9",
+   "note": "内层元组同样不可变。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "定位 n[0][0]"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": false,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "内层也有封条 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: 'tuple' object does not support item assignment",
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "box = (1, [2, 3])",
+   "code": "box[1].append(4)\nbox",
+   "note": "元组只保证“装着哪些对象”不变；如果某个元素本身是列表，列表的内容仍然可以修改。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1"
+      ],
+      [
+       "2",
+       "3"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 1,
+     "say": "box[1] 是一个列表（没有封条）"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1"
+      ],
+      [
+       "2",
+       "3",
+       "4"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       1,
+       2
+      ]
+     ],
+     "row": 1,
+     "col": 2,
+     "say": "列表内部追加 4 · 元组没有换对象"
+    }
+   ],
+   "result": "(1, [2, 3, 4])",
+   "error": null,
+   "identity": "box[1] 还是同一个列表对象，只是内容变了",
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "box = (1, [2, 3])",
+   "code": "box[1] = [9]",
+   "note": "但不能让元组的某个位置改为指向另一个对象。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1"
+      ],
+      [
+       "2",
+       "3"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "定位 box[1]"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": false,
+     "grid": [
+      [
+       "1"
+      ],
+      [
+       "2",
+       "3"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "外层元组锁定 · 不能换成新对象 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: 'tuple' object does not support item assignment",
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "",
+   "code": "d = {(1, 2): '起点'}\nd[(1, 2)]",
+   "note": "只包含不可变对象的元组是可哈希的，可以作为字典的键或放进集合；列表不行。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ]
+     ],
+     "rowSeal": [
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "(1, 2) 可哈希 · 作为字典键查到 '起点'"
+    }
+   ],
+   "result": "'起点'",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "nest",
+   "setup": "",
+   "code": "hash((1, [2, 3]))",
+   "note": "元组里只要含有列表，就不可哈希，不能当字典键。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": false,
+     "grid": [
+      [
+       "1"
+      ],
+      [
+       "2",
+       "3"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 1,
+     "say": "内部有列表 · 不可哈希 · TypeError"
+    }
+   ],
+   "result": null,
+   "error": "TypeError: unhashable type: 'list'",
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "list(t)",
+   "note": "list(元组) 按顺序复制元素，生成一个新的列表。原元组保持不变。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3"
+     ],
+     "outLit": [
+      0
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 3 到列表第 0 位"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1"
+     ],
+     "outLit": [
+      1
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 1 到列表第 1 位"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4"
+     ],
+     "outLit": [
+      2
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 4 到列表第 2 位"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1"
+     ],
+     "outLit": [
+      3
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 1 到列表第 3 位"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      4
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 5 到列表第 4 位"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "得到列表 · 可以修改了 · 原元组不变"
+    }
+   ],
+   "result": "[3, 1, 4, 1, 5]",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "lst = [3, 1, 4, 1, 5]",
+   "code": "tuple(lst)",
+   "note": "tuple(列表) 生成一个新的元组；之后再改 lst 也不会影响这个元组。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      0
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 3 到元组第 0 位"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      1
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 1 到元组第 1 位"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      2
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 4 到元组第 2 位"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      3
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 1 到元组第 3 位"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      4
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "复制 5 到元组第 4 位"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "封装完成 · 元组锁定"
+    }
+   ],
+   "result": "(3, 1, 4, 1, 5)",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "lst = list(t)\nlst.append(9)\nlst[0] = 0\nt2 = tuple(lst)\nt2",
+   "note": "想“修改”元组的常见做法：先转成列表，改完再转回元组。得到的是新元组，原来的 t 不变。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3"
+     ],
+     "outLit": [
+      0
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "list(t)：复制 3"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1"
+     ],
+     "outLit": [
+      1
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "list(t)：复制 1"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4"
+     ],
+     "outLit": [
+      2
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "list(t)：复制 4"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1"
+     ],
+     "outLit": [
+      3
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "list(t)：复制 1"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "outLit": [
+      4
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "list(t)：复制 5"
+    },
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5",
+      "9"
+     ],
+     "outLit": [
+      5
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "lst.append(9)"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "0",
+      "1",
+      "4",
+      "1",
+      "5",
+      "9"
+     ],
+     "outLit": [
+      0
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "lst[0] = 0"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "src": [
+      "0",
+      "1",
+      "4",
+      "1",
+      "5",
+      "9"
+     ],
+     "seal": true,
+     "out": [
+      "0",
+      "1",
+      "4",
+      "1",
+      "5",
+      "9"
+     ],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "tuple(lst)：封装成新元组 t2"
+    }
+   ],
+   "result": "(0, 1, 4, 1, 5, 9)",
+   "error": null,
+   "identity": "t 仍然是 (3, 1, 4, 1, 5)",
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "t = (3, 1, 4, 1, 5)",
+   "code": "sorted(t)",
+   "note": "sorted() 接受任何可迭代对象，但总是返回列表；需要元组时写 tuple(sorted(t))。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描槽位 0"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描槽位 1"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描槽位 2"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描槽位 3"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "扫描槽位 4"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [
+      "1",
+      "1",
+      "3",
+      "4",
+      "5"
+     ],
+     "outLit": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "排序结果放进新列表"
+    }
+   ],
+   "result": "[1, 1, 3, 4, 5]",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "",
+   "code": "tuple('abc')",
+   "note": "tuple() 和 list() 可以转换任何可迭代对象：字符串、range、集合、字典的键等。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'a'"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "取出字符 'a'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "'a'",
+      "'b'"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "取出字符 'b'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "'a'",
+      "'b'",
+      "'c'"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "取出字符 'c'"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "'a'",
+      "'b'",
+      "'c'"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "封装成元组"
+    }
+   ],
+   "result": "('a', 'b', 'c')",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "",
+   "code": "tuple(range(4))",
+   "note": "range 对象按需产生数字，tuple() 把它们全部取出并固定下来。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "0"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "range 产生 0"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "0",
+      "1"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "range 产生 1"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "0",
+      "1",
+      "2"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "range 产生 2"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "0",
+      "1",
+      "2",
+      "3"
+     ],
+     "seal": false,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "range 产生 3"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "0",
+      "1",
+      "2",
+      "3"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "封装成元组"
+    }
+   ],
+   "result": "(0, 1, 2, 3)",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "[list(p) for p in n]",
+   "note": "嵌套结构需要逐层转换：用生成式把每个内层元组都转成列表。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      false,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "第 0 个内层元组 → 列表"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      false,
+      false,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 1,
+     "say": "第 1 个内层元组 → 列表"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      false,
+      false,
+      false
+     ],
+     "cells": [
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       1
+      ]
+     ],
+     "row": 2,
+     "col": 1,
+     "say": "第 2 个内层元组 → 列表"
+    }
+   ],
+   "result": "[[1, 2], [3, 4], [5, 6]]",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "m = [[1, 2], [3, 4]]",
+   "code": "tuple(tuple(r) for r in m)",
+   "note": "反过来，把二维列表逐层转成嵌套元组，结果整体不可变、可哈希。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "第 0 行列表 → 元组"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "row": 1,
+     "col": 1,
+     "say": "第 1 行列表 → 元组"
+    }
+   ],
+   "result": "((1, 2), (3, 4))",
+   "error": null,
+   "identity": null,
+   "loop": null
+  },
+  {
+   "mode": "convert",
+   "setup": "n = ((1, 2), (3, 4), (5, 6))",
+   "code": "list(n)",
+   "note": "list() 只转换最外层：结果是一个列表，但里面的元素仍然是元组。",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "1",
+      "4",
+      "1",
+      "5"
+     ],
+     "seal": true,
+     "out": [],
+     "outLit": [],
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "5",
+       "6"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      true,
+      true
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       0
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       0
+      ],
+      [
+       2,
+       1
+      ]
+     ],
+     "row": 2,
+     "col": 1,
+     "say": "外层变成列表 · 每一行仍有封条（仍是元组）"
+    }
+   ],
+   "result": "[(1, 2), (3, 4), (5, 6)]",
+   "error": null,
+   "identity": null,
+   "loop": null
+  }
+ ]
+}

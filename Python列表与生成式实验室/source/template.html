@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Python 列表分拣台 · 列表、生成式与嵌套列表</title><style>/* KIT */
+/* STYLE */</style></head>
+<body class="iso" data-theme="light"><main>
+<header><a class="wordmark" href="#top">PY / LAB <span>基础实验 02</span></a><button id="theme" aria-label="切换至深色主题">深色模式</button></header>
+<section class="intro" id="top"><div class="eyebrow">A SMALL MACHINE FOR BIG IDEAS</div><h1>列表是一排编号料槽。<br><span>生成式是一条带闸门的分拣线。</span></h1><p>选一个预设示例，看拾取滑台按索引访问料槽、过滤旗标判断 <code>if</code>、<br class="desktop">结果落进新列表；右侧矩阵托盘演示嵌套列表 <code>m[i][j]</code>。</p></section>
+<div class="workspace">
+<section class="visual" aria-label="列表分拣台">
+<figure><div class="iso-plate"><div class="card-head"><span>FIG. 02 / LIST SORTER</span><span>Python 列表分拣台</span></div><div class="iso-stage" id="stage" tabindex="0" role="group" aria-label="列表分拣台。左右方向键切换示例，空格键重播，Home 到首项，End 到末项。"><!-- FIGURE --></div><div class="card-foot"><span>← → 切换示例 · 空格重播</span><output data-readout>正在校准</output></div></div><figcaption><span class="legend"><i></i> 高亮 = 正在访问的元素</span><p>前排是原列表 <code>nums</code>（每个槽前方上一行是正索引，下一行是负索引），后排是新列表。滑台上的竖旗升起表示 <code>if</code> 条件通过，落下表示被过滤。右侧托盘：左侧滑块选行 <code>i</code>，前方滑块选列 <code>j</code>。</p></figcaption></figure>
+<div class="binding"><span class="label">当前步骤</span><code id="step">准备</code><p id="step-note">滑台会按访问顺序逐个移动。</p></div>
+<div class="tour-bar"><span id="tour-status">空闲时自动浏览示例</span><span class="tour-buttons"><button id="replay">重播</button><button id="tour" aria-pressed="true">暂停巡览</button></span></div>
+</section>
+<aside class="controls">
+<section class="control-section"><div class="section-heading"><span>01</span><h2>选择主题</h2></div><div class="tabs" role="tablist" aria-label="主题"><button role="tab" data-mode="list">列表</button><button role="tab" data-mode="comp">列表生成式</button><button role="tab" data-mode="nest">嵌套列表</button></div><div id="examples" class="example-list" role="group" aria-label="预设示例"></div></section>
+<section class="control-section"><div class="section-heading"><span>02</span><h2>代码与结果</h2></div><div class="terminal"><div class="setup"><code id="setup"></code></div><div><pre id="code"></pre></div><div class="result"><span>结果</span><output id="result"></output></div><div class="result" id="after-row"><span>之后的 nums</span><output id="after"></output></div></div><p id="note" class="note"></p><div id="loop-box" class="loop"><span class="label">等价的 for 循环</span><pre id="loop"></pre></div><p id="identity" class="micro"></p></section>
+</aside></div>
+<section class="notes"><div class="section-heading"><span>FIELD NOTES</span><h2>把规则带走</h2></div><div class="notes-grid">
+<article><span>01 / 列表</span><h3>有序、可变、按位置取</h3><p>列表用 <code>[]</code> 创建，元素可以是任意类型。索引从 <code>0</code> 开始，<code>-1</code> 是最后一个。索引越界会抛出 <code>IndexError</code>，切片越界则自动截断。</p><p>切片 <code>a[start:stop:step]</code> 总是返回<strong>新列表</strong>。<code>append</code>、<code>insert</code>、<code>remove</code>、<code>sort</code> 原地修改并返回 <code>None</code>；<code>pop</code> 返回被删除的元素；<code>sorted()</code> 返回新列表。</p></article>
+<article><span>02 / 生成式</span><h3>一行写完的 for 循环</h3><p><code>[表达式 for 变量 in 可迭代对象 if 条件]</code> 等价于先建空列表，再循环、判断、<code>append</code>。末尾的 <code>if</code> 负责过滤；写在前面的 <code>a if 条件 else b</code> 是条件表达式，不过滤。</p><p>多个 <code>for</code> 的顺序与嵌套循环的书写顺序一致。Python 3 中，生成式的循环变量不会泄漏到外面。逻辑复杂时，普通循环往往更好读。</p></article>
+<article><span>03 / 嵌套列表</span><h3>列表里装着列表</h3><p><code>m[i]</code> 取出第 i 行（也是一个列表），<code>m[i][j]</code> 再取这一行的第 j 个。展开、转置都可以用嵌套的生成式完成。</p><p>创建二维列表时用 <code>[[0] * 3 for _ in range(3)]</code>。<code>[[0] * 3] * 3</code> 会让三行指向<strong>同一个</strong>内层列表，改一处，三行一起变。</p></article>
+</div></section>
+<footer><p>离线教学装置 · Anatomy 等距 SVG · <span id="version"></span></p><p>所有示例结果都由真实 Python 预先计算并随页面内置；浏览器不执行任意 Python 代码。每个示例都从初始的 <code>nums</code> 或 <code>m</code> 开始运行。</p></footer>
+</main><script>/* SCRIPT */</script></body></html>

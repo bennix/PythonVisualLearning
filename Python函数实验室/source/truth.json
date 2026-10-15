@@ -1,0 +1,4996 @@
+{
+ "python": "3.10.21",
+ "examples": [
+  {
+   "mode": "define",
+   "title": "def 定义、return 返回",
+   "code": "def area(w, h):\n    return w * h\n\narea(3, 4)",
+   "note": "def 函数名(形参): 定义函数，缩进的代码是函数体；return 把结果交还给调用者。定义时不执行，调用时才执行。",
+   "result": "12",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 area(3, 4) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "?"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 3 → 按顺序放进形参 w"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "4"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 4 → 按顺序放进形参 h"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "4"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "3",
+      "4"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 12"
+    }
+   ]
+  },
+  {
+   "mode": "define",
+   "title": "没有 return 就返回 None",
+   "code": "def greet(name):\n    print('你好,', name)\n\nresult = greet('小明')\nprint(result)",
+   "note": "函数体没有 return（或只写 return）时，调用结果是 None。print 只是显示，不等于返回。",
+   "result": null,
+   "printed": "你好, 小明\nNone\n",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "'小明'"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 greet('小明') · 函数有 1 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'小明'"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小明'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 '小明' → 按顺序放进形参 name"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "'小明'"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小明'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "'小明'"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小明'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "打印后返回 None"
+    }
+   ]
+  },
+  {
+   "mode": "define",
+   "title": "return 多个值（打包成元组）",
+   "code": "def min_max(nums):\n    return min(nums), max(nums)\n\nlo, hi = min_max([4, 1, 9])\n(lo, hi)",
+   "note": "return a, b 实际返回一个元组 (a, b)，调用方可以直接解包到多个变量。",
+   "result": "(1, 9)",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "[4, 1, 9]"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?"
+     ],
+     "outTag": [
+      "nums"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 min_max([4, 1, 9]) · 函数有 1 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "[4, 1, 9]"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "[4, 1, 9]"
+     ],
+     "outTag": [
+      "nums"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 [4, 1, 9] → 按顺序放进形参 nums"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "[4, 1, 9]"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "[4, 1, 9]"
+     ],
+     "outTag": [
+      "nums"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "[4, 1, 9]"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "[4, 1, 9]"
+     ],
+     "outTag": [
+      "nums"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 (1, 9)"
+    }
+   ]
+  },
+  {
+   "mode": "define",
+   "title": "函数是对象，可以赋值和传递",
+   "code": "def double(x):\n    return x * 2\n\nf = double\nf(21)",
+   "note": "函数名只是指向函数对象的变量：可以赋给别的名字、放进列表、当作参数传给另一个函数。",
+   "result": "42",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "21"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 double(21) · 函数有 1 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "21"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "21"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 21 → 按顺序放进形参 x"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "21"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "21"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "21"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "21"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 42"
+    }
+   ]
+  },
+  {
+   "mode": "define",
+   "title": "局部变量只在函数内部",
+   "code": "def calc():\n    temp = 10\n    return temp + 1\n\ncalc()\ntemp",
+   "note": "函数里赋值的变量是局部变量，函数结束后就不存在了；在外面访问会报 NameError。",
+   "result": null,
+   "printed": "",
+   "error": "NameError: name 'temp' is not defined",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "calc()"
+     ],
+     "srcTag": [
+      "调用"
+     ],
+     "seal": false,
+     "out": [
+      "11"
+     ],
+     "outTag": [
+      "calc() 返回"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "calc() 返回 11 · 局部变量 temp 随函数结束而消失"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "calc()"
+     ],
+     "srcTag": [
+      "调用"
+     ],
+     "seal": false,
+     "out": [
+      "11"
+     ],
+     "outTag": [
+      "calc() 返回"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": false,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "在函数外访问 temp · NameError"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "位置参数：按顺序",
+   "code": "def intro(name, age):\n    return f'{name}，{age} 岁'\n\nintro('小红', 12)",
+   "note": "位置实参按从左到右的顺序，依次交给形参。顺序写反，结果就错了。",
+   "result": "'小红，12 岁'",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "'小红'",
+      "12"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 intro('小红', 12) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'小红'",
+      "12"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "?"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 '小红' → 按顺序放进形参 name"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "'小红'",
+      "12"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 12 → 按顺序放进形参 age"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "'小红'",
+      "12"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "'小红'",
+      "12"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 '小红，12 岁'"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "关键字参数：按名字",
+   "code": "def intro(name, age):\n    return f'{name}，{age} 岁'\n\nintro(age=12, name='小红')",
+   "note": "写成 形参名=值，按名字对应，顺序可以任意。",
+   "result": "'小红，12 岁'",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "age=12",
+      "name='小红'"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 intro(age=12, name='小红') · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "age=12",
+      "name='小红'"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "关键字实参 age=12 → 按名字放进形参 age"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "age=12",
+      "name='小红'"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "关键字实参 name='小红' → 按名字放进形参 name"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "age=12",
+      "name='小红'"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "age=12",
+      "name='小红'"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小红'",
+      "12"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 '小红，12 岁'"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "默认参数：可以不传",
+   "code": "def power(base, exp=2):\n    return base ** exp\n\npower(5)",
+   "note": "定义时写 exp=2，调用时不传 exp 就用默认值 2。带默认值的形参必须放在没有默认值的后面。",
+   "result": "25",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 power(5) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "?"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 5 → 按顺序放进形参 base"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "2"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "没有传值的形参使用默认值：exp=2"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "2"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "2"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 25"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "默认参数：传了就覆盖",
+   "code": "def power(base, exp=2):\n    return base ** exp\n\npower(2, 10)",
+   "note": "传了实参，默认值就被覆盖。",
+   "result": "1024",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "2",
+      "10"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 power(2, 10) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "2",
+      "10"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "2",
+      "?"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 2 → 按顺序放进形参 base"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "2",
+      "10"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "2",
+      "10"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 10 → 按顺序放进形参 exp"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "2",
+      "10"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "2",
+      "10"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "2",
+      "10"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "2",
+      "10"
+     ],
+     "outTag": [
+      "base",
+      "exp=2"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 1024"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "*args：收集多余的位置参数",
+   "code": "def total(*nums):\n    return sum(nums)\n\ntotal(1, 2, 3, 4)",
+   "note": "形参前加 * 表示把所有多出来的位置实参收进一个元组。名字常写作 args，也可以自己起。",
+   "result": "10",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      []
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 total(1, 2, 3, 4) · 函数有 1 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "1"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "多出来的位置实参 1 → 收进元组 nums"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "多出来的位置实参 2 → 收进元组 nums"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2",
+       "3"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [
+      [
+       0,
+       2
+      ]
+     ],
+     "row": 0,
+     "col": 2,
+     "say": "多出来的位置实参 3 → 收进元组 nums"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2",
+       "3",
+       "4"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [
+      [
+       0,
+       3
+      ]
+     ],
+     "row": 0,
+     "col": 3,
+     "say": "多出来的位置实参 4 → 收进元组 nums"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2",
+       "3",
+       "4"
+      ]
+     ],
+     "rowSeal": [
+      true
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 3,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2",
+       "3",
+       "4"
+      ]
+     ],
+     "rowSeal": [
+      true
+     ],
+     "rowTag": [
+      "*nums"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 3,
+     "say": "返回 10"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "**kwargs：收集多余的关键字参数",
+   "code": "def profile(name, **info):\n    return f'{name}: {info}'\n\nprofile('小李', age=13, city='北京')",
+   "note": "形参前加 ** 表示把没有对应形参的关键字实参收进一个字典。",
+   "result": "\"小李: {'age': 13, 'city': '北京'}\"",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "'小李'",
+      "age=13",
+      "city='北京'"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      []
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "**info"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 profile('小李', age=13, city='北京') · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'小李'",
+      "age=13",
+      "city='北京'"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小李'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      []
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "**info"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 '小李' → 按顺序放进形参 name"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "'小李'",
+      "age=13",
+      "city='北京'"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小李'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'age': 13"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "**info"
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "没有名为 age 的形参 → 收进字典 info"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "'小李'",
+      "age=13",
+      "city='北京'"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小李'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'age': 13",
+       "'city': '北京'"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "**info"
+     ],
+     "cells": [
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "没有名为 city 的形参 → 收进字典 info"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "'小李'",
+      "age=13",
+      "city='北京'"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小李'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "'age': 13",
+       "'city': '北京'"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "**info"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 1,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "'小李'",
+      "age=13",
+      "city='北京'"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小李'"
+     ],
+     "outTag": [
+      "name"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [
+      [
+       "'age': 13",
+       "'city': '北京'"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "**info"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 1,
+     "say": "返回 \"小李: {'age': 13, 'city': '北京'}\""
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "仅关键字参数：* 后面的",
+   "code": "def move(x, *, speed=1):\n    return x * speed\n\nmove(10, speed=3)",
+   "note": "单独的 * 之后的形参只能用关键字传入，调用时更清楚，避免传错位置。",
+   "result": "30",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "10",
+      "speed=3"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 move(10, speed=3) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "10",
+      "speed=3"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "10",
+      "?"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 10 → 按顺序放进形参 x"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "10",
+      "speed=3"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "10",
+      "3"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "关键字实参 speed=3 → 按名字放进形参 speed"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "10",
+      "speed=3"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "10",
+      "3"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "10",
+      "speed=3"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "10",
+      "3"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 30"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "仅关键字参数：用位置传会报错",
+   "code": "def move(x, *, speed=1):\n    return x * speed\n\nmove(10, 3)",
+   "note": "* 后面的 speed 不接受位置实参，所以 move(10, 3) 报 TypeError。",
+   "result": null,
+   "printed": "",
+   "error": "TypeError: move() takes 1 positional argument but 2 were given",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "10",
+      "3"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 move(10, 3) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "10",
+      "3"
+     ],
+     "srcTag": [
+      "位置",
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "x",
+      "speed=1"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": false,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "无法绑定 · TypeError: too many positional arguments"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "仅位置参数：/ 前面的",
+   "code": "def clamp(n, /, lo=0, hi=10):\n    return max(lo, min(n, hi))\n\nclamp(15, hi=12)",
+   "note": "/ 之前的形参只能按位置传（Python 3.8+），不能写 n=15。内置函数里常见。",
+   "result": "12",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "15",
+      "hi=12"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "n",
+      "lo=0",
+      "hi=10"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 clamp(15, hi=12) · 函数有 3 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "15",
+      "hi=12"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "15",
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "n",
+      "lo=0",
+      "hi=10"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 15 → 按顺序放进形参 n"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "15",
+      "hi=12"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "15",
+      "?",
+      "12"
+     ],
+     "outTag": [
+      "n",
+      "lo=0",
+      "hi=10"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "关键字实参 hi=12 → 按名字放进形参 hi"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "15",
+      "hi=12"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "15",
+      "0",
+      "12"
+     ],
+     "outTag": [
+      "n",
+      "lo=0",
+      "hi=10"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "没有传值的形参使用默认值：lo=0"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "15",
+      "hi=12"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "15",
+      "0",
+      "12"
+     ],
+     "outTag": [
+      "n",
+      "lo=0",
+      "hi=10"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "15",
+      "hi=12"
+     ],
+     "srcTag": [
+      "位置",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "15",
+      "0",
+      "12"
+     ],
+     "outTag": [
+      "n",
+      "lo=0",
+      "hi=10"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 12"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "几种形式组合",
+   "code": "def demo(a, b=2, *args, c, **kw):\n    return (a, b, args, c, kw)\n\ndemo(1, 5, 6, 7, c=8, d=9)",
+   "note": "固定顺序：普通 → 默认 → *args → 仅关键字 → **kwargs。每个实参按规则落到唯一的位置。",
+   "result": "(1, 5, (6, 7), 8, {'d': 9})",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [],
+      []
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 demo(1, 5, 6, 7, c=8, d=9) · 函数有 5 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [],
+      []
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 1 → 按顺序放进形参 a"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [],
+      []
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 5 → 按顺序放进形参 b"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "6"
+      ],
+      []
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "多出来的位置实参 6 → 收进元组 args"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "6",
+       "7"
+      ],
+      []
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 1,
+     "say": "多出来的位置实参 7 → 收进元组 args"
+    },
+    {
+     "slot": 4,
+     "lit": [
+      4
+     ],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "8"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [
+      2
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "6",
+       "7"
+      ],
+      []
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [],
+     "row": 0,
+     "col": 1,
+     "say": "关键字实参 c=8 → 按名字放进形参 c"
+    },
+    {
+     "slot": 5,
+     "lit": [
+      5
+     ],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "8"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "6",
+       "7"
+      ],
+      [
+       "'d': 9"
+      ]
+     ],
+     "rowSeal": [
+      false,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [
+      [
+       1,
+       0
+      ]
+     ],
+     "row": 1,
+     "col": 0,
+     "say": "没有名为 d 的形参 → 收进字典 kw"
+    },
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "8"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "6",
+       "7"
+      ],
+      [
+       "'d': 9"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [],
+     "row": 1,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 5,
+     "lit": [],
+     "src": [
+      "1",
+      "5",
+      "6",
+      "7",
+      "c=8",
+      "d=9"
+     ],
+     "srcTag": [
+      "位置",
+      "位置",
+      "位置",
+      "位置",
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "1",
+      "5",
+      "8"
+     ],
+     "outTag": [
+      "a",
+      "b=2",
+      "c"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [
+      [
+       "6",
+       "7"
+      ],
+      [
+       "'d': 9"
+      ]
+     ],
+     "rowSeal": [
+      true,
+      false
+     ],
+     "rowTag": [
+      "*args",
+      "**kw"
+     ],
+     "cells": [],
+     "row": 1,
+     "col": 0,
+     "say": "返回 (1, 5, (6, 7), 8, {'d': 9})"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "缺少参数会报错",
+   "code": "def area(w, h):\n    return w * h\n\narea(3)",
+   "note": "没有默认值的形参必须传值，少传会报 TypeError，并告诉你缺哪一个。",
+   "result": null,
+   "printed": "",
+   "error": "TypeError: area() missing 1 required positional argument: 'h'",
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 area(3) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "3"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "w",
+      "h"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": false,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "无法绑定 · TypeError: missing a required argument: 'h'"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "调用时用 * 和 ** 拆包",
+   "code": "def intro(name, age):\n    return f'{name}，{age} 岁'\n\ndata = {'name': '小王', 'age': 11}\nintro(**data)",
+   "note": "调用时 *列表 把元素拆成位置实参，**字典 把键值拆成关键字实参。",
+   "result": "'小王，11 岁'",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "name='小王'",
+      "age=11"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 intro(name='小王', age=11) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "name='小王'",
+      "age=11"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小王'",
+      "?"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "关键字实参 name='小王' → 按名字放进形参 name"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "name='小王'",
+      "age=11"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小王'",
+      "11"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "关键字实参 age=11 → 按名字放进形参 age"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "name='小王'",
+      "age=11"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小王'",
+      "11"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "name='小王'",
+      "age=11"
+     ],
+     "srcTag": [
+      "关键字",
+      "关键字"
+     ],
+     "seal": false,
+     "out": [
+      "'小王'",
+      "11"
+     ],
+     "outTag": [
+      "name",
+      "age"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 '小王，11 岁'"
+    }
+   ]
+  },
+  {
+   "mode": "params",
+   "title": "可变默认值的陷阱",
+   "code": "def add_item(x, box=[]):\n    box.append(x)\n    return box\n\nadd_item(1)\nadd_item(2)",
+   "note": "默认值只在定义函数时计算一次。可变对象（列表）做默认值会在多次调用之间共享，应写 box=None 再在函数里新建。",
+   "result": "[1, 2]",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "add_item(1)",
+      "add_item(2)"
+     ],
+     "srcTag": [
+      "第 1 次",
+      "第 2 次"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "（空）"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "默认 box"
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "定义时只创建了一个默认列表"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "add_item(1)",
+      "add_item(2)"
+     ],
+     "srcTag": [
+      "第 1 次",
+      "第 2 次"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [
+      [
+       "1"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "默认 box"
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "第 1 次调用 · 往默认列表放入 1"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "add_item(1)",
+      "add_item(2)"
+     ],
+     "srcTag": [
+      "第 1 次",
+      "第 2 次"
+     ],
+     "seal": false,
+     "out": [
+      "[1, 2]"
+     ],
+     "outTag": [
+      "返回"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [
+      [
+       "1",
+       "2"
+      ]
+     ],
+     "rowSeal": [
+      false
+     ],
+     "rowTag": [
+      "默认 box"
+     ],
+     "cells": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "row": 0,
+     "col": 0,
+     "say": "第 2 次调用 · 还是同一个列表，变成 [1, 2]"
+    }
+   ]
+  },
+  {
+   "mode": "lambda",
+   "title": "lambda 写法",
+   "code": "square = lambda x: x * x\nsquare(6)",
+   "note": "lambda 参数: 表达式 创建一个没有名字的小函数，表达式的值就是返回值，不用写 return。",
+   "result": "36",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "6"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 <lambda>(6) · 函数有 1 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "6"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "6"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 6 → 按顺序放进形参 x"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "6"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "6"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "6"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "6"
+     ],
+     "outTag": [
+      "x"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 36"
+    }
+   ]
+  },
+  {
+   "mode": "lambda",
+   "title": "多个参数",
+   "code": "add = lambda a, b=10: a + b\nadd(5)",
+   "note": "lambda 也能有多个参数和默认值，规则与 def 完全相同。",
+   "result": "15",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "?",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=10"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "调用 <lambda>(5) · 函数有 2 个形参"
+    },
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "?"
+     ],
+     "outTag": [
+      "a",
+      "b=10"
+     ],
+     "outLit": [
+      0
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "位置实参 5 → 按顺序放进形参 a"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "10"
+     ],
+     "outTag": [
+      "a",
+      "b=10"
+     ],
+     "outLit": [
+      1
+     ],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "没有传值的形参使用默认值：b=10"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "10"
+     ],
+     "outTag": [
+      "a",
+      "b=10"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "绑定完成 · 开始执行函数体"
+    },
+    {
+     "slot": 0,
+     "lit": [],
+     "src": [
+      "5"
+     ],
+     "srcTag": [
+      "位置"
+     ],
+     "seal": false,
+     "out": [
+      "5",
+      "10"
+     ],
+     "outTag": [
+      "a",
+      "b=10"
+     ],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "返回 15"
+    }
+   ]
+  },
+  {
+   "mode": "lambda",
+   "title": "lambda 与 def 等价",
+   "code": "def square_def(x):\n    return x * x\n\nsquare = lambda x: x * x\n(square_def(7), square(7))",
+   "note": "lambda 只能写一个表达式，不能写多条语句。逻辑复杂时用 def 更清楚。",
+   "result": "(49, 49)",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0,
+      1
+     ],
+     "src": [
+      "7",
+      "7"
+     ],
+     "srcTag": [
+      "def 版",
+      "lambda 版"
+     ],
+     "seal": false,
+     "out": [
+      "49",
+      "49"
+     ],
+     "outTag": [
+      "square_def(7)",
+      "square(7)"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "两种写法传入同一个实参 7"
+    },
+    {
+     "slot": 1,
+     "lit": [],
+     "src": [
+      "7",
+      "7"
+     ],
+     "srcTag": [
+      "def 版",
+      "lambda 版"
+     ],
+     "seal": false,
+     "out": [
+      "49",
+      "49"
+     ],
+     "outTag": [
+      "square_def(7)",
+      "square(7)"
+     ],
+     "outLit": [
+      0,
+      1
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "结果相同：都是 49"
+    }
+   ]
+  },
+  {
+   "mode": "lambda",
+   "title": "配合 map 和 filter",
+   "code": "nums = [1, 2, 3, 4, 5]\nlist(filter(lambda n: n % 2 == 1, map(lambda n: n * 10, nums)))",
+   "note": "lambda 最常用来当作参数传给另一个函数：map 对每个元素变换，filter 按条件筛选。",
+   "result": "[]",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 4,
+     "lit": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "srcTag": [
+      "nums",
+      "nums",
+      "nums",
+      "nums",
+      "nums"
+     ],
+     "seal": false,
+     "out": [
+      "10",
+      "20",
+      "30",
+      "40",
+      "50"
+     ],
+     "outTag": [
+      "map",
+      "map",
+      "map",
+      "map",
+      "map"
+     ],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "map：每个元素 × 10"
+    },
+    {
+     "slot": 4,
+     "lit": [],
+     "src": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "srcTag": [
+      "nums",
+      "nums",
+      "nums",
+      "nums",
+      "nums"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "filter：只留下奇数 · 10 到 50 全是偶数"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "默认排序",
+   "code": "words = ['banana', 'Kiwi', 'apple', 'fig']\nsorted(words)",
+   "note": "字符串默认按字符编码比较，大写字母排在所有小写字母前面，所以 'Kiwi' 最先。",
+   "result": "['Kiwi', 'apple', 'banana', 'fig']",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('banana') = 'banana'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'Kiwi'",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('Kiwi') = 'Kiwi'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('apple') = 'apple'"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('fig') = 'fig'"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "seal": false,
+     "out": [
+      "'Kiwi'",
+      "'apple'",
+      "'banana'",
+      "'fig'"
+     ],
+     "outTag": [
+      "'Kiwi'",
+      "'apple'",
+      "'banana'",
+      "'fig'"
+     ],
+     "outLit": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "key=len：按长度",
+   "code": "words = ['banana', 'Kiwi', 'apple', 'fig']\nsorted(words, key=len)",
+   "note": "key 接收一个函数：先对每个元素算出 key 值，再按 key 值排序。这里直接传内置函数 len。",
+   "result": "['fig', 'Kiwi', 'apple', 'banana']",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "6",
+      "",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('banana') = 6"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "6",
+      "4",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('Kiwi') = 4"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "6",
+      "4",
+      "5",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('apple') = 5"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "6",
+      "4",
+      "5",
+      "3"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('fig') = 3"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "6",
+      "4",
+      "5",
+      "3"
+     ],
+     "seal": false,
+     "out": [
+      "'fig'",
+      "'Kiwi'",
+      "'apple'",
+      "'banana'"
+     ],
+     "outTag": [
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "outLit": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "key=lambda：忽略大小写",
+   "code": "words = ['banana', 'Kiwi', 'apple', 'fig']\nsorted(words, key=lambda s: s.lower())",
+   "note": "用 lambda 临时写一个 key 函数：比较前先转成小写。元素本身不变，只是比较依据变了。",
+   "result": "['apple', 'banana', 'fig', 'Kiwi']",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('banana') = 'banana'"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'kiwi'",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('Kiwi') = 'kiwi'"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'kiwi'",
+      "'apple'",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('apple') = 'apple'"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key('fig') = 'fig'"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "'banana'",
+      "'Kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "srcTag": [
+      "'banana'",
+      "'kiwi'",
+      "'apple'",
+      "'fig'"
+     ],
+     "seal": false,
+     "out": [
+      "'apple'",
+      "'banana'",
+      "'fig'",
+      "'Kiwi'"
+     ],
+     "outTag": [
+      "'apple'",
+      "'banana'",
+      "'fig'",
+      "'kiwi'"
+     ],
+     "outLit": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "按元组的第 2 项排序",
+   "code": "students = [('小明', 85), ('小红', 92), ('小刚', 78)]\nsorted(students, key=lambda s: s[1])",
+   "note": "列表里是 (姓名, 分数) 元组，key=lambda s: s[1] 表示按分数比较。",
+   "result": "[('小刚', 78), ('小明', 85), ('小红', 92)]",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小明', 85)) = 85"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "92",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小红', 92)) = 92"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "92",
+      "78"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小刚', 78)) = 78"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "92",
+      "78"
+     ],
+     "seal": false,
+     "out": [
+      "('小刚', 78)",
+      "('小明', 85)",
+      "('小红', 92)"
+     ],
+     "outTag": [
+      "78",
+      "85",
+      "92"
+     ],
+     "outLit": [
+      0,
+      1,
+      2
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "reverse=True：从高到低",
+   "code": "students = [('小明', 85), ('小红', 92), ('小刚', 78)]\nsorted(students, key=lambda s: s[1], reverse=True)",
+   "note": "reverse=True 把结果倒过来，得到降序。",
+   "result": "[('小红', 92), ('小明', 85), ('小刚', 78)]",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小明', 85)) = 85"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "92",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小红', 92)) = 92"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "92",
+      "78"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小刚', 78)) = 78"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "('小明', 85)",
+      "('小红', 92)",
+      "('小刚', 78)"
+     ],
+     "srcTag": [
+      "85",
+      "92",
+      "78"
+     ],
+     "seal": false,
+     "out": [
+      "('小红', 92)",
+      "('小明', 85)",
+      "('小刚', 78)"
+     ],
+     "outTag": [
+      "92",
+      "85",
+      "78"
+     ],
+     "outLit": [
+      0,
+      1,
+      2
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从大到小排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "多条件：先年龄，再姓名",
+   "code": "people = [('小明', 12), ('小红', 11), ('小刚', 12), ('小丽', 11)]\nsorted(people, key=lambda p: (p[1], p[0]))",
+   "note": "key 返回元组时，先比第 1 项，相同再比第 2 项。中文姓名按字符编码比较。",
+   "result": "[('小丽', 11), ('小红', 11), ('小刚', 12), ('小明', 12)]",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "('小明', 12)",
+      "('小红', 11)",
+      "('小刚', 12)",
+      "('小丽', 11)"
+     ],
+     "srcTag": [
+      "(12, '小明')",
+      "",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小明', 12)) = (12, '小明')"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "('小明', 12)",
+      "('小红', 11)",
+      "('小刚', 12)",
+      "('小丽', 11)"
+     ],
+     "srcTag": [
+      "(12, '小明')",
+      "(11, '小红')",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小红', 11)) = (11, '小红')"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "('小明', 12)",
+      "('小红', 11)",
+      "('小刚', 12)",
+      "('小丽', 11)"
+     ],
+     "srcTag": [
+      "(12, '小明')",
+      "(11, '小红')",
+      "(12, '小刚')",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小刚', 12)) = (12, '小刚')"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "('小明', 12)",
+      "('小红', 11)",
+      "('小刚', 12)",
+      "('小丽', 11)"
+     ],
+     "srcTag": [
+      "(12, '小明')",
+      "(11, '小红')",
+      "(12, '小刚')",
+      "(11, '小丽')"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(('小丽', 11)) = (11, '小丽')"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "('小明', 12)",
+      "('小红', 11)",
+      "('小刚', 12)",
+      "('小丽', 11)"
+     ],
+     "srcTag": [
+      "(12, '小明')",
+      "(11, '小红')",
+      "(12, '小刚')",
+      "(11, '小丽')"
+     ],
+     "seal": false,
+     "out": [
+      "('小丽', 11)",
+      "('小红', 11)",
+      "('小刚', 12)",
+      "('小明', 12)"
+     ],
+     "outTag": [
+      "(11, '小丽')",
+      "(11, '小红')",
+      "(12, '小刚')",
+      "(12, '小明')"
+     ],
+     "outLit": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "按绝对值排序",
+   "code": "nums = [-7, 3, -1, 5]\nsorted(nums, key=abs)",
+   "note": "key=abs 按绝对值比较，结果里保留原来的正负号。",
+   "result": "[-1, 3, 5, -7]",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "-7",
+      "3",
+      "-1",
+      "5"
+     ],
+     "srcTag": [
+      "7",
+      "",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(-7) = 7"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "-7",
+      "3",
+      "-1",
+      "5"
+     ],
+     "srcTag": [
+      "7",
+      "3",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(3) = 3"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "-7",
+      "3",
+      "-1",
+      "5"
+     ],
+     "srcTag": [
+      "7",
+      "3",
+      "1",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(-1) = 1"
+    },
+    {
+     "slot": 3,
+     "lit": [
+      3
+     ],
+     "src": [
+      "-7",
+      "3",
+      "-1",
+      "5"
+     ],
+     "srcTag": [
+      "7",
+      "3",
+      "1",
+      "5"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(5) = 5"
+    },
+    {
+     "slot": 3,
+     "lit": [],
+     "src": [
+      "-7",
+      "3",
+      "-1",
+      "5"
+     ],
+     "srcTag": [
+      "7",
+      "3",
+      "1",
+      "5"
+     ],
+     "seal": false,
+     "out": [
+      "-1",
+      "3",
+      "5",
+      "-7"
+     ],
+     "outTag": [
+      "1",
+      "3",
+      "5",
+      "7"
+     ],
+     "outLit": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  },
+  {
+   "mode": "sort",
+   "title": "sort() 原地排序，返回 None",
+   "code": "scores = [85, 92, 78]\nresult = scores.sort(key=lambda s: -s)\n(result, scores)",
+   "note": "列表的 sort() 方法直接修改原列表并返回 None；sorted() 返回新列表、原列表不变。两者都接受 key 和 reverse。",
+   "result": "(None, [92, 85, 78])",
+   "printed": "",
+   "error": null,
+   "steps": [
+    {
+     "slot": 0,
+     "lit": [
+      0
+     ],
+     "src": [
+      "85",
+      "92",
+      "78"
+     ],
+     "srcTag": [
+      "-85",
+      "",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(85) = -85"
+    },
+    {
+     "slot": 1,
+     "lit": [
+      1
+     ],
+     "src": [
+      "85",
+      "92",
+      "78"
+     ],
+     "srcTag": [
+      "-85",
+      "-92",
+      ""
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(92) = -92"
+    },
+    {
+     "slot": 2,
+     "lit": [
+      2
+     ],
+     "src": [
+      "85",
+      "92",
+      "78"
+     ],
+     "srcTag": [
+      "-85",
+      "-92",
+      "-78"
+     ],
+     "seal": false,
+     "out": [],
+     "outTag": [],
+     "outLit": [],
+     "outSeal": false,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "key(78) = -78"
+    },
+    {
+     "slot": 2,
+     "lit": [],
+     "src": [
+      "85",
+      "92",
+      "78"
+     ],
+     "srcTag": [
+      "-85",
+      "-92",
+      "-78"
+     ],
+     "seal": false,
+     "out": [
+      "92",
+      "85",
+      "78"
+     ],
+     "outTag": [
+      "-92",
+      "-85",
+      "-78"
+     ],
+     "outLit": [
+      0,
+      1,
+      2
+     ],
+     "outSeal": true,
+     "ok": true,
+     "grid": [],
+     "rowSeal": [],
+     "rowTag": [],
+     "cells": [],
+     "row": 0,
+     "col": 0,
+     "say": "按 key 从小到大排好 · key 相同保持原序"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Pandas 数据分拣台 · 简单数据分析与 Matplotlib 可视化</title><style>/* KIT */
+/* STYLE */</style></head>
+<body class="iso" data-theme="light"><main>
+<header><a class="wordmark" href="#top">PY / LAB <span>基础实验 09</span></a><button id="theme" aria-label="切换至深色主题">深色模式</button></header>
+<section class="intro" id="top"><div class="eyebrow">A SMALL MACHINE FOR BIG IDEAS</div><h1>一张成绩表，<br><span>几行代码就能看清楚。</span></h1><p>选一个预设示例：看 pandas 选中了哪些行和列、返回了什么样的表，<br class="desktop">再用 Matplotlib 把结果画成折线、柱状、散点、饼图和直方图。所有结果都来自真实的 pandas 与 Matplotlib。</p></section>
+<div class="workspace">
+<section class="visual" aria-label="Pandas 数据分拣台">
+<figure><div class="iso-plate"><div class="card-head"><span>FIG. 09 / DATAFRAME SORTER</span><span>Pandas 数据分拣台</span></div><div class="iso-stage" id="stage" tabindex="0" role="slider" aria-valuemin="0" aria-label="Pandas 数据分拣台"><!-- FIGURE --></div><div class="card-foot"><span>← → 单步 · 空格 播放/暂停 · PgDn 下一个示例</span><output data-readout>正在校准</output></div></div><figcaption><span class="legend"><i></i> 高亮格 = 这次操作用到的单元格</span><p>左侧是读入的 <strong>DataFrame</strong>：第一排是列名，左边小字是行索引，<code>NaN</code> 表示缺失值。后方滑块指向选中的<strong>列</strong>，左侧滑块指向选中的<strong>行</strong>（没有选择时变暗）。右侧托盘显示操作<strong>返回的结果</strong>：表格、Series 或一个值。作图示例的图由 Matplotlib 实际绘制，显示在下方。</p></figcaption></figure>
+<div class="binding"><span class="label" id="step-count">准备</span><code id="detail">—</code></div>
+<div class="tour-bar"><span class="tour-buttons"><button id="prev">上一步</button><button id="play">播放</button><button id="next">下一步</button><button id="replay">重播</button></span><span class="tour-buttons"><span id="tour-status"></span><button id="tour" aria-pressed="true">停止巡览</button></span></div>
+<section class="chart-card" id="chart-card" hidden><div class="section-heading"><span>PLOT</span><h2>Matplotlib 画出的图</h2></div><div id="chart" class="chart"></div></section>
+</section>
+<aside class="controls">
+<section class="control-section"><div class="section-heading"><span>01</span><h2>选择示例</h2></div><div class="tabs four" role="tablist" aria-label="主题"><button role="tab" data-mode="look">读取查看</button><button role="tab" data-mode="filter">筛选排序</button><button role="tab" data-mode="stats">统计分组</button><button role="tab" data-mode="plot">作图</button></div><div id="examples" class="example-list" role="group" aria-label="预设示例"></div></section>
+<section class="control-section"><div class="section-heading"><span>02</span><h2 id="title">代码</h2></div><div class="terminal"><div class="setup"><pre id="setup"></pre></div><div><pre id="code"></pre></div></div><p id="note" class="note"></p></section>
+<section class="control-section"><div class="section-heading"><span>03</span><h2>结果</h2></div><div class="result-row" id="printed-row" hidden><span class="label">print 输出</span><pre id="printed" class="output"></pre></div><div id="result-box" class="result-box"></div></section>
+<section class="control-section"><div class="section-heading"><span>04</span><h2>示例数据</h2></div><details><summary>scores.csv（成绩表，小强的英语缺考）</summary><pre id="csv" class="output"></pre></details><details><summary>sales.csv（上半年销售）</summary><pre id="sales-csv" class="output"></pre></details></section>
+</aside></div>
+<section class="notes"><div class="section-heading"><span>FIELD NOTES</span><h2>把规则带走</h2></div><div class="notes-grid">
+<article><span>01 / DataFrame</span><h3>二维表格 = 行索引 + 列名</h3><p><code>pd.read_csv('文件.csv')</code> 读入表格。<code>head()</code> 看前几行，<code>shape</code> 看行列数，<code>dtypes</code> 看每列类型，<code>describe()</code> 看数字列的统计概览。</p><p><code>df['列']</code> 取一列得到 <code>Series</code>，<code>df[['列1', '列2']]</code> 取多列得到 DataFrame。缺失值显示为 <code>NaN</code>，用 <code>isna()</code> 查找、<code>fillna()</code> 填补、<code>dropna()</code> 删除。</p></article>
+<article><span>02 / 筛选与统计</span><h3>布尔筛选、排序、分组</h3><p><code>df[df['数学'] >= 90]</code> 按条件筛选行，多个条件用 <code>&</code>、<code>|</code> 并给每个条件加括号。<code>loc[行标签, 列名]</code> 按标签取，<code>iloc</code> 按位置取。<code>sort_values('列', ascending=False)</code> 排序。</p><p><code>mean()</code>、<code>sum()</code>、<code>max()</code> 按列统计；<code>value_counts()</code> 计数；<code>groupby('班级')['数学'].mean()</code>：先分组，再对每组计算。这些操作都返回新对象，原表不变（新增列除外）。</p></article>
+<article><span>03 / Matplotlib</span><h3>选对图，再加标题和标签</h3><p><code>fig, ax = plt.subplots()</code> 得到画布和坐标轴。趋势用折线 <code>ax.plot</code>，比较类别用柱状 <code>ax.bar</code>，看两个量的关系用散点 <code>ax.scatter</code>，看占比用饼图 <code>ax.pie</code>，看分布用直方图 <code>ax.hist</code>。</p><p>记得 <code>set_title</code>、<code>set_xlabel</code>、<code>set_ylabel</code>，多条线用 <code>label</code> + <code>legend()</code>。<code>df.plot(kind='bar')</code> 可以直接从 pandas 画图。显示中文需要设置中文字体，在脚本中最后用 <code>plt.show()</code> 显示或 <code>savefig</code> 保存。</p></article>
+</div></section>
+<footer><p>离线教学装置 · Anatomy 等距 SVG · <span id="version"></span></p><p>所有表格结果都由真实 pandas 运行得出，所有图都由真实 Matplotlib 绘制并以 SVG 内置在页面中；浏览器不执行任意 Python 代码。为显示中文，生成图时设置了 <code>plt.rcParams['font.sans-serif']</code> 为系统中文字体；示例代码里省略了这一行和 <code>plt.show()</code>。</p></footer>
+</main><script>/* SCRIPT */</script></body></html>

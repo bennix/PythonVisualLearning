@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Python 字符串排字台 · 字符串与常用方法</title><style>/* KIT */
+/* STYLE */</style></head>
+<body class="iso" data-theme="light"><main>
+<header><a class="wordmark" href="#top">PY / LAB <span>基础实验 04</span></a><button id="theme" aria-label="切换至深色主题">深色模式</button></header>
+<section class="intro" id="top"><div class="eyebrow">A SMALL MACHINE FOR BIG IDEAS</div><h1>字符串是一排封好的铅字。<br><span>方法从不改它，只浇铸新的一行。</span></h1><p>选一个预设示例：看拾取滑台逐个读取字符、<code>upper()</code> 与 <code>replace()</code> 怎样在后排生成新字符串，<br class="desktop">以及 <code>split()</code> 与 <code>join()</code> 如何拆开、拼回。</p></section>
+<div class="workspace">
+<section class="visual" aria-label="字符串排字台">
+<figure><div class="iso-plate"><div class="card-head"><span>FIG. 04 / STRING COMPOSER</span><span>Python 字符串排字台</span></div><div class="iso-stage" id="stage" tabindex="0" role="group" aria-label="字符串排字台。左右方向键切换示例，空格键重播，Home 到首项，End 到末项。"><!-- FIGURE --></div><div class="card-foot"><span>← → 切换示例 · 空格重播</span><output data-readout>正在校准</output></div></div><figcaption><span class="legend"><i></i> 高亮 = 正在读取或写入的字符</span><p>前排每个铅字块是一个字符（<code>␣</code> 表示空格），槽前上一行是正索引，下一行是负索引；压在上面的封条表示字符串不可变。字符串方法不会碰前排，而是在后排逐字浇铸一行<strong>新字符串</strong>，浇铸完成后同样封上封条。竖旗落下表示出错。右侧托盘存放 <code>split()</code> 切出的每一段，<code>join()</code> 再逐段取回、拼成前排的新字符串。</p></figcaption></figure>
+<div class="binding"><span class="label">当前步骤</span><code id="step">准备</code><p id="step-note">滑台会按访问顺序逐个移动。</p></div>
+<div class="tour-bar"><span id="tour-status">空闲时自动浏览示例</span><span class="tour-buttons"><button id="replay">重播</button><button id="tour" aria-pressed="true">暂停巡览</button></span></div>
+</section>
+<aside class="controls">
+<section class="control-section"><div class="section-heading"><span>01</span><h2>选择主题</h2></div><div class="tabs" role="tablist" aria-label="主题"><button role="tab" data-mode="basic">字符串基础</button><button role="tab" data-mode="method">常用方法</button><button role="tab" data-mode="split">分割与连接</button></div><div id="examples" class="example-list" role="group" aria-label="预设示例"></div></section>
+<section class="control-section"><div class="section-heading"><span>02</span><h2>代码与结果</h2></div><div class="terminal"><div class="setup"><code id="setup"></code></div><div><pre id="code"></pre></div><div class="result"><span>结果</span><output id="result"></output></div></div><p id="note" class="note"></p><div id="loop-box" class="loop"><span class="label">等价的普通写法</span><pre id="loop"></pre></div><p id="identity" class="micro"></p></section>
+</aside></div>
+<section class="notes"><div class="section-heading"><span>FIELD NOTES</span><h2>把规则带走</h2></div><div class="notes-grid">
+<article><span>01 / 字符串</span><h3>有序、不可变的字符序列</h3><p>用单引号、双引号或三引号创建：<code>'hi'</code>、<code>"hi"</code>、<code>'''多行'''</code>。索引、负索引、切片、<code>len()</code>、<code>in</code> 的用法与列表相同。</p><p>字符串不可变：<code>s[0] = 'h'</code> 会报 <code>TypeError</code>。<code>+</code> 拼接、<code>*</code> 重复都产生新字符串。字符串不能直接和数字相加，要先用 <code>str()</code> 或 <code>int()</code> 转换；<code>f'{变量}'</code> 是最方便的拼接方式。</p></article>
+<article><span>02 / 常用方法</span><h3>方法返回新字符串，记得接住</h3><p><code>upper()</code>、<code>lower()</code>、<code>title()</code>、<code>strip()</code>、<code>replace()</code> 都返回新字符串，原字符串不变。只写 <code>s.upper()</code> 而不赋值，<code>s</code> 不会变，要写 <code>s = s.upper()</code>。</p><p><code>find()</code> 找不到返回 <code>-1</code>，<code>index()</code> 找不到会报错；<code>count()</code> 计数；<code>startswith()</code>、<code>isalpha()</code>、<code>isdigit()</code> 这类方法返回 <code>True</code> 或 <code>False</code>。</p></article>
+<article><span>03 / 分割与连接</span><h3>split 拆成列表，join 拼回字符串</h3><p><code>s.split()</code> 按空白切分，<code>s.split(',')</code> 按逗号切分，结果都是字符串列表。</p><p><code>'分隔符'.join(列表)</code>：<code>join</code> 是分隔符的方法，不是列表的方法。列表里的元素必须全是字符串，含数字时先转换，例如 <code>'-'.join(str(n) for n in nums)</code>。</p></article>
+</div></section>
+<footer><p>离线教学装置 · Anatomy 等距 SVG · <span id="version"></span></p><p>所有示例结果都由真实 Python 预先计算并随页面内置；浏览器不执行任意 Python 代码。每个示例都在独立的环境中、从代码区第一行显示的初始数据开始运行。</p></footer>
+</main><script>/* SCRIPT */</script></body></html>

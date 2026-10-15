@@ -1,0 +1,1105 @@
+{
+ "python": "3.10.21",
+ "nums": [
+  3,
+  1,
+  4,
+  1,
+  5,
+  9
+ ],
+ "m": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   4,
+   5,
+   6
+  ],
+  [
+   7,
+   8,
+   9
+  ]
+ ],
+ "examples": [
+  {
+   "mode": "list",
+   "code": "nums[0]",
+   "kind": "index",
+   "note": "正索引从 0 开始：第一个元素在 0 号槽。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0
+   ],
+   "stops": null,
+   "output": null,
+   "result": "3",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[-1]",
+   "kind": "index",
+   "note": "负索引从末尾倒数：-1 是最后一个元素，等价于 nums[len(nums) - 1]。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    5
+   ],
+   "stops": null,
+   "output": null,
+   "result": "9",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[2:5]",
+   "kind": "slice",
+   "note": "切片 [start:stop] 包含 start，不包含 stop，结果是一个新列表。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    2,
+    3,
+    4
+   ],
+   "stops": [
+    2,
+    5
+   ],
+   "output": [
+    "4",
+    "1",
+    "5"
+   ],
+   "result": "[4, 1, 5]",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[::2]",
+   "kind": "slice",
+   "note": "step=2 表示每隔一个取一次；省略 start/stop 表示从头到尾。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    2,
+    4
+   ],
+   "stops": [
+    0,
+    6
+   ],
+   "output": [
+    "3",
+    "4",
+    "5"
+   ],
+   "result": "[3, 4, 5]",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[::-1]",
+   "kind": "slice",
+   "note": "step 为负数时倒着取，nums[::-1] 得到反转后的新列表，原列表不变。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+   ],
+   "stops": null,
+   "output": [
+    "9",
+    "5",
+    "1",
+    "4",
+    "1",
+    "3"
+   ],
+   "result": "[9, 5, 1, 4, 1, 3]",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[10]",
+   "kind": "index",
+   "note": "索引超出范围会抛出 IndexError。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    8
+   ],
+   "stops": null,
+   "output": null,
+   "result": null,
+   "error": "IndexError: list index out of range",
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[4:100]",
+   "kind": "slice",
+   "note": "切片不会越界报错：超出的部分会被自动截断。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    4,
+    5
+   ],
+   "stops": [
+    4,
+    6
+   ],
+   "output": [
+    "5",
+    "9"
+   ],
+   "result": "[5, 9]",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "list",
+   "code": "nums[1] = 8\nnums",
+   "kind": "assign",
+   "note": "列表是可变的：可以直接给某个位置重新赋值。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    8,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    1
+   ],
+   "stops": null,
+   "output": null,
+   "result": "[3, 8, 4, 1, 5, 9]",
+   "error": null,
+   "mutated": true
+  },
+  {
+   "mode": "list",
+   "code": "nums.append(2)",
+   "kind": "method",
+   "note": "append 在末尾添加一个元素，原地修改，返回 None。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9,
+    2
+   ],
+   "visit": [
+    6
+   ],
+   "stops": null,
+   "output": null,
+   "result": "None",
+   "error": null,
+   "mutated": true
+  },
+  {
+   "mode": "list",
+   "code": "nums.insert(1, 7)",
+   "kind": "method",
+   "note": "insert(i, x) 把 x 插到索引 i，后面的元素整体后移。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    7,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    1
+   ],
+   "stops": null,
+   "output": null,
+   "result": "None",
+   "error": null,
+   "mutated": true
+  },
+  {
+   "mode": "list",
+   "code": "nums.pop()",
+   "kind": "method",
+   "note": "pop() 删除并返回最后一个元素；pop(i) 删除索引 i 处的元素。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5
+   ],
+   "visit": [
+    5
+   ],
+   "stops": null,
+   "output": null,
+   "result": "9",
+   "error": null,
+   "mutated": true
+  },
+  {
+   "mode": "list",
+   "code": "nums.remove(1)",
+   "kind": "method",
+   "note": "remove(x) 只删除第一个等于 x 的元素，返回 None；找不到时抛出 ValueError。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    1
+   ],
+   "stops": null,
+   "output": null,
+   "result": "None",
+   "error": null,
+   "mutated": true
+  },
+  {
+   "mode": "list",
+   "code": "nums.sort()",
+   "kind": "method",
+   "note": "sort() 原地排序并返回 None，所以不要写 nums = nums.sort()。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    1,
+    1,
+    3,
+    4,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "stops": null,
+   "output": null,
+   "result": "None",
+   "error": null,
+   "mutated": true
+  },
+  {
+   "mode": "list",
+   "code": "sorted(nums)",
+   "kind": "sorted",
+   "note": "sorted() 返回一个新的已排序列表，原来的 nums 保持不变。",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "stops": null,
+   "output": [
+    "1",
+    "1",
+    "3",
+    "4",
+    "5",
+    "9"
+   ],
+   "result": "[1, 1, 3, 4, 5, 9]",
+   "error": null,
+   "mutated": false
+  },
+  {
+   "mode": "comp",
+   "code": "[x * 2 for x in nums]",
+   "kind": "comp",
+   "note": "最基本的形式：对每个元素做同样的变换，结果数量与原列表相同。",
+   "loop": "result = []\nfor x in nums:\n    result.append(x * 2)",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "pass": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "output": [
+    "6",
+    "2",
+    "8",
+    "2",
+    "10",
+    "18"
+   ],
+   "result": "[6, 2, 8, 2, 10, 18]",
+   "error": null,
+   "filtered": false
+  },
+  {
+   "mode": "comp",
+   "code": "[x for x in nums if x % 2 == 1]",
+   "kind": "comp",
+   "note": "末尾的 if 是过滤条件：只有条件为真的元素才会进入新列表。",
+   "loop": "result = []\nfor x in nums:\n    if x % 2 == 1:\n        result.append(x)",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "pass": [
+    true,
+    true,
+    false,
+    true,
+    true,
+    true
+   ],
+   "output": [
+    "3",
+    "1",
+    "1",
+    "5",
+    "9"
+   ],
+   "result": "[3, 1, 1, 5, 9]",
+   "error": null,
+   "filtered": true
+  },
+  {
+   "mode": "comp",
+   "code": "[x * x for x in nums if x > 2]",
+   "kind": "comp",
+   "note": "先过滤再变换：每个元素先经过 if，通过后才计算 x * x。",
+   "loop": "result = []\nfor x in nums:\n    if x > 2:\n        result.append(x * x)",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "pass": [
+    true,
+    false,
+    true,
+    false,
+    true,
+    true
+   ],
+   "output": [
+    "9",
+    "16",
+    "25",
+    "81"
+   ],
+   "result": "[9, 16, 25, 81]",
+   "error": null,
+   "filtered": true
+  },
+  {
+   "mode": "comp",
+   "code": "['奇' if x % 2 else '偶' for x in nums]",
+   "kind": "comp",
+   "note": "写在 for 前面的 a if 条件 else b 是条件表达式：不过滤，每个元素都会输出。",
+   "loop": "result = []\nfor x in nums:\n    result.append('奇' if x % 2 else '偶')",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "pass": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "output": [
+    "奇",
+    "奇",
+    "偶",
+    "奇",
+    "奇",
+    "奇"
+   ],
+   "result": "['奇', '奇', '偶', '奇', '奇', '奇']",
+   "error": null,
+   "filtered": false
+  },
+  {
+   "mode": "comp",
+   "code": "squares = [x * x for x in nums]\nx",
+   "kind": "scope",
+   "note": "Python 3 中，生成式里的循环变量 x 只在生成式内部存在，外面访问会抛出 NameError；普通 for 循环的变量则会留在外面。",
+   "loop": "squares = []\nfor x in nums:\n    squares.append(x * x)\nx   # 9：普通 for 循环的变量会留下",
+   "before": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "after": [
+    3,
+    1,
+    4,
+    1,
+    5,
+    9
+   ],
+   "visit": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "pass": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "output": [
+    "9",
+    "1",
+    "16",
+    "1",
+    "25",
+    "81"
+   ],
+   "result": null,
+   "error": "NameError: name 'x' is not defined",
+   "filtered": false
+  },
+  {
+   "mode": "nest",
+   "code": "m[1]",
+   "kind": "nest",
+   "note": "m[1] 取出第 1 行，它本身也是一个列表。",
+   "loop": null,
+   "matrix": [
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6
+    ],
+    [
+     7,
+     8,
+     9
+    ]
+   ],
+   "cells": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "row": 1,
+   "col": null,
+   "output": null,
+   "result": "[4, 5, 6]",
+   "error": null,
+   "shared": false
+  },
+  {
+   "mode": "nest",
+   "code": "m[1][2]",
+   "kind": "nest",
+   "note": "m[i][j]：先用 i 选行，再用 j 在这一行里选列。",
+   "loop": null,
+   "matrix": [
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6
+    ],
+    [
+     7,
+     8,
+     9
+    ]
+   ],
+   "cells": [
+    [
+     1,
+     2
+    ]
+   ],
+   "row": 1,
+   "col": 2,
+   "output": null,
+   "result": "6",
+   "error": null,
+   "shared": false
+  },
+  {
+   "mode": "nest",
+   "code": "m[-1][0]",
+   "kind": "nest",
+   "note": "负索引同样适用：m[-1] 是最后一行，再取它的第 0 个元素。",
+   "loop": null,
+   "matrix": [
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6
+    ],
+    [
+     7,
+     8,
+     9
+    ]
+   ],
+   "cells": [
+    [
+     2,
+     0
+    ]
+   ],
+   "row": 2,
+   "col": 0,
+   "output": null,
+   "result": "7",
+   "error": null,
+   "shared": false
+  },
+  {
+   "mode": "nest",
+   "code": "[x for row in m for x in row]",
+   "kind": "nest",
+   "note": "展开（扁平化）：多个 for 的顺序与嵌套循环的书写顺序相同，先外层 row，再内层 x。",
+   "loop": "result = []\nfor row in m:\n    for x in row:\n        result.append(x)",
+   "matrix": [
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6
+    ],
+    [
+     7,
+     8,
+     9
+    ]
+   ],
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "row": null,
+   "col": null,
+   "output": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "result": "[1, 2, 3, 4, 5, 6, 7, 8, 9]",
+   "error": null,
+   "shared": false
+  },
+  {
+   "mode": "nest",
+   "code": "[[row[i] for row in m] for i in range(3)]",
+   "kind": "nest",
+   "note": "转置：外层按列号 i 循环，内层从每一行取第 i 个，得到新的 3×3 列表。",
+   "loop": "result = []\nfor i in range(3):\n    new_row = []\n    for row in m:\n        new_row.append(row[i])\n    result.append(new_row)",
+   "matrix": [
+    [
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6
+    ],
+    [
+     7,
+     8,
+     9
+    ]
+   ],
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "row": null,
+   "col": null,
+   "output": [
+    "1",
+    "4",
+    "7",
+    "2",
+    "5",
+    "8",
+    "3",
+    "6",
+    "9"
+   ],
+   "result": "[[1, 4, 7], [2, 5, 8], [3, 6, 9]]",
+   "error": null,
+   "shared": false
+  },
+  {
+   "mode": "nest",
+   "code": "g = [[0] * 3] * 3\ng[0][0] = 1\ng",
+   "kind": "shared",
+   "note": "陷阱：[[0] * 3] * 3 把同一个内层列表复制了 3 次引用。改 g[0][0]，三行同时变化。",
+   "loop": null,
+   "matrix": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "row": 0,
+   "col": 0,
+   "output": null,
+   "result": "[[1, 0, 0], [1, 0, 0], [1, 0, 0]]",
+   "error": null,
+   "shared": true,
+   "identity": "g[0] is g[1]  →  True"
+  },
+  {
+   "mode": "nest",
+   "code": "g = [[0] * 3 for _ in range(3)]\ng[0][0] = 1\ng",
+   "kind": "shared",
+   "note": "正确写法：生成式每次循环都新建一个内层列表，三行互不影响。",
+   "loop": null,
+   "matrix": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "cells": [
+    [
+     0,
+     0
+    ]
+   ],
+   "row": 0,
+   "col": 0,
+   "output": null,
+   "result": "[[1, 0, 0], [0, 0, 0], [0, 0, 0]]",
+   "error": null,
+   "shared": false,
+   "identity": "g[0] is g[1]  →  False"
+  }
+ ]
+}

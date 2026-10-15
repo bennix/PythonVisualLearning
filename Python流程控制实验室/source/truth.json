@@ -1,0 +1,3662 @@
+{
+ "python": "3.10.21",
+ "examples": [
+  {
+   "mode": "branch",
+   "title": "if / else：二选一",
+   "code": [
+    "score = 72",
+    "if score >= 60:",
+    "    result = '及格'",
+    "else:",
+    "    result = '不及格'",
+    "print(result)"
+   ],
+   "note": "条件为 True 走 if 下面缩进的代码块，否则走 else 块。两个分支只会执行一个。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "score": "72"
+     },
+     "out": "",
+     "cond": "score >= 60",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "score >= 60 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "score": "72"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 6,
+     "taken": null,
+     "detail": "执行这一行 · 跳过后面的分支，去第 6 行"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "score": "72",
+      "result": "'及格'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "score": "72",
+     "result": "'及格'"
+    },
+    "out": "及格\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "branch",
+   "title": "if / elif / else：多选一",
+   "code": [
+    "score = 85",
+    "if score >= 90:",
+    "    grade = 'A'",
+    "elif score >= 80:",
+    "    grade = 'B'",
+    "elif score >= 60:",
+    "    grade = 'C'",
+    "else:",
+    "    grade = 'D'",
+    "print(grade)"
+   ],
+   "note": "从上往下依次判断，遇到第一个为 True 的条件就执行它的块，后面的 elif / else 全部跳过。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "score": "85"
+     },
+     "out": "",
+     "cond": "score >= 90",
+     "value": "False",
+     "kind": "if",
+     "next": 4,
+     "taken": false,
+     "detail": "score >= 90 → False · 跳过，去第 4 行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "score": "85"
+     },
+     "out": "",
+     "cond": "score >= 80",
+     "value": "True",
+     "kind": "elif",
+     "next": 5,
+     "taken": true,
+     "detail": "score >= 80 → True · 进入代码块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "score": "85"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 10,
+     "taken": null,
+     "detail": "执行这一行 · 跳过后面的分支，去第 10 行"
+    },
+    {
+     "line": 10,
+     "vars": {
+      "score": "85",
+      "grade": "'B'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "score": "85",
+     "grade": "'B'"
+    },
+    "out": "B\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "branch",
+   "title": "条件顺序很重要",
+   "code": [
+    "score = 95",
+    "if score >= 60:",
+    "    grade = '及格'",
+    "elif score >= 90:",
+    "    grade = '优秀'",
+    "print(grade)"
+   ],
+   "note": "95 也满足 score >= 60，所以第一个分支先命中，'优秀' 永远轮不到。范围大的条件应放在后面。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "score": "95"
+     },
+     "out": "",
+     "cond": "score >= 60",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "score >= 60 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "score": "95"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 6,
+     "taken": null,
+     "detail": "执行这一行 · 跳过后面的分支，去第 6 行"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "score": "95",
+      "grade": "'及格'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "score": "95",
+     "grade": "'及格'"
+    },
+    "out": "及格\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "branch",
+   "title": "多个独立的 if",
+   "code": [
+    "n = 6",
+    "if n % 2 == 0:",
+    "    print('偶数')",
+    "if n % 3 == 0:",
+    "    print('3 的倍数')"
+   ],
+   "note": "两个独立的 if 都会被判断，可以都执行；而 if / elif 最多只执行一个分支。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "6"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n % 2 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "6"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "6"
+     },
+     "out": "偶数\n",
+     "cond": "n % 3 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 5,
+     "taken": true,
+     "detail": "n % 3 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "n": "6"
+     },
+     "out": "偶数\n",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "6"
+    },
+    "out": "偶数\n3 的倍数\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "branch",
+   "title": "and / or 组合条件",
+   "code": [
+    "age = 15",
+    "has_ticket = True",
+    "if age >= 12 and has_ticket:",
+    "    print('可以入场')",
+    "else:",
+    "    print('不能入场')"
+   ],
+   "note": "and 要求两边都为 True；or 只要一边为 True。not 取反。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "age": "15"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "age": "15",
+      "has_ticket": "True"
+     },
+     "out": "",
+     "cond": "age >= 12 and has_ticket",
+     "value": "True",
+     "kind": "if",
+     "next": 4,
+     "taken": true,
+     "detail": "age >= 12 and has_ticket → True · 进入代码块"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "age": "15",
+      "has_ticket": "True"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "age": "15",
+     "has_ticket": "True"
+    },
+    "out": "可以入场\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "branch",
+   "title": "真值判断：空列表为假",
+   "code": [
+    "items = []",
+    "if items:",
+    "    print('有', len(items), '件')",
+    "else:",
+    "    print('列表为空')"
+   ],
+   "note": "0、0.0、''、[]、{}、None 都被当作 False；非空容器和非零数字被当作 True。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "items": "[]"
+     },
+     "out": "",
+     "cond": "items",
+     "value": "[]",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "items → [] · 进入 else 块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "items": "[]"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "items": "[]"
+    },
+    "out": "列表为空\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "branch",
+   "title": "条件表达式（三元写法）",
+   "code": [
+    "x = -4",
+    "label = '正数' if x > 0 else '非正数'",
+    "print(label)"
+   ],
+   "note": "a if 条件 else b 是一个表达式，一行内完成二选一，并把结果赋给变量。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "x": "-4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "x": "-4",
+      "label": "'非正数'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "x": "-4",
+     "label": "'非正数'"
+    },
+    "out": "非正数\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "loop",
+   "title": "for 遍历列表",
+   "code": [
+    "total = 0",
+    "for n in [3, 1, 4]:",
+    "    total += n",
+    "print(total)"
+   ],
+   "note": "for 依次取出每个元素赋给 n，执行一次循环体；取完后回到 for 行发现没有元素了，循环结束。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "total": "0"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：n = 3"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "0",
+      "n": "3"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "total": "3",
+      "n": "3"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：n = 1"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "3",
+      "n": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "total": "4",
+      "n": "1"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：n = 4"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "4",
+      "n": "4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "total": "8",
+      "n": "4"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 4,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去第 4 行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "total": "8",
+      "n": "4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "total": "8",
+     "n": "4"
+    },
+    "out": "8\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "loop",
+   "title": "for + range()",
+   "code": [
+    "for i in range(1, 4):",
+    "    print(i * i)"
+   ],
+   "note": "range(1, 4) 产生 1、2、3，不包含 4。range(n) 从 0 开始。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：i = 1"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "i": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "i": "1"
+     },
+     "out": "1\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：i = 2"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "i": "2"
+     },
+     "out": "1\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "i": "2"
+     },
+     "out": "1\n4\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：i = 3"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "i": "3"
+     },
+     "out": "1\n4\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "i": "3"
+     },
+     "out": "1\n4\n9\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "i": "3"
+    },
+    "out": "1\n4\n9\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "loop",
+   "title": "while 条件循环",
+   "code": [
+    "n = 3",
+    "while n > 0:",
+    "    print(n)",
+    "    n -= 1",
+    "print('发射!')"
+   ],
+   "note": "while 每次先判断条件，为 True 就执行循环体，然后回到 while 行重新判断。循环体内必须让条件最终变为 False。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "3"
+     },
+     "out": "",
+     "cond": "n > 0",
+     "value": "True",
+     "kind": "while",
+     "next": 3,
+     "taken": true,
+     "detail": "n > 0 → True · 执行循环体"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "3"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "3"
+     },
+     "out": "3\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（while）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "2"
+     },
+     "out": "3\n",
+     "cond": "n > 0",
+     "value": "True",
+     "kind": "while",
+     "next": 3,
+     "taken": true,
+     "detail": "n > 0 → True · 执行循环体"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "2"
+     },
+     "out": "3\n",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "2"
+     },
+     "out": "3\n2\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（while）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "1"
+     },
+     "out": "3\n2\n",
+     "cond": "n > 0",
+     "value": "True",
+     "kind": "while",
+     "next": 3,
+     "taken": true,
+     "detail": "n > 0 → True · 执行循环体"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "1"
+     },
+     "out": "3\n2\n",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "1"
+     },
+     "out": "3\n2\n1\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（while）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "0"
+     },
+     "out": "3\n2\n1\n",
+     "cond": "n > 0",
+     "value": "False",
+     "kind": "while",
+     "next": 5,
+     "taken": false,
+     "detail": "n > 0 → False · 条件不成立，循环结束，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "n": "0"
+     },
+     "out": "3\n2\n1\n",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "0"
+    },
+    "out": "3\n2\n1\n发射!\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "loop",
+   "title": "累加直到超过上限",
+   "code": [
+    "total = 0",
+    "n = 0",
+    "while total <= 10:",
+    "    n += 1",
+    "    total += n",
+    "print(n, total)"
+   ],
+   "note": "while 适合“次数事先不确定，直到满足某个条件才停”的情况。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "total": "0"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "0",
+      "n": "0"
+     },
+     "out": "",
+     "cond": "total <= 10",
+     "value": "True",
+     "kind": "while",
+     "next": 4,
+     "taken": true,
+     "detail": "total <= 10 → True · 执行循环体"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "total": "0",
+      "n": "0"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 5,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "0",
+      "n": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 3 行（while）"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "1",
+      "n": "1"
+     },
+     "out": "",
+     "cond": "total <= 10",
+     "value": "True",
+     "kind": "while",
+     "next": 4,
+     "taken": true,
+     "detail": "total <= 10 → True · 执行循环体"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "total": "1",
+      "n": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 5,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "1",
+      "n": "2"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 3 行（while）"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "3",
+      "n": "2"
+     },
+     "out": "",
+     "cond": "total <= 10",
+     "value": "True",
+     "kind": "while",
+     "next": 4,
+     "taken": true,
+     "detail": "total <= 10 → True · 执行循环体"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "total": "3",
+      "n": "2"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 5,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "3",
+      "n": "3"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 3 行（while）"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "6",
+      "n": "3"
+     },
+     "out": "",
+     "cond": "total <= 10",
+     "value": "True",
+     "kind": "while",
+     "next": 4,
+     "taken": true,
+     "detail": "total <= 10 → True · 执行循环体"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "total": "6",
+      "n": "3"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 5,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "6",
+      "n": "4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 3 行（while）"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "10",
+      "n": "4"
+     },
+     "out": "",
+     "cond": "total <= 10",
+     "value": "True",
+     "kind": "while",
+     "next": 4,
+     "taken": true,
+     "detail": "total <= 10 → True · 执行循环体"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "total": "10",
+      "n": "4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 5,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "total": "10",
+      "n": "5"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 3,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 3 行（while）"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "total": "15",
+      "n": "5"
+     },
+     "out": "",
+     "cond": "total <= 10",
+     "value": "False",
+     "kind": "while",
+     "next": 6,
+     "taken": false,
+     "detail": "total <= 10 → False · 条件不成立，循环结束，去第 6 行"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "total": "15",
+      "n": "5"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "total": "15",
+     "n": "5"
+    },
+    "out": "5 15\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "loop",
+   "title": "嵌套循环",
+   "code": [
+    "for row in range(1, 3):",
+    "    for col in range(1, 3):",
+    "        print(row, '×', col, '=', row * col)"
+   ],
+   "note": "外层每走一次，内层都要从头完整走一遍：共 2 × 2 = 4 次。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：row = 1"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "row": "1"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：col = 1"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "row": "1",
+      "col": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "row": "1",
+      "col": "1"
+     },
+     "out": "1 × 1 = 1\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：col = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "row": "1",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "row": "1",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n",
+     "kind": "for",
+     "next": 1,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "row": "1",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：row = 2"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "row": "2",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：col = 1"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "row": "2",
+      "col": "1"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "row": "2",
+      "col": "1"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n2 × 1 = 2\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：col = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "row": "2",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n2 × 1 = 2\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "row": "2",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n2 × 1 = 2\n2 × 2 = 4\n",
+     "kind": "for",
+     "next": 1,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "row": "2",
+      "col": "2"
+     },
+     "out": "1 × 1 = 1\n1 × 2 = 2\n2 × 1 = 2\n2 × 2 = 4\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "row": "2",
+     "col": "2"
+    },
+    "out": "1 × 1 = 1\n1 × 2 = 2\n2 × 1 = 2\n2 × 2 = 4\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "loop",
+   "title": "enumerate 同时取下标",
+   "code": [
+    "for i, name in enumerate(['甲', '乙']):",
+    "    print(i, name)"
+   ],
+   "note": "enumerate 每次给出 (下标, 元素)，比自己维护计数器更简洁。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：i = 0, name = '甲'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "i": "0",
+      "name": "'甲'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "i": "0",
+      "name": "'甲'"
+     },
+     "out": "0 甲\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：i = 1, name = '乙'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "i": "1",
+      "name": "'乙'"
+     },
+     "out": "0 甲\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "i": "1",
+      "name": "'乙'"
+     },
+     "out": "0 甲\n1 乙\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "i": "1",
+     "name": "'乙'"
+    },
+    "out": "0 甲\n1 乙\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "break：提前结束循环",
+   "code": [
+    "for n in [5, 7, 8, 9]:",
+    "    if n % 2 == 0:",
+    "        print('第一个偶数', n)",
+    "        break",
+    "print('结束')"
+   ],
+   "note": "break 立即跳出它所在的这一层循环，后面的 9 不会再被检查。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 5"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "5"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 1,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "5"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 7"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 1,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "7"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 8"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "8"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n % 2 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "8"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "8"
+     },
+     "out": "第一个偶数 8\n",
+     "kind": "break",
+     "next": 5,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "n": "8"
+     },
+     "out": "第一个偶数 8\n",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "8"
+    },
+    "out": "第一个偶数 8\n结束\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "continue：跳过本次",
+   "code": [
+    "for n in range(5):",
+    "    if n % 2 == 0:",
+    "        continue",
+    "    print(n)"
+   ],
+   "note": "continue 跳过本次循环剩下的语句，直接回到循环开头取下一个元素。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 0"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "0"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n % 2 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "0"
+     },
+     "out": "",
+     "kind": "continue",
+     "next": 1,
+     "taken": null,
+     "detail": "continue · 跳过本次剩余语句，回到第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "0"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 1"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "1"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 4,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 4 行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "1"
+     },
+     "out": "1\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 2"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "2"
+     },
+     "out": "1\n",
+     "cond": "n % 2 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n % 2 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "2"
+     },
+     "out": "1\n",
+     "kind": "continue",
+     "next": 1,
+     "taken": null,
+     "detail": "continue · 跳过本次剩余语句，回到第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "2"
+     },
+     "out": "1\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 3"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "3"
+     },
+     "out": "1\n",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 4,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 4 行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "3"
+     },
+     "out": "1\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "3"
+     },
+     "out": "1\n3\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 4"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "4"
+     },
+     "out": "1\n3\n",
+     "cond": "n % 2 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n % 2 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "4"
+     },
+     "out": "1\n3\n",
+     "kind": "continue",
+     "next": 1,
+     "taken": null,
+     "detail": "continue · 跳过本次剩余语句，回到第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "4"
+     },
+     "out": "1\n3\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "4"
+    },
+    "out": "1\n3\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "for … else：没有 break 才执行",
+   "code": [
+    "for n in [3, 5, 7]:",
+    "    if n % 2 == 0:",
+    "        print('找到偶数')",
+    "        break",
+    "else:",
+    "    print('全是奇数')"
+   ],
+   "note": "循环正常走完（没有被 break 打断）时，才执行 else 块。适合“找遍了也没找到”的情况。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 3"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "3"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 1,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "3"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 5"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "5"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 1,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "5"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 7"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 1,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "7"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 6,
+     "taken": false,
+     "detail": "元素已取完，循环正常结束（没有 break）· 执行循环的 else 块"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "n": "7"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "7"
+    },
+    "out": "全是奇数\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "for … else：被 break 打断",
+   "code": [
+    "for n in [3, 4, 7]:",
+    "    if n % 2 == 0:",
+    "        print('找到偶数', n)",
+    "        break",
+    "else:",
+    "    print('全是奇数')"
+   ],
+   "note": "这次在 4 处 break，所以 else 块被跳过。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 3"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "3"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 1,
+     "taken": false,
+     "detail": "n % 2 == 0 → False · 跳过，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "3"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 4"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "4"
+     },
+     "out": "",
+     "cond": "n % 2 == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n % 2 == 0 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "4"
+     },
+     "out": "找到偶数 4\n",
+     "kind": "break",
+     "next": null,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "4"
+    },
+    "out": "找到偶数 4\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "while True + break",
+   "code": [
+    "tries = 0",
+    "while True:",
+    "    tries += 1",
+    "    if tries == 3:",
+    "        break",
+    "print('尝试了', tries, '次')"
+   ],
+   "note": "while True 本身永远不会停，必须靠循环体里的 break 退出。常用于“直到满足条件为止”。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "tries": "0"
+     },
+     "out": "",
+     "cond": "True",
+     "value": "True",
+     "kind": "while",
+     "next": 3,
+     "taken": true,
+     "detail": "True → True · 执行循环体"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "tries": "0"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "tries": "1"
+     },
+     "out": "",
+     "cond": "tries == 3",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "tries == 3 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "tries": "1"
+     },
+     "out": "",
+     "cond": "True",
+     "value": "True",
+     "kind": "while",
+     "next": 3,
+     "taken": true,
+     "detail": "True → True · 执行循环体"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "tries": "1"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "tries": "2"
+     },
+     "out": "",
+     "cond": "tries == 3",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "tries == 3 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "tries": "2"
+     },
+     "out": "",
+     "cond": "True",
+     "value": "True",
+     "kind": "while",
+     "next": 3,
+     "taken": true,
+     "detail": "True → True · 执行循环体"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "tries": "2"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "tries": "3"
+     },
+     "out": "",
+     "cond": "tries == 3",
+     "value": "True",
+     "kind": "if",
+     "next": 5,
+     "taken": true,
+     "detail": "tries == 3 → True · 进入代码块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "tries": "3"
+     },
+     "out": "",
+     "kind": "break",
+     "next": 6,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去第 6 行"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "tries": "3"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "tries": "3"
+    },
+    "out": "尝试了 3 次\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "break 只跳出一层",
+   "code": [
+    "for a in range(2):",
+    "    for b in range(3):",
+    "        if b == 1:",
+    "            break",
+    "        print(a, b)"
+   ],
+   "note": "内层的 break 只结束内层循环，外层循环照常继续下一轮。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：a = 0"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "a": "0"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：b = 0"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "a": "0",
+      "b": "0"
+     },
+     "out": "",
+     "cond": "b == 1",
+     "value": "False",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "b == 1 → False · 跳过，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "a": "0",
+      "b": "0"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "a": "0",
+      "b": "0"
+     },
+     "out": "0 0\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：b = 1"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "a": "0",
+      "b": "1"
+     },
+     "out": "0 0\n",
+     "cond": "b == 1",
+     "value": "True",
+     "kind": "if",
+     "next": 4,
+     "taken": true,
+     "detail": "b == 1 → True · 进入代码块"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "a": "0",
+      "b": "1"
+     },
+     "out": "0 0\n",
+     "kind": "break",
+     "next": 1,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "a": "0",
+      "b": "1"
+     },
+     "out": "0 0\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：a = 1"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "a": "1",
+      "b": "1"
+     },
+     "out": "0 0\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：b = 0"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "0 0\n",
+     "cond": "b == 1",
+     "value": "False",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "b == 1 → False · 跳过，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "0 0\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "a": "1",
+      "b": "0"
+     },
+     "out": "0 0\n1 0\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：b = 1"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "a": "1",
+      "b": "1"
+     },
+     "out": "0 0\n1 0\n",
+     "cond": "b == 1",
+     "value": "True",
+     "kind": "if",
+     "next": 4,
+     "taken": true,
+     "detail": "b == 1 → True · 进入代码块"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "a": "1",
+      "b": "1"
+     },
+     "out": "0 0\n1 0\n",
+     "kind": "break",
+     "next": 1,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "a": "1",
+      "b": "1"
+     },
+     "out": "0 0\n1 0\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "a": "1",
+     "b": "1"
+    },
+    "out": "0 0\n1 0\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "jump",
+   "title": "pass：什么也不做",
+   "code": [
+    "for n in range(3):",
+    "    if n == 1:",
+    "        pass",
+    "    else:",
+    "        print(n)"
+   ],
+   "note": "pass 是占位语句，语法上需要一个代码块但暂时什么都不做时使用。它和 continue 不同，不会跳过后面的语句。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 0"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "0"
+     },
+     "out": "",
+     "cond": "n == 1",
+     "value": "False",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "n == 1 → False · 进入 else 块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "n": "0"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "0"
+     },
+     "out": "0\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 1"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "1"
+     },
+     "out": "0\n",
+     "cond": "n == 1",
+     "value": "True",
+     "kind": "if",
+     "next": 3,
+     "taken": true,
+     "detail": "n == 1 → True · 进入代码块"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "1"
+     },
+     "out": "0\n",
+     "kind": "pass",
+     "next": 1,
+     "taken": null,
+     "detail": "pass · 占位，什么也不做，继续下一行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "1"
+     },
+     "out": "0\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 2"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "2"
+     },
+     "out": "0\n",
+     "cond": "n == 1",
+     "value": "False",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "n == 1 → False · 进入 else 块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "n": "2"
+     },
+     "out": "0\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "2"
+     },
+     "out": "0\n2\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "2"
+    },
+    "out": "0\n2\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "combo",
+   "title": "match / case 分支匹配",
+   "code": [
+    "for cmd in ['go', 'stop', 'jump']:",
+    "    match cmd:",
+    "        case 'go':",
+    "            print('前进')",
+    "        case 'stop' | 'pause':",
+    "            print('停下')",
+    "        case _:",
+    "            print('未知指令')"
+   ],
+   "note": "match（Python 3.10+）从上往下比较每个 case，执行第一个匹配的；| 表示“或”，_ 匹配任何值，相当于 else。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：cmd = 'go'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "cmd": "'go'"
+     },
+     "out": "",
+     "kind": "match",
+     "next": 3,
+     "taken": null,
+     "detail": "match cmd（cmd = 'go'）· 依次比较下面的 case"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "cmd": "'go'"
+     },
+     "out": "",
+     "kind": "case",
+     "next": 4,
+     "taken": true,
+     "detail": "case 'go' · 匹配成功，执行这一支"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "cmd": "'go'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "cmd": "'go'"
+     },
+     "out": "前进\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：cmd = 'stop'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "cmd": "'stop'"
+     },
+     "out": "前进\n",
+     "kind": "match",
+     "next": 3,
+     "taken": null,
+     "detail": "match cmd（cmd = 'stop'）· 依次比较下面的 case"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "cmd": "'stop'"
+     },
+     "out": "前进\n",
+     "kind": "case",
+     "next": 5,
+     "taken": false,
+     "detail": "case 'go' · 不匹配，试下一个 case"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "cmd": "'stop'"
+     },
+     "out": "前进\n",
+     "kind": "case",
+     "next": 6,
+     "taken": true,
+     "detail": "case 'stop' | 'pause' · 匹配成功，执行这一支"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "cmd": "'stop'"
+     },
+     "out": "前进\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "cmd": "'stop'"
+     },
+     "out": "前进\n停下\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：cmd = 'jump'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "cmd": "'jump'"
+     },
+     "out": "前进\n停下\n",
+     "kind": "match",
+     "next": 3,
+     "taken": null,
+     "detail": "match cmd（cmd = 'jump'）· 依次比较下面的 case"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "cmd": "'jump'"
+     },
+     "out": "前进\n停下\n",
+     "kind": "case",
+     "next": 5,
+     "taken": false,
+     "detail": "case 'go' · 不匹配，试下一个 case"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "cmd": "'jump'"
+     },
+     "out": "前进\n停下\n",
+     "kind": "case",
+     "next": 7,
+     "taken": false,
+     "detail": "case 'stop' | 'pause' · 不匹配，试下一个 case"
+    },
+    {
+     "line": 7,
+     "vars": {
+      "cmd": "'jump'"
+     },
+     "out": "前进\n停下\n",
+     "kind": "case",
+     "next": 8,
+     "taken": true,
+     "detail": "case _ · 匹配成功，执行这一支"
+    },
+    {
+     "line": 8,
+     "vars": {
+      "cmd": "'jump'"
+     },
+     "out": "前进\n停下\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "cmd": "'jump'"
+     },
+     "out": "前进\n停下\n未知指令\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "cmd": "'jump'"
+    },
+    "out": "前进\n停下\n未知指令\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "combo",
+   "title": "try / except 处理错误",
+   "code": [
+    "for text in ['12', 'abc']:",
+    "    try:",
+    "        n = int(text)",
+    "        print('数字', n)",
+    "    except ValueError:",
+    "        print('不是数字:', text)"
+   ],
+   "note": "try 块里出错时，立即跳到匹配的 except 块，程序不会崩溃，循环继续。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：text = '12'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "text": "'12'"
+     },
+     "out": "",
+     "kind": "try",
+     "next": 3,
+     "taken": null,
+     "detail": "try · 尝试执行下面的代码，出错就跳到 except"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "text": "'12'"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 4,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "text": "'12'",
+      "n": "12"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "text": "'12'",
+      "n": "12"
+     },
+     "out": "数字 12\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：text = 'abc'"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "text": "'abc'",
+      "n": "12"
+     },
+     "out": "数字 12\n",
+     "kind": "try",
+     "next": 3,
+     "taken": null,
+     "detail": "try · 尝试执行下面的代码，出错就跳到 except"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "text": "'abc'",
+      "n": "12"
+     },
+     "out": "数字 12\n",
+     "kind": "stmt",
+     "next": 5,
+     "taken": null,
+     "detail": "执行这一行 · 跳过后面的分支，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "text": "'abc'",
+      "n": "12"
+     },
+     "out": "数字 12\n",
+     "kind": "except",
+     "next": 6,
+     "taken": null,
+     "detail": "出现了匹配的错误 · 跳到 except 块处理"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "text": "'abc'",
+      "n": "12"
+     },
+     "out": "数字 12\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "text": "'abc'",
+      "n": "12"
+     },
+     "out": "数字 12\n不是数字: abc\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "text": "'abc'",
+     "n": "12"
+    },
+    "out": "数字 12\n不是数字: abc\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "combo",
+   "title": "找出质数",
+   "code": [
+    "for n in range(2, 8):",
+    "    for d in range(2, n):",
+    "        if n % d == 0:",
+    "            break",
+    "    else:",
+    "        print(n, '是质数')"
+   ],
+   "note": "综合应用：内层循环找因数，找到就 break；没被 break 打断的 else 说明没有因数，n 是质数。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 2"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "2"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 6,
+     "taken": false,
+     "detail": "元素已取完，循环正常结束（没有 break）· 执行循环的 else 块"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "n": "2"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "2"
+     },
+     "out": "2 是质数\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 3"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "3"
+     },
+     "out": "2 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "3",
+      "d": "2"
+     },
+     "out": "2 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "3",
+      "d": "2"
+     },
+     "out": "2 是质数\n",
+     "kind": "for",
+     "next": 6,
+     "taken": false,
+     "detail": "元素已取完，循环正常结束（没有 break）· 执行循环的 else 块"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "n": "3",
+      "d": "2"
+     },
+     "out": "2 是质数\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "3",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 4"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "4",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "4",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "cond": "n % d == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 4,
+     "taken": true,
+     "detail": "n % d == 0 → True · 进入代码块"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "4",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "break",
+     "next": 1,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "4",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 5"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "5",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "5",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "5",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 3"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "5",
+      "d": "3"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "5",
+      "d": "3"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 4"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "5",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "5",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "for",
+     "next": 6,
+     "taken": false,
+     "detail": "元素已取完，循环正常结束（没有 break）· 执行循环的 else 块"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "n": "5",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "5",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 6"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "6",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "6",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "cond": "n % d == 0",
+     "value": "True",
+     "kind": "if",
+     "next": 4,
+     "taken": true,
+     "detail": "n % d == 0 → True · 进入代码块"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "n": "6",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "break",
+     "next": 1,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去第 1 行"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "6",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 2,
+     "taken": true,
+     "detail": "取出下一个元素：n = 7"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 2"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "7",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7",
+      "d": "2"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 3"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "7",
+      "d": "3"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7",
+      "d": "3"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 4"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "7",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7",
+      "d": "4"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 5"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "7",
+      "d": "5"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7",
+      "d": "5"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：d = 6"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "n": "7",
+      "d": "6"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "cond": "n % d == 0",
+     "value": "False",
+     "kind": "if",
+     "next": 2,
+     "taken": false,
+     "detail": "n % d == 0 → False · 跳过，去第 2 行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "n": "7",
+      "d": "6"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "for",
+     "next": 6,
+     "taken": false,
+     "detail": "元素已取完，循环正常结束（没有 break）· 执行循环的 else 块"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "n": "7",
+      "d": "6"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n",
+     "kind": "stmt",
+     "next": 1,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 1 行（for）"
+    },
+    {
+     "line": 1,
+     "vars": {
+      "n": "7",
+      "d": "6"
+     },
+     "out": "2 是质数\n3 是质数\n5 是质数\n7 是质数\n",
+     "kind": "for",
+     "next": null,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "n": "7",
+     "d": "6"
+    },
+    "out": "2 是质数\n3 是质数\n5 是质数\n7 是质数\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "combo",
+   "title": "猜数字（预设输入）",
+   "code": [
+    "answer = 7",
+    "for guess in [4, 9, 7]:",
+    "    if guess < answer:",
+    "        print(guess, '太小')",
+    "    elif guess > answer:",
+    "        print(guess, '太大')",
+    "    else:",
+    "        print(guess, '猜对了!')",
+    "        break"
+   ],
+   "note": "if / elif / else 判断大小，猜对时 break 结束。这里用预设的猜测代替 input()。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "answer": "7"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：guess = 4"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "answer": "7",
+      "guess": "4"
+     },
+     "out": "",
+     "cond": "guess < answer",
+     "value": "True",
+     "kind": "if",
+     "next": 4,
+     "taken": true,
+     "detail": "guess < answer → True · 进入代码块"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "answer": "7",
+      "guess": "4"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "answer": "7",
+      "guess": "4"
+     },
+     "out": "4 太小\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：guess = 9"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "answer": "7",
+      "guess": "9"
+     },
+     "out": "4 太小\n",
+     "cond": "guess < answer",
+     "value": "False",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "guess < answer → False · 跳过，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "answer": "7",
+      "guess": "9"
+     },
+     "out": "4 太小\n",
+     "cond": "guess > answer",
+     "value": "True",
+     "kind": "elif",
+     "next": 6,
+     "taken": true,
+     "detail": "guess > answer → True · 进入代码块"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "answer": "7",
+      "guess": "9"
+     },
+     "out": "4 太小\n",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行 · 循环体结束，回到第 2 行（for）"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "answer": "7",
+      "guess": "9"
+     },
+     "out": "4 太小\n9 太大\n",
+     "kind": "for",
+     "next": 3,
+     "taken": true,
+     "detail": "取出下一个元素：guess = 7"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "answer": "7",
+      "guess": "7"
+     },
+     "out": "4 太小\n9 太大\n",
+     "cond": "guess < answer",
+     "value": "False",
+     "kind": "if",
+     "next": 5,
+     "taken": false,
+     "detail": "guess < answer → False · 跳过，去第 5 行"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "answer": "7",
+      "guess": "7"
+     },
+     "out": "4 太小\n9 太大\n",
+     "cond": "guess > answer",
+     "value": "False",
+     "kind": "elif",
+     "next": 8,
+     "taken": false,
+     "detail": "guess > answer → False · 进入 else 块"
+    },
+    {
+     "line": 8,
+     "vars": {
+      "answer": "7",
+      "guess": "7"
+     },
+     "out": "4 太小\n9 太大\n",
+     "kind": "stmt",
+     "next": 9,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 9,
+     "vars": {
+      "answer": "7",
+      "guess": "7"
+     },
+     "out": "4 太小\n9 太大\n7 猜对了!\n",
+     "kind": "break",
+     "next": null,
+     "taken": null,
+     "detail": "break · 立即跳出所在循环，去程序末尾"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "answer": "7",
+     "guess": "7"
+    },
+    "out": "4 太小\n9 太大\n7 猜对了!\n"
+   },
+   "error": null
+  },
+  {
+   "mode": "combo",
+   "title": "统计及格人数",
+   "code": [
+    "scores = [58, 90, 72, 45]",
+    "passed = 0",
+    "for s in scores:",
+    "    if s >= 60:",
+    "        passed += 1",
+    "print(passed, '/', len(scores))"
+   ],
+   "note": "循环 + 条件 + 计数器，是最常见的数据处理模式。",
+   "steps": [
+    {
+     "line": 1,
+     "vars": {},
+     "out": "",
+     "kind": "stmt",
+     "next": 2,
+     "taken": null,
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "vars": {
+      "scores": "[58, 90, 72, 45]"
+     },
+     "out": "",
+     "kind": "pass",
+     "next": 3,
+     "taken": null,
+     "detail": "pass · 占位，什么也不做，继续下一行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "0"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 4,
+     "taken": true,
+     "detail": "取出下一个元素：s = 58"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "0",
+      "s": "58"
+     },
+     "out": "",
+     "cond": "s >= 60",
+     "value": "False",
+     "kind": "if",
+     "next": 3,
+     "taken": false,
+     "detail": "s >= 60 → False · 跳过，去第 3 行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "0",
+      "s": "58"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 4,
+     "taken": true,
+     "detail": "取出下一个元素：s = 90"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "0",
+      "s": "90"
+     },
+     "out": "",
+     "cond": "s >= 60",
+     "value": "True",
+     "kind": "if",
+     "next": 5,
+     "taken": true,
+     "detail": "s >= 60 → True · 进入代码块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "0",
+      "s": "90"
+     },
+     "out": "",
+     "kind": "pass",
+     "next": 3,
+     "taken": null,
+     "detail": "pass · 占位，什么也不做，继续下一行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "1",
+      "s": "90"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 4,
+     "taken": true,
+     "detail": "取出下一个元素：s = 72"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "1",
+      "s": "72"
+     },
+     "out": "",
+     "cond": "s >= 60",
+     "value": "True",
+     "kind": "if",
+     "next": 5,
+     "taken": true,
+     "detail": "s >= 60 → True · 进入代码块"
+    },
+    {
+     "line": 5,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "1",
+      "s": "72"
+     },
+     "out": "",
+     "kind": "pass",
+     "next": 3,
+     "taken": null,
+     "detail": "pass · 占位，什么也不做，继续下一行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "2",
+      "s": "72"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 4,
+     "taken": true,
+     "detail": "取出下一个元素：s = 45"
+    },
+    {
+     "line": 4,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "2",
+      "s": "45"
+     },
+     "out": "",
+     "cond": "s >= 60",
+     "value": "False",
+     "kind": "if",
+     "next": 3,
+     "taken": false,
+     "detail": "s >= 60 → False · 跳过，去第 3 行"
+    },
+    {
+     "line": 3,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "2",
+      "s": "45"
+     },
+     "out": "",
+     "kind": "for",
+     "next": 6,
+     "taken": false,
+     "detail": "元素已取完 · 循环结束，去第 6 行"
+    },
+    {
+     "line": 6,
+     "vars": {
+      "scores": "[58, 90, 72, 45]",
+      "passed": "2",
+      "s": "45"
+     },
+     "out": "",
+     "kind": "stmt",
+     "next": null,
+     "taken": null,
+     "detail": "执行这一行"
+    }
+   ],
+   "final": {
+    "line": 0,
+    "vars": {
+     "scores": "[58, 90, 72, 45]",
+     "passed": "2",
+     "s": "45"
+    },
+    "out": "2 / 4\n"
+   },
+   "error": null
+  }
+ ]
+}

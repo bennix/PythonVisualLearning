@@ -1,0 +1,45 @@
+Python 变量与数据类型实验室
+
+打开方式
+双击本文件夹中的 index.html，用 Chrome、Edge、Safari 等现代浏览器打开。
+无需安装 Python、无需启动服务，也不需要联网。index.html 的样式、SVG、程序与数据全部内联，单独复制这个文件也能使用。
+
+怎么玩
+1. 输入变量名，观察左侧名称闸门。支持中文等 Unicode 标识符；错误、关键字及内置名遮蔽会有提示。
+2. 点击 14 种类型按钮，观察绑定滑台换站和赋值表达式变化。
+3. 选择比较目标，查看 type(x) is T 和 isinstance(x, T) 的区别。选 bool、比较 int 是最典型的例子。
+4. Tab 可到达控件；检验台获得焦点后用方向键切换，Home / End 跳到首尾。
+5. 页面右上角切换浅深主题。自动巡览可暂停；系统启用“减少动态效果”后停止动画和巡览。
+
+内容范围与版本
+包含 int、float、complex、bool、str、list、tuple、range、dict、set、frozenset、bytes、bytearray、NoneType。
+类型结果、硬关键字和标识符范围来自本机 Python 3.10.21 / Unicode 13.0.0。较新 Python 接受的新增 Unicode 字符可能不在本页范围内。
+软关键字提示同时说明现代 Python 中 type 的语境含义，不把 match、case、type 当作一律禁止的名称。
+NFKC 规范化使用浏览器标准 normalize；标识符合法性使用内置 Python 真值范围，不依赖 JavaScript 的近似正则。
+这是预设对象的教学演示，不是 Python 解释器，不会执行用户输入的代码。
+站位只是类型样本索引，不表示类型大小、内存消耗或继承关系。
+
+源码
+source/template.html 页面结构
+source/style.css 界面主题与布局
+source/live.js 交互、名称检查与动画
+source/build.mjs 实际 Anatomy kit 等距 SVG 构建脚本
+source/iso-kit.mjs 保留的 Anatomy 核心（MIT）
+source/truth.py 和 truth.json Python 真值生成脚本与离线数据
+source/test.mjs 内容及边界盒相交测试
+source/browser-tests.json 浏览器交互验证序列
+
+重新构建（需要 Node.js）
+node source/build.mjs
+重新生成当前 Python 版本的数据（可选）
+python3 source/truth.py
+node source/build.mjs
+测试
+node source/test.mjs
+
+实际验证
+73 个实体零件、21 个 Python 名称对照、14 种样本及 bool/int 继承检查通过。
+496 组滑台/闸门位置的轴对齐边界盒检查未发现穿插。
+Chrome 桌面与 390px 手机无横向溢出、控制台干净；方向键/Home/End、名称闸门、滑台定位、深浅主题和 reduced-motion 均已实测。
+Anatomy 线端检查浅深主题及首尾位置均为 line ends: 0。验证文件夹保存了已人工读图的截图和 4 倍细节图。
+本图仅使用平面挤出件，不含管线、车削圆件或 WebGL；没有声称通过 Anatomy 完整的深度排序/支撑几何审计。边界盒测试不等同于完整审计。

@@ -1,0 +1,12 @@
+eval: undefined
+eval: "eased movement passed"
+line ends: 0 of 108 ends on 15 lines float
+eval: "timed scan passed"
+eval: "offscreen detected"
+eval: "offscreen pause passed"
+eval: "hidden simulated"
+eval: "visibility guard passed (simulated hidden)"
+line ends: 0 of 108 ends on 15 lines float
+eval: "token passed"
+eval: "复制代码"
+console: clean

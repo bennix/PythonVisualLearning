@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Python 文件读写台 · 文本、CSV 与 JSON</title><style>/* KIT */
+/* STYLE */</style></head>
+<body class="iso" data-theme="light"><main>
+<header><a class="wordmark" href="#top">PY / LAB <span>基础实验 08</span></a><button id="theme" aria-label="切换至深色主题">深色模式</button></header>
+<section class="intro" id="top"><div class="eyebrow">A SMALL MACHINE FOR BIG IDEAS</div><h1>写进去的字，<br><span>要关上文件才真正落盘。</span></h1><p>逐步运行预设程序：看 <code>write()</code> 的内容先停在缓冲区、<code>close()</code> 之后才出现在磁盘上，<br class="desktop">读取时位置怎样往后移，以及 CSV 和 JSON 在磁盘上到底长什么样。每一步都来自真实 Python 的运行。</p></section>
+<div class="workspace">
+<section class="visual" aria-label="文件读写台">
+<figure><div class="iso-plate"><div class="card-head"><span>FIG. 08 / FILE BENCH</span><span>Python 文件读写台</span></div><div class="iso-stage" id="stage" tabindex="0" role="slider" aria-valuemin="0" aria-label="文件读写台"><!-- FIGURE --></div><div class="card-foot"><span>← → 单步 · 空格 播放/暂停 · PgDn 下一个程序</span><output data-readout>正在校准</output></div></div><figcaption><span class="legend"><i></i> 高亮行 = 刚执行的那一行；右侧显示它执行之后的状态</span><p>左侧滑台指向当前行，出错时竖旗落下，跳线连到下一步。右上是<strong>写缓冲托盘</strong>：<code>write()</code> 的内容先堆在这里，高亮块越高，还没写到磁盘的字节越多。右下是<strong>磁盘板</strong>：逐行显示文件在磁盘上的真实内容（<code>·</code> 表示空格）。磁盘板左边的<strong>光标滑块</strong>标出读取位置 <code>tell()</code> 落在哪一行；没有打开的读取文件时，滑块变暗。</p></figcaption></figure>
+<div class="binding"><span class="label" id="step-count">准备</span><code id="detail">—</code></div>
+<div class="tour-bar"><span class="tour-buttons"><button id="prev">上一步</button><button id="play">播放</button><button id="next">下一步</button><button id="replay">重播</button></span><span class="tour-buttons"><span id="tour-status"></span><button id="tour" aria-pressed="true">停止巡览</button></span></div>
+</section>
+<aside class="controls">
+<section class="control-section"><div class="section-heading"><span>01</span><h2>选择程序</h2></div><div class="tabs" role="tablist" aria-label="主题"><button role="tab" data-mode="text">文本文件</button><button role="tab" data-mode="csv">CSV</button><button role="tab" data-mode="json">JSON</button></div><div id="examples" class="example-list" role="group" aria-label="预设程序"></div></section>
+<section class="control-section"><div class="section-heading"><span>02</span><h2 id="title">程序</h2></div><ol id="code" class="code-list"></ol><p id="note" class="note"></p></section>
+<section class="control-section"><div class="section-heading"><span>03</span><h2>文件对象、磁盘与输出</h2></div><span class="label">文件对象（这一步执行之后）</span><div id="handle" class="vars"></div><span class="label">磁盘上的文件内容</span><pre id="disk" class="output disk"></pre><span class="label">其他变量</span><div id="vars" class="vars"></div><span class="label">print 输出</span><pre id="output" class="output"></pre></section>
+</aside></div>
+<section class="notes"><div class="section-heading"><span>FIELD NOTES</span><h2>把规则带走</h2></div><div class="notes-grid">
+<article><span>01 / 文本文件</span><h3>with open(…, encoding='utf-8')</h3><p>模式：<code>'r'</code> 读取（默认）、<code>'w'</code> 写入（<strong>打开时立即清空</strong>）、<code>'a'</code> 追加到末尾。始终写上 <code>encoding='utf-8'</code>，读写用同一种编码。</p><p><code>read()</code> 读全部，<code>readline()</code> 读一行，<code>readlines()</code> 得到列表，<code>for line in f</code> 逐行遍历；文件对象记着当前位置，<code>seek(0)</code> 回到开头。<code>write()</code> 不会自动换行，内容先进入缓冲区，<code>close()</code> 或 <code>flush()</code> 后才写入磁盘。用 <code>with</code> 会自动关闭。</p></article>
+<article><span>02 / CSV</span><h3>用 csv 模块，不要自己 split</h3><p>打开 CSV 时写 <code>newline=''</code>。<code>csv.writer(f).writerow(列表)</code> 写一行，<code>csv.reader(f)</code> 把每行拆成列表。</p><p><code>DictReader</code> 用第一行作列名，每行是字典；<code>DictWriter</code> 需要 <code>fieldnames</code>，<code>writeheader()</code> 写表头。<strong>读出来的数字都是字符串</strong>，计算前要 <code>int()</code>。值里有逗号时 csv 会自动加双引号。</p></article>
+<article><span>03 / JSON</span><h3>dump / load 处理文件，dumps / loads 处理字符串</h3><p><code>json.dump(对象, f, ensure_ascii=False, indent=2)</code> 写入，<code>json.load(f)</code> 读回。dict ↔ 对象，list ↔ 数组，<code>True/False/None</code> ↔ <code>true/false/null</code>，元组会变成数组。</p><p>JSON 字符串必须用双引号；集合等类型不能直接写入。修改 JSON 文件：读成字典 → 修改 → 整体写回。</p></article>
+</div></section>
+<footer><p>离线教学装置 · Anatomy 等距 SVG · <span id="version"></span></p><p>每个程序都在真实 Python 中、一个全新的临时文件夹里逐行运行，记录每行执行后磁盘上的真实字节、文件对象的模式、读取位置和缓冲区里尚未写入的字节数，随页面内置；浏览器不执行任意 Python，也不读写你电脑上的文件。缓冲区字节数通过统计交给 <code>write()</code> 的字节、减去已到达磁盘的字节得到。</p></footer>
+</main><script>/* SCRIPT */</script></body></html>

@@ -1,0 +1,66 @@
+Python 数据分析与可视化实验室 · 使用说明
+=========================================
+
+打开方式
+  双击 index.html，用浏览器（Chrome / Safari / Edge）打开即可。
+  完全离线，无需联网，电脑上也不需要安装 pandas 或 Matplotlib。
+
+页面内容
+  一台等距“Pandas 数据分拣台”机器：
+  · 左侧 = 读入的成绩表（DataFrame）：第一排是列名，左边小字是行索引，
+    NaN 表示缺失值（小强的英语缺考）
+  · 后方滑块指向选中的列，左侧滑块指向选中的行；没有选择时滑块变暗
+  · 每一步高亮这次操作用到的单元格
+  · 右侧托盘 = 操作返回的结果：DataFrame、Series 或一个值
+  · 作图示例：最后一步在下方显示 Matplotlib 实际画出的图
+
+四个主题，共 25 个预设示例
+  1. 读取与查看（6 个）：read_csv、head()、shape 与 dtypes、
+     describe()、取一列、取多列
+  2. 筛选与排序（5 个）：条件筛选、多个条件 & |、loc 按标签取行列、
+     sort_values 排序、新增计算列
+  3. 统计与分组（6 个）：mean 列统计、value_counts、groupby 分组平均、
+     groupby 多列多统计、isna 找缺失值、fillna 填补缺失
+  4. Matplotlib 作图（8 个）：折线图、两条线与图例、柱状图、散点图、
+     饼图、直方图、pandas 直接画图、子图
+
+操作
+  · 右侧选主题、点示例；“上一步 / 播放 / 下一步 / 重播”按钮
+  · 点击图后：← → 单步，空格 播放/暂停，Home / End 跳到首尾，
+    PageDown / PageUp 切换示例
+  · 右侧面板显示完整代码、完整结果表和 print 输出；
+    “示例数据”可展开查看两个 CSV 文件的原始内容
+  · 右上角切换浅色 / 深色模式；“自动巡览”会在运行结束后切换下一个示例
+  · 系统开启“减少动态效果”时，直接显示最后一步，可用按钮单步
+
+说明
+  · 所有表格结果都由真实 pandas 2.1.4 运行得出，所有图都由真实
+    Matplotlib 3.9.4 绘制并以 SVG 形式内置在页面中；
+    浏览器并不执行任意 Python 代码。
+  · 为显示中文，生成图时设置了中文字体：
+      plt.rcParams['font.sans-serif'] = ['PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS']
+      plt.rcParams['axes.unicode_minus'] = False
+    示例代码里省略了这两行和 plt.show()。自己运行时请加上，
+    Windows 可用 'Microsoft YaHei' 或 'SimHei'。
+  · 机器托盘空间有限，太长的值会用 … 截断，完整结果在右侧面板。
+  · 动画中“选中哪些行和列”是为教学标注的，结果本身来自真实运行；
+    测试会核对标注的行确实就是结果里的那些行。
+
+文件夹结构
+  index.html      成品（单文件，所有资源和图都已内联）
+  source/         源码
+    truth.py        用 pandas / Matplotlib 运行全部示例，生成 truth.json
+    build.mjs       用 Anatomy kit 生成等距 SVG 并打包 index.html
+    live.js         交互、表格与托盘绘制、动画
+    template.html / style.css
+    test.py         独立复核：重新运行每个示例，逐格比对结果、检查图
+    browser-tests.json  浏览器交互测试脚本
+  验证/           验证截图（浅色、深色、手机、4 倍细节、线端检查）
+
+重新构建
+  本机默认的 python3（Homebrew 3.10）里 pandas 与 numpy 版本不兼容、
+  无法导入，所以生成数据用的是系统自带的 Python：
+  cd source
+  /usr/bin/python3 truth.py
+  node build.mjs
+  /usr/bin/python3 test.py

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Python 函数装配台 · 定义、参数、lambda 与排序</title><style>/* KIT */
+/* STYLE */</style></head>
+<body class="iso" data-theme="light"><main>
+<header><a class="wordmark" href="#top">PY / LAB <span>基础实验 06</span></a><button id="theme" aria-label="切换至深色主题">深色模式</button></header>
+<section class="intro" id="top"><div class="eyebrow">A SMALL MACHINE FOR BIG IDEAS</div><h1>调用函数，就是把实参装进形参。<br><span>lambda 是不起名字的小函数。</span></h1><p>选一个预设示例：看每个实参按位置或名字落进哪个形参，多出来的被 <code>*args</code> / <code>**kwargs</code> 收走，<br class="desktop">以及 <code>sorted(…, key=lambda …)</code> 怎样先算出每个元素的 key 再排序。</p></section>
+<div class="workspace">
+<section class="visual" aria-label="函数装配台">
+<figure><div class="iso-plate"><div class="card-head"><span>FIG. 06 / CALL ASSEMBLER</span><span>Python 函数装配台</span></div><div class="iso-stage" id="stage" tabindex="0" role="group" aria-label="函数装配台"><!-- FIGURE --></div><div class="card-foot"><span>← → 切换示例 · 空格重播</span><output data-readout>正在校准</output></div></div><figcaption><span class="legend"><i></i> 高亮 = 正在处理的实参与它落进的位置</span><p><strong>前排</strong>是调用时传入的实参，下方小字标明“位置”或“关键字”；<strong>后排</strong>是函数定义的形参，下方小字是形参名和默认值。多出来的位置实参被右侧滑块送进 <code>*args</code> 托盘（元组，封条表示不可变），多出来的关键字实参进 <code>**kwargs</code> 托盘（字典）。竖旗落下表示调用出错。右前方显示屏给出返回值。排序示例中，前排下方小字是每个元素的 <strong>key 值</strong>，后排是排好序的结果。</p></figcaption></figure>
+<div class="binding"><span class="label">当前步骤</span><code id="step">准备</code></div>
+<div class="tour-bar"><span id="tour-status"></span><span class="tour-buttons"><button id="replay">重播</button><button id="tour" aria-pressed="true">暂停巡览</button></span></div>
+</section>
+<aside class="controls">
+<section class="control-section"><div class="section-heading"><span>01</span><h2>选择主题</h2></div><div class="tabs four" role="tablist" aria-label="主题"><button role="tab" data-mode="define">定义调用</button><button role="tab" data-mode="params">参数形式</button><button role="tab" data-mode="lambda">lambda</button><button role="tab" data-mode="sort">排序</button></div><div id="examples" class="example-list" role="group" aria-label="预设示例"></div></section>
+<section class="control-section"><div class="section-heading"><span>02</span><h2 id="title">代码与结果</h2></div><div class="terminal"><div><pre id="code"></pre></div><div class="result"><span>最后一行的值</span><output id="result"></output></div><div class="result" id="printed-row"><span>print 输出</span><pre id="printed"></pre></div></div><p id="note" class="note"></p></section>
+</aside></div>
+<section class="notes"><div class="section-heading"><span>FIELD NOTES</span><h2>把规则带走</h2></div><div class="notes-grid">
+<article><span>01 / 定义与调用</span><h3>def 定义，调用才执行</h3><p><code>def 名字(形参):</code> 定义函数，缩进部分是函数体，定义时并不运行。<code>return</code> 把值交还给调用者并结束函数；没有 <code>return</code> 就返回 <code>None</code>。<code>return a, b</code> 返回元组。</p><p>函数内部赋值的变量是局部变量，函数外看不到。函数本身也是对象，可以赋值、传递。</p></article>
+<article><span>02 / 参数形式</span><h3>定义顺序：普通 → 默认 → *args → 仅关键字 → **kwargs</h3><p>调用时<strong>位置实参</strong>按顺序对应，<strong>关键字实参</strong> <code>名=值</code> 按名字对应，位置实参必须写在关键字实参前面。<code>exp=2</code> 是默认值，不传就用它。<code>*args</code> 收集多余位置实参成元组，<code>**kwargs</code> 收集多余关键字实参成字典。</p><p>单独的 <code>*</code> 后面是仅关键字参数，<code>/</code> 前面是仅位置参数。调用时 <code>*列表</code>、<code>**字典</code> 可以拆包。默认值不要用列表等可变对象。</p></article>
+<article><span>03 / lambda 与排序</span><h3>key 决定按什么比</h3><p><code>lambda 参数: 表达式</code> 是只有一个表达式的匿名函数，自动返回表达式的值，常直接写在需要函数的地方。</p><p><code>sorted(数据, key=函数, reverse=False)</code>：先对每个元素调用 key 得到比较值，再按比较值排序，元素本身不变；key 相同时保持原顺序（稳定排序）。key 返回元组可以多条件排序。<code>list.sort()</code> 原地排序并返回 <code>None</code>，<code>sorted()</code> 返回新列表。</p></article>
+</div></section>
+<footer><p>离线教学装置 · Anatomy 等距 SVG · <span id="version"></span></p><p>所有结果都由真实 Python 预先运行得出；实参如何落进形参由 Python 的 <code>inspect.signature().bind()</code> 计算，与真实调用规则一致。浏览器不执行任意 Python 代码。</p></footer>
+</main><script>/* SCRIPT */</script></body></html>

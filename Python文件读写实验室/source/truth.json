@@ -1,0 +1,6674 @@
+{
+ "python": "3.10.21",
+ "examples": [
+  {
+   "mode": "text",
+   "title": "with open 写入文本",
+   "code": [
+    "with open('note.txt', 'w', encoding='utf-8') as f:",
+    "    f.write('第一行\\n')",
+    "    f.write('第二行\\n')",
+    "print('写好了')"
+   ],
+   "note": "with open(文件名, 'w', encoding='utf-8') as f 打开文件，块结束时自动关闭。write 不会自动换行，要自己写 \\n。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "note.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "note.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 note.txt w>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('note.txt', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "note.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "note.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 note.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "note.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "note.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 10
+       }
+      },
+      "vars": {
+       "f": "<文件对象 note.txt w>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "write",
+     "detail": "写入 · 10 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "note.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "note.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 10
+      }
+     },
+     "vars": {
+      "f": "<文件对象 note.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "note.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "note.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 20
+       }
+      },
+      "vars": {
+       "f": "<文件对象 note.txt w>"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "write",
+     "detail": "写入 · 20 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "note.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "note.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 20
+      }
+     },
+     "vars": {
+      "f": "<文件对象 note.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "note.txt": {
+        "bytes": 20,
+        "text": "第一行\n第二行\n",
+        "hex": "e7 ac ac e4 b8 80 e8 a1 8c 0a e7 ac ac e4 ba 8c e8 a1 8c 0a"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "note.txt",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 note.txt w 已关闭>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "note.txt": {
+       "bytes": 20,
+       "text": "第一行\n第二行\n",
+       "hex": "e7 ac ac e4 b8 80 e8 a1 8c 0a e7 ac ac e4 ba 8c e8 a1 8c 0a"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "note.txt",
+       "mode": "w",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 note.txt w 已关闭>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "note.txt": {
+        "bytes": 20,
+        "text": "第一行\n第二行\n",
+        "hex": "e7 ac ac e4 b8 80 e8 a1 8c 0a e7 ac ac e4 ba 8c e8 a1 8c 0a"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "note.txt",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 note.txt w 已关闭>"
+      },
+      "out": "写好了\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "写好了\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {
+    "note.txt": {
+     "bytes": 20,
+     "text": "第一行\n第二行\n",
+     "hex": "e7 ac ac e4 b8 80 e8 a1 8c 0a e7 ac ac e4 ba 8c e8 a1 8c 0a"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "read() 一次读完",
+   "code": [
+    "with open('poem.txt', encoding='utf-8') as f:",
+    "    text = f.read()",
+    "print(text)",
+    "print(len(text), '个字符')"
+   ],
+   "note": "默认模式 'r' 是读取。read() 返回整个文件内容的字符串，换行符 \\n 也算字符。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('poem.txt', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 48,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 48 字节"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 48,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r 已关闭>",
+      "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n举头望明月\n\n"
+     },
+     "next": 4,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r 已关闭>",
+      "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+     },
+     "out": "床前明月光\n疑是地上霜\n举头望明月\n\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "text": "'床前明月光\\n疑是地上霜\\n举头望明月\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n举头望明月\n\n18 个字符\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "床前明月光\n疑是地上霜\n举头望明月\n\n18 个字符\n",
+   "error": null,
+   "setup": {
+    "poem.txt": "床前明月光\n疑是地上霜\n举头望明月\n"
+   },
+   "finalDisk": {
+    "poem.txt": {
+     "bytes": 48,
+     "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+     "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "for 逐行读取",
+   "code": [
+    "with open('poem.txt', encoding='utf-8') as f:",
+    "    for line in f:",
+    "        print(line.strip())"
+   ],
+   "note": "文件对象可以直接用 for 遍历，每次得到一行（包含末尾的 \\n），用 strip() 去掉。大文件也只占很少内存。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('poem.txt', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'床前明月光\\n'"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'床前明月光\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'床前明月光\\n'"
+      },
+      "out": "床前明月光\n"
+     },
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'床前明月光\\n'"
+     },
+     "out": "床前明月光\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'疑是地上霜\\n'"
+      },
+      "out": "床前明月光\n"
+     },
+     "next": 3,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'疑是地上霜\\n'"
+     },
+     "out": "床前明月光\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'疑是地上霜\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n"
+     },
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'疑是地上霜\\n'"
+     },
+     "out": "床前明月光\n疑是地上霜\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'举头望明月\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n"
+     },
+     "next": 3,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'举头望明月\\n'"
+     },
+     "out": "床前明月光\n疑是地上霜\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'举头望明月\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n举头望明月\n"
+     },
+     "next": 2,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'举头望明月\\n'"
+     },
+     "out": "床前明月光\n疑是地上霜\n举头望明月\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 48,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "line": "'举头望明月\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n举头望明月\n"
+     },
+     "next": 1,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 48,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "line": "'举头望明月\\n'"
+     },
+     "out": "床前明月光\n疑是地上霜\n举头望明月\n",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "line": "'举头望明月\\n'"
+      },
+      "out": "床前明月光\n疑是地上霜\n举头望明月\n"
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "床前明月光\n疑是地上霜\n举头望明月\n",
+   "error": null,
+   "setup": {
+    "poem.txt": "床前明月光\n疑是地上霜\n举头望明月\n"
+   },
+   "finalDisk": {
+    "poem.txt": {
+     "bytes": 48,
+     "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+     "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "readline 与读写位置",
+   "code": [
+    "with open('poem.txt', encoding='utf-8') as f:",
+    "    a = f.readline()",
+    "    b = f.readline()",
+    "    f.seek(0)",
+    "    c = f.readline()",
+    "print(a, b, c)"
+   ],
+   "note": "文件对象记着当前位置：每次读取都从上次停下的地方继续。seek(0) 回到开头。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('poem.txt', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 16,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "a": "'床前明月光\\n'"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 16 字节"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 16,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "a": "'床前明月光\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 32,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "a": "'床前明月光\\n'",
+       "b": "'疑是地上霜\\n'"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 32 字节"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 32,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "a": "'床前明月光\\n'",
+      "b": "'疑是地上霜\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "a": "'床前明月光\\n'",
+       "b": "'疑是地上霜\\n'"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "seek",
+     "detail": "seek() · 移动读写位置"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "a": "'床前明月光\\n'",
+      "b": "'疑是地上霜\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 16,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "a": "'床前明月光\\n'",
+       "b": "'疑是地上霜\\n'",
+       "c": "'床前明月光\\n'"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 16 字节"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 16,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "a": "'床前明月光\\n'",
+      "b": "'疑是地上霜\\n'",
+      "c": "'床前明月光\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "a": "'床前明月光\\n'",
+       "b": "'疑是地上霜\\n'",
+       "c": "'床前明月光\\n'"
+      },
+      "out": ""
+     },
+     "next": 6,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 6,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r 已关闭>",
+      "a": "'床前明月光\\n'",
+      "b": "'疑是地上霜\\n'",
+      "c": "'床前明月光\\n'"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "a": "'床前明月光\\n'",
+       "b": "'疑是地上霜\\n'",
+       "c": "'床前明月光\\n'"
+      },
+      "out": "床前明月光\n 疑是地上霜\n 床前明月光\n\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "床前明月光\n 疑是地上霜\n 床前明月光\n\n",
+   "error": null,
+   "setup": {
+    "poem.txt": "床前明月光\n疑是地上霜\n举头望明月\n"
+   },
+   "finalDisk": {
+    "poem.txt": {
+     "bytes": 48,
+     "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+     "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "readlines 得到列表",
+   "code": [
+    "with open('poem.txt', encoding='utf-8') as f:",
+    "    lines = f.readlines()",
+    "print(lines)"
+   ],
+   "note": "readlines() 返回每一行组成的列表，每个元素都带着 \\n。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('poem.txt', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 48,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r>",
+       "lines": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 48 字节"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 48,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r>",
+      "lines": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "lines": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt r 已关闭>",
+      "lines": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt r 已关闭>",
+       "lines": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']"
+      },
+      "out": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "['床前明月光\\n', '疑是地上霜\\n', '举头望明月\\n']\n",
+   "error": null,
+   "setup": {
+    "poem.txt": "床前明月光\n疑是地上霜\n举头望明月\n"
+   },
+   "finalDisk": {
+    "poem.txt": {
+     "bytes": 48,
+     "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+     "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "'w' 会清空原文件",
+   "code": [
+    "with open('poem.txt', 'w', encoding='utf-8') as f:",
+    "    f.write('新内容\\n')"
+   ],
+   "note": "'w' 模式打开的瞬间，原来的内容就被清空了，即使还没写任何东西。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt w>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('poem.txt', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 10
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt w>"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "write",
+     "detail": "写入 · 10 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 10
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 10,
+        "text": "新内容\n",
+        "hex": "e6 96 b0 e5 86 85 e5 ae b9 0a"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt w 已关闭>"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {
+    "poem.txt": "床前明月光\n疑是地上霜\n举头望明月\n"
+   },
+   "finalDisk": {
+    "poem.txt": {
+     "bytes": 10,
+     "text": "新内容\n",
+     "hex": "e6 96 b0 e5 86 85 e5 ae b9 0a"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "'a' 追加到末尾",
+   "code": [
+    "with open('poem.txt', 'a', encoding='utf-8') as f:",
+    "    f.write('低头思故乡\\n')"
+   ],
+   "note": "'a' 模式保留原内容，新写入的放在文件末尾。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "a",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt a>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('poem.txt', 'a') · 追加模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "a",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt a>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 48,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "a",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 16
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt a>"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "write",
+     "detail": "写入 · 16 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "poem.txt": {
+       "bytes": 48,
+       "text": "床前明月光\n疑是地上霜\n举头望明月\n",
+       "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "poem.txt",
+       "mode": "a",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 16
+      }
+     },
+     "vars": {
+      "f": "<文件对象 poem.txt a>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "poem.txt": {
+        "bytes": 64,
+        "text": "床前明月光\n疑是地上霜\n举头望明月\n低头思故乡\n",
+        "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "poem.txt",
+        "mode": "a",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 poem.txt a 已关闭>"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {
+    "poem.txt": "床前明月光\n疑是地上霜\n举头望明月\n"
+   },
+   "finalDisk": {
+    "poem.txt": {
+     "bytes": 64,
+     "text": "床前明月光\n疑是地上霜\n举头望明月\n低头思故乡\n",
+     "hex": "e5 ba 8a e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "不用 with 时必须 close",
+   "code": [
+    "f = open('log.txt', 'w', encoding='utf-8')",
+    "f.write('重要数据')",
+    "size = 0",
+    "f.close()",
+    "done = True"
+   ],
+   "note": "写入的内容先放在内存缓冲区里，close()（或 flush()）之后才真正写到磁盘。忘记关闭可能丢数据，所以推荐用 with。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "log.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "log.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 log.txt w>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "open",
+     "detail": "open() · 打开文件，得到文件对象；'w' 模式会立即清空原文件"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "log.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "log.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 log.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "log.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "log.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 12
+       }
+      },
+      "vars": {
+       "f": "<文件对象 log.txt w>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "write",
+     "detail": "写入 · 12 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "log.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "log.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 12
+      }
+     },
+     "vars": {
+      "f": "<文件对象 log.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "log.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "log.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 12
+       }
+      },
+      "vars": {
+       "f": "<文件对象 log.txt w>",
+       "size": "0"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "log.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "log.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 12
+      }
+     },
+     "vars": {
+      "f": "<文件对象 log.txt w>",
+      "size": "0"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "log.txt": {
+        "bytes": 12,
+        "text": "重要数据",
+        "hex": "e9 87 8d e8 a6 81 e6 95 b0 e6 8d ae"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "log.txt",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 log.txt w 已关闭>",
+       "size": "0"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "close",
+     "detail": "close() · 关闭文件，缓冲区写入磁盘"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "log.txt": {
+       "bytes": 12,
+       "text": "重要数据",
+       "hex": "e9 87 8d e8 a6 81 e6 95 b0 e6 8d ae"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "log.txt",
+       "mode": "w",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 log.txt w 已关闭>",
+      "size": "0"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "log.txt": {
+        "bytes": 12,
+        "text": "重要数据",
+        "hex": "e9 87 8d e8 a6 81 e6 95 b0 e6 8d ae"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "log.txt",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 log.txt w 已关闭>",
+       "size": "0",
+       "done": "True"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {},
+   "finalDisk": {
+    "log.txt": {
+     "bytes": 12,
+     "text": "重要数据",
+     "hex": "e9 87 8d e8 a6 81 e6 95 b0 e6 8d ae"
+    }
+   }
+  },
+  {
+   "mode": "text",
+   "title": "文件不存在",
+   "code": [
+    "try:",
+    "    with open('missing.txt', encoding='utf-8') as f:",
+    "        print(f.read())",
+    "except FileNotFoundError as e:",
+    "    print('找不到文件:', e.filename)"
+   ],
+   "note": "以读取模式打开不存在的文件会抛出 FileNotFoundError，可以用 try / except 处理。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "try",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('missing.txt', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "exception",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "exc": "FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 4,
+     "kind": "error",
+     "detail": "出错 · FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "e": "FileNotFoundError(2, 'No such file or directory')"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "except",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "e": "FileNotFoundError(2, 'No such file or directory')"
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": "找不到文件: missing.txt\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "找不到文件: missing.txt\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {}
+  },
+  {
+   "mode": "text",
+   "title": "编码不一致会出错",
+   "code": [
+    "with open('cn.txt', 'w', encoding='utf-8') as f:",
+    "    f.write('中文')",
+    "with open('cn.txt', encoding='gbk') as f:",
+    "    print(f.read())"
+   ],
+   "note": "用 UTF-8 写入、却用 GBK 读取，字节对不上就会 UnicodeDecodeError。读写时要用同一种编码，推荐始终写 encoding='utf-8'。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt w>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "with",
+     "detail": "with open('cn.txt', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "cn.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "cn.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 cn.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 6
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt w>"
+      },
+      "out": ""
+     },
+     "next": 1,
+     "kind": "write",
+     "detail": "写入 · 6 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "cn.txt": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "cn.txt",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 6
+      }
+     },
+     "vars": {
+      "f": "<文件对象 cn.txt w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 6,
+        "text": "中文",
+        "hex": "e4 b8 ad e6 96 87"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt w 已关闭>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "cn.txt": {
+       "bytes": 6,
+       "text": "中文",
+       "hex": "e4 b8 ad e6 96 87"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "cn.txt",
+       "mode": "w",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 cn.txt w 已关闭>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 6,
+        "text": "中文",
+        "hex": "e4 b8 ad e6 96 87"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "gbk",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt r>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "with open('cn.txt', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "cn.txt": {
+       "bytes": 6,
+       "text": "中文",
+       "hex": "e4 b8 ad e6 96 87"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "cn.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "gbk",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 cn.txt r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 6,
+        "text": "中文",
+        "hex": "e4 b8 ad e6 96 87"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "gbk",
+        "tell": 6,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt r>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 6 字节"
+    },
+    {
+     "line": 4,
+     "event": "exception",
+     "disk": {
+      "cn.txt": {
+       "bytes": 6,
+       "text": "中文",
+       "hex": "e4 b8 ad e6 96 87"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "cn.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "gbk",
+       "tell": 6,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 cn.txt r>"
+     },
+     "out": "",
+     "exc": "UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 2: illegal multibyte sequence",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 6,
+        "text": "中文",
+        "hex": "e4 b8 ad e6 96 87"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "r",
+        "closed": false,
+        "encoding": "gbk",
+        "tell": 6,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt r>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "error",
+     "detail": "出错 · UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 2: illegal multibyte sequence"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "cn.txt": {
+       "bytes": 6,
+       "text": "中文",
+       "hex": "e4 b8 ad e6 96 87"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "cn.txt",
+       "mode": "r",
+       "closed": false,
+       "encoding": "gbk",
+       "tell": 6,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 cn.txt r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "cn.txt": {
+        "bytes": 6,
+        "text": "中文",
+        "hex": "e4 b8 ad e6 96 87"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "cn.txt",
+        "mode": "r",
+        "closed": true,
+        "encoding": "gbk"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 cn.txt r 已关闭>"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": "UnicodeDecodeError: 'gbk' codec can't decode byte 0xad in position 2: illegal multibyte sequence",
+   "setup": {},
+   "finalDisk": {
+    "cn.txt": {
+     "bytes": 6,
+     "text": "中文",
+     "hex": "e4 b8 ad e6 96 87"
+    }
+   }
+  },
+  {
+   "mode": "csv",
+   "title": "csv.writer 写入表格",
+   "code": [
+    "import csv",
+    "rows = [['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+    "with open('scores.csv', 'w', newline='', encoding='utf-8') as f:",
+    "    writer = csv.writer(f)",
+    "    writer.writerows(rows)"
+   ],
+   "note": "csv.writer 把每个列表写成一行，元素之间加逗号。打开 CSV 时写 newline=''，避免在 Windows 上多出空行。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+       "f": "<文件对象 scores.csv w>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "with open('scores.csv', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+      "f": "<文件对象 scores.csv w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+       "f": "<文件对象 scores.csv w>",
+       "writer": "<_csv.writer object at 0x105dda980>"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+      "f": "<文件对象 scores.csv w>",
+      "writer": "<_csv.writer object at 0x105dda980>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 37
+       }
+      },
+      "vars": {
+       "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+       "f": "<文件对象 scores.csv w>",
+       "writer": "<_csv.writer object at 0x105dda980>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "write",
+     "detail": "写入 · 37 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 37
+      }
+     },
+     "vars": {
+      "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+      "f": "<文件对象 scores.csv w>",
+      "writer": "<_csv.writer object at 0x105dda980>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 37,
+        "text": "姓名,分数\r\n小明,88\r\n小红,92\r\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e5 88 86 e6 95 b0 0d 0a e5 b0 8f e6 98 8e 2c 38 38"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "rows": "[['姓名', '分数'], ['小明', 88], ['小红', 92]]",
+       "f": "<文件对象 scores.csv w 已关闭>",
+       "writer": "<_csv.writer object at 0x105dda980>"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {},
+   "finalDisk": {
+    "scores.csv": {
+     "bytes": 37,
+     "text": "姓名,分数\r\n小明,88\r\n小红,92\r\n",
+     "hex": "e5 a7 93 e5 90 8d 2c e5 88 86 e6 95 b0 0d 0a e5 b0 8f e6 98 8e 2c 38 38"
+    }
+   }
+  },
+  {
+   "mode": "csv",
+   "title": "csv.reader 读取",
+   "code": [
+    "import csv",
+    "with open('scores.csv', newline='', encoding='utf-8') as f:",
+    "    for row in csv.reader(f):",
+    "        print(row)"
+   ],
+   "note": "csv.reader 把每一行拆成字符串列表。注意：读出来的数字也是字符串，计算前要 int()。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "with open('scores.csv', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['姓名', '语文', '数学']"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['姓名', '语文', '数学']"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['姓名', '语文', '数学']"
+      },
+      "out": "['姓名', '语文', '数学']\n"
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['姓名', '语文', '数学']"
+     },
+     "out": "['姓名', '语文', '数学']\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['小明', '88', '95']"
+      },
+      "out": "['姓名', '语文', '数学']\n"
+     },
+     "next": 4,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['小明', '88', '95']"
+     },
+     "out": "['姓名', '语文', '数学']\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['小明', '88', '95']"
+      },
+      "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n"
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['小明', '88', '95']"
+     },
+     "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['小红', '92', '81']"
+      },
+      "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n"
+     },
+     "next": 4,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['小红', '92', '81']"
+     },
+     "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['小红', '92', '81']"
+      },
+      "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n['小红', '92', '81']\n"
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['小红', '92', '81']"
+     },
+     "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n['小红', '92', '81']\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 47,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "['小红', '92', '81']"
+      },
+      "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n['小红', '92', '81']\n"
+     },
+     "next": 2,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 47,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "['小红', '92', '81']"
+     },
+     "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n['小红', '92', '81']\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r 已关闭>",
+       "row": "['小红', '92', '81']"
+      },
+      "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n['小红', '92', '81']\n"
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "['姓名', '语文', '数学']\n['小明', '88', '95']\n['小红', '92', '81']\n",
+   "error": null,
+   "setup": {
+    "scores.csv": "姓名,语文,数学\n小明,88,95\n小红,92,81\n"
+   },
+   "finalDisk": {
+    "scores.csv": {
+     "bytes": 47,
+     "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+     "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+    }
+   }
+  },
+  {
+   "mode": "csv",
+   "title": "DictReader 按列名读取",
+   "code": [
+    "import csv",
+    "with open('scores.csv', newline='', encoding='utf-8') as f:",
+    "    for row in csv.DictReader(f):",
+    "        print(row['姓名'], int(row['数学']))"
+   ],
+   "note": "DictReader 把第一行当作列名，每一行变成字典，用列名取值，比记下标更清楚。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "with open('scores.csv', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+      },
+      "out": "小明 95\n"
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+     },
+     "out": "小明 95\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": "小明 95\n"
+     },
+     "next": 4,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "小明 95\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": "小明 95\n小红 81\n"
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "小明 95\n小红 81\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 47,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": "小明 95\n小红 81\n"
+     },
+     "next": 3,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 3,
+     "event": "exception",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 47,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "小明 95\n小红 81\n",
+     "exc": "StopIteration: ",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 47,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": "小明 95\n小红 81\n"
+     },
+     "next": 2,
+     "kind": "error",
+     "detail": "出错 · StopIteration: "
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 47,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "小明 95\n小红 81\n",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 scores.csv r 已关闭>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": "小明 95\n小红 81\n"
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "小明 95\n小红 81\n",
+   "error": null,
+   "setup": {
+    "scores.csv": "姓名,语文,数学\n小明,88,95\n小红,92,81\n"
+   },
+   "finalDisk": {
+    "scores.csv": {
+     "bytes": 47,
+     "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+     "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+    }
+   }
+  },
+  {
+   "mode": "csv",
+   "title": "DictWriter 写入字典",
+   "code": [
+    "import csv",
+    "people = [{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+    "with open('people.csv', 'w', newline='', encoding='utf-8') as f:",
+    "    w = csv.DictWriter(f, fieldnames=['name', 'age'])",
+    "    w.writeheader()",
+    "    w.writerows(people)"
+   ],
+   "note": "DictWriter 需要 fieldnames 指定列顺序；writeheader() 写表头行。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "people.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "people.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+       "f": "<文件对象 people.csv w>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "with open('people.csv', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "people.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "people.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+      "f": "<文件对象 people.csv w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "people.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "people.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+       "f": "<文件对象 people.csv w>",
+       "w": "<csv.DictWriter object at 0x105eaea70>"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "people.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "people.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+      "f": "<文件对象 people.csv w>",
+      "w": "<csv.DictWriter object at 0x105eaea70>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "people.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "people.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 10
+       }
+      },
+      "vars": {
+       "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+       "f": "<文件对象 people.csv w>",
+       "w": "<csv.DictWriter object at 0x105eaea70>"
+      },
+      "out": ""
+     },
+     "next": 6,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "event": "line",
+     "disk": {
+      "people.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "people.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 10
+      }
+     },
+     "vars": {
+      "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+      "f": "<文件对象 people.csv w>",
+      "w": "<csv.DictWriter object at 0x105eaea70>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "people.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "people.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 32
+       }
+      },
+      "vars": {
+       "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+       "f": "<文件对象 people.csv w>",
+       "w": "<csv.DictWriter object at 0x105eaea70>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "write",
+     "detail": "写入 · 32 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "people.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "people.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 32
+      }
+     },
+     "vars": {
+      "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+      "f": "<文件对象 people.csv w>",
+      "w": "<csv.DictWriter object at 0x105eaea70>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "people.csv": {
+        "bytes": 32,
+        "text": "name,age\r\n小李,12\r\n小王,11\r\n",
+        "hex": "6e 61 6d 65 2c 61 67 65 0d 0a e5 b0 8f e6 9d 8e 2c 31 32 0d 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "people.csv",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "people": "[{'name': '小李', 'age': 12}, {'name': '小王', 'age': 11}]",
+       "f": "<文件对象 people.csv w 已关闭>",
+       "w": "<csv.DictWriter object at 0x105eaea70>"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {},
+   "finalDisk": {
+    "people.csv": {
+     "bytes": 32,
+     "text": "name,age\r\n小李,12\r\n小王,11\r\n",
+     "hex": "6e 61 6d 65 2c 61 67 65 0d 0a e5 b0 8f e6 9d 8e 2c 31 32 0d 0a e5 b0 8f"
+    }
+   }
+  },
+  {
+   "mode": "csv",
+   "title": "含逗号的值自动加引号",
+   "code": [
+    "import csv",
+    "with open('items.csv', 'w', newline='', encoding='utf-8') as f:",
+    "    csv.writer(f).writerow(['苹果', '红色,圆形', 5])",
+    "with open('items.csv', newline='', encoding='utf-8') as f:",
+    "    print(next(csv.reader(f)))"
+   ],
+   "note": "值里本身有逗号时，csv 模块会自动用双引号包起来，读回时也能正确还原。所以不要自己用 split(',') 解析 CSV。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "items.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "items.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 items.csv w>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "with open('items.csv', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "items.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "items.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 items.csv w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "items.csv": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "items.csv",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 26
+       }
+      },
+      "vars": {
+       "f": "<文件对象 items.csv w>"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "write",
+     "detail": "写入 · 26 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "items.csv": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "items.csv",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 26
+      }
+     },
+     "vars": {
+      "f": "<文件对象 items.csv w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "items.csv": {
+        "bytes": 26,
+        "text": "苹果,\"红色,圆形\",5\r\n",
+        "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "items.csv",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 items.csv w 已关闭>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "items.csv": {
+       "bytes": 26,
+       "text": "苹果,\"红色,圆形\",5\r\n",
+       "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "items.csv",
+       "mode": "w",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 items.csv w 已关闭>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "items.csv": {
+        "bytes": 26,
+        "text": "苹果,\"红色,圆形\",5\r\n",
+        "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "items.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 items.csv r>"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "with",
+     "detail": "with open('items.csv', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "items.csv": {
+       "bytes": 26,
+       "text": "苹果,\"红色,圆形\",5\r\n",
+       "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "items.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 items.csv r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "items.csv": {
+        "bytes": 26,
+        "text": "苹果,\"红色,圆形\",5\r\n",
+        "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "items.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 items.csv r>"
+      },
+      "out": "['苹果', '红色,圆形', '5']\n"
+     },
+     "next": 4,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "items.csv": {
+       "bytes": 26,
+       "text": "苹果,\"红色,圆形\",5\r\n",
+       "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "items.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 items.csv r>"
+     },
+     "out": "['苹果', '红色,圆形', '5']\n",
+     "after": {
+      "disk": {
+       "items.csv": {
+        "bytes": 26,
+        "text": "苹果,\"红色,圆形\",5\r\n",
+        "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "items.csv",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 items.csv r 已关闭>"
+      },
+      "out": "['苹果', '红色,圆形', '5']\n"
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "['苹果', '红色,圆形', '5']\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {
+    "items.csv": {
+     "bytes": 26,
+     "text": "苹果,\"红色,圆形\",5\r\n",
+     "hex": "e8 8b b9 e6 9e 9c 2c 22 e7 ba a2 e8 89 b2 2c e5 9c 86 e5 bd a2 22 2c 35"
+    }
+   }
+  },
+  {
+   "mode": "csv",
+   "title": "统计：计算平均分",
+   "code": [
+    "import csv",
+    "total = 0",
+    "count = 0",
+    "with open('scores.csv', newline='', encoding='utf-8') as f:",
+    "    for row in csv.DictReader(f):",
+    "        total += int(row['数学'])",
+    "        count += 1",
+    "print('数学平均分', total / count)"
+   ],
+   "note": "综合应用：逐行读取、把字符串转成数字、累加统计。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {},
+      "vars": {
+       "total": "0"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {
+      "total": "0"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {},
+      "vars": {
+       "total": "0",
+       "count": "0"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {},
+     "vars": {
+      "total": "0",
+      "count": "0"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "0",
+       "count": "0",
+       "f": "<文件对象 scores.csv r>"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "with",
+     "detail": "with open('scores.csv', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "0",
+      "count": "0",
+      "f": "<文件对象 scores.csv r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "0",
+       "count": "0",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+      },
+      "out": ""
+     },
+     "next": 6,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 6,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "0",
+      "count": "0",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "95",
+       "count": "0",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+      },
+      "out": ""
+     },
+     "next": 7,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 7,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "95",
+      "count": "0",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "95",
+       "count": "1",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "95",
+      "count": "1",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小明', '语文': '88', '数学': '95'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "95",
+       "count": "1",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": ""
+     },
+     "next": 6,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 6,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "95",
+      "count": "1",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "176",
+       "count": "1",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": ""
+     },
+     "next": 7,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 7,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "176",
+      "count": "1",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "176",
+       "count": "2",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "176",
+      "count": "2",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 47,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "176",
+       "count": "2",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "for",
+     "detail": "for · 逐行（或逐条记录）遍历"
+    },
+    {
+     "line": 5,
+     "event": "exception",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 47,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "176",
+      "count": "2",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "",
+     "exc": "StopIteration: ",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 47,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "total": "176",
+       "count": "2",
+       "f": "<文件对象 scores.csv r>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "error",
+     "detail": "出错 · StopIteration: "
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 47,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "total": "176",
+      "count": "2",
+      "f": "<文件对象 scores.csv r>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "total": "176",
+       "count": "2",
+       "f": "<文件对象 scores.csv r 已关闭>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": ""
+     },
+     "next": 8,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 8,
+     "event": "line",
+     "disk": {
+      "scores.csv": {
+       "bytes": 47,
+       "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+       "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "scores.csv",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "total": "176",
+      "count": "2",
+      "f": "<文件对象 scores.csv r 已关闭>",
+      "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "scores.csv": {
+        "bytes": 47,
+        "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+        "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "scores.csv",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "total": "176",
+       "count": "2",
+       "f": "<文件对象 scores.csv r 已关闭>",
+       "row": "{'姓名': '小红', '语文': '92', '数学': '81'}"
+      },
+      "out": "数学平均分 88.0\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "数学平均分 88.0\n",
+   "error": null,
+   "setup": {
+    "scores.csv": "姓名,语文,数学\n小明,88,95\n小红,92,81\n"
+   },
+   "finalDisk": {
+    "scores.csv": {
+     "bytes": 47,
+     "text": "姓名,语文,数学\n小明,88,95\n小红,92,81\n",
+     "hex": "e5 a7 93 e5 90 8d 2c e8 af ad e6 96 87 2c e6 95 b0 e5 ad a6 0a e5 b0 8f"
+    }
+   }
+  },
+  {
+   "mode": "json",
+   "title": "json.dump 写入文件",
+   "code": [
+    "import json",
+    "data = {'name': '小明', 'level': 3, 'tags': ['python', '数学']}",
+    "with open('data.json', 'w', encoding='utf-8') as f:",
+    "    json.dump(data, f, ensure_ascii=False, indent=2)"
+   ],
+   "note": "json.dump(对象, 文件) 把字典、列表等写成 JSON 文本。ensure_ascii=False 保留中文原样，indent=2 让文件分行缩进、便于阅读。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "data.json": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "data.json",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}",
+       "f": "<文件对象 data.json w>"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "with open('data.json', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "data.json": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "data.json",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}",
+      "f": "<文件对象 data.json w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "data.json": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "data.json",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 80
+       }
+      },
+      "vars": {
+       "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}",
+       "f": "<文件对象 data.json w>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "write",
+     "detail": "写入 · 80 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "data.json": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "data.json",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 80
+      }
+     },
+     "vars": {
+      "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}",
+      "f": "<文件对象 data.json w>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "data.json": {
+        "bytes": 80,
+        "text": "{\n  \"name\": \"小明\",\n  \"level\": 3,\n  \"tags\": [\n    \"python\",\n    \"数学\"\n  ]\n}",
+        "hex": "7b 0a 20 20 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 0a 20 20"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "data.json",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "data": "{'name': '小明', 'level': 3, 'tags': ['python', '数学']}",
+       "f": "<文件对象 data.json w 已关闭>"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {},
+   "finalDisk": {
+    "data.json": {
+     "bytes": 80,
+     "text": "{\n  \"name\": \"小明\",\n  \"level\": 3,\n  \"tags\": [\n    \"python\",\n    \"数学\"\n  ]\n}",
+     "hex": "7b 0a 20 20 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 0a 20 20"
+    }
+   }
+  },
+  {
+   "mode": "json",
+   "title": "json.load 读取文件",
+   "code": [
+    "import json",
+    "with open('config.json', encoding='utf-8') as f:",
+    "    cfg = json.load(f)",
+    "print(cfg['name'], cfg['tags'][1], cfg['vip'])"
+   ],
+   "note": "json.load(文件) 把 JSON 文本还原成 Python 对象：对象 → dict，数组 → list，true/false → True/False，null → None。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "with open('config.json', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 74,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r>",
+       "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 74 字节"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 74,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r>",
+      "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r 已关闭>",
+       "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r 已关闭>",
+      "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r 已关闭>",
+       "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+      },
+      "out": "小明 数学 False\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "小明 数学 False\n",
+   "error": null,
+   "setup": {
+    "config.json": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}"
+   },
+   "finalDisk": {
+    "config.json": {
+     "bytes": 74,
+     "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+     "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+    }
+   }
+  },
+  {
+   "mode": "json",
+   "title": "dumps / loads：字符串互转",
+   "code": [
+    "import json",
+    "s = json.dumps({'ok': True, 'x': None, 'n': (1, 2)})",
+    "back = json.loads(s)",
+    "print(s)",
+    "print(back)"
+   ],
+   "note": "带 s 的版本处理字符串而不是文件。元组会变成 JSON 数组，读回来是列表；True/None 写成 true/null。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "convert",
+     "detail": "json.dumps / loads · 在字符串和 Python 对象之间转换，不涉及文件"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'"
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'",
+       "back": "{'ok': True, 'x': None, 'n': [1, 2]}"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "convert",
+     "detail": "json.dumps / loads · 在字符串和 Python 对象之间转换，不涉及文件"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'",
+      "back": "{'ok': True, 'x': None, 'n': [1, 2]}"
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'",
+       "back": "{'ok': True, 'x': None, 'n': [1, 2]}"
+      },
+      "out": "{\"ok\": true, \"x\": null, \"n\": [1, 2]}\n"
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'",
+      "back": "{'ok': True, 'x': None, 'n': [1, 2]}"
+     },
+     "out": "{\"ok\": true, \"x\": null, \"n\": [1, 2]}\n",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "s": "'{\"ok\": true, \"x\": null, \"n\": [1, 2]}'",
+       "back": "{'ok': True, 'x': None, 'n': [1, 2]}"
+      },
+      "out": "{\"ok\": true, \"x\": null, \"n\": [1, 2]}\n{'ok': True, 'x': None, 'n': [1, 2]}\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "{\"ok\": true, \"x\": null, \"n\": [1, 2]}\n{'ok': True, 'x': None, 'n': [1, 2]}\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {}
+  },
+  {
+   "mode": "json",
+   "title": "中文：ensure_ascii 的区别",
+   "code": [
+    "import json",
+    "a = json.dumps({'城市': '北京'})",
+    "b = json.dumps({'城市': '北京'}, ensure_ascii=False)",
+    "print(a)",
+    "print(b)"
+   ],
+   "note": "默认 ensure_ascii=True，中文被写成 \\uXXXX 转义；设为 False 才保留中文原样。两种读回来结果相同。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "convert",
+     "detail": "json.dumps / loads · 在字符串和 Python 对象之间转换，不涉及文件"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'"
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'",
+       "b": "'{\"城市\": \"北京\"}'"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "convert",
+     "detail": "json.dumps / loads · 在字符串和 Python 对象之间转换，不涉及文件"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'",
+      "b": "'{\"城市\": \"北京\"}'"
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'",
+       "b": "'{\"城市\": \"北京\"}'"
+      },
+      "out": "{\"\\u57ce\\u5e02\": \"\\u5317\\u4eac\"}\n"
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'",
+      "b": "'{\"城市\": \"北京\"}'"
+     },
+     "out": "{\"\\u57ce\\u5e02\": \"\\u5317\\u4eac\"}\n",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "a": "'{\"\\\\u57ce\\\\u5e02\": \"\\\\u5317\\\\u4eac\"}'",
+       "b": "'{\"城市\": \"北京\"}'"
+      },
+      "out": "{\"\\u57ce\\u5e02\": \"\\u5317\\u4eac\"}\n{\"城市\": \"北京\"}\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "{\"\\u57ce\\u5e02\": \"\\u5317\\u4eac\"}\n{\"城市\": \"北京\"}\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {}
+  },
+  {
+   "mode": "json",
+   "title": "读取 → 修改 → 写回",
+   "code": [
+    "import json",
+    "with open('config.json', encoding='utf-8') as f:",
+    "    cfg = json.load(f)",
+    "cfg['level'] += 1",
+    "cfg['vip'] = True",
+    "with open('config.json', 'w', encoding='utf-8') as f:",
+    "    json.dump(cfg, f, ensure_ascii=False)"
+   ],
+   "note": "修改 JSON 文件的标准做法：读进来成为字典，改字典，再整体写回。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 0,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r>"
+      },
+      "out": ""
+     },
+     "next": 3,
+     "kind": "with",
+     "detail": "with open('config.json', 'r') · 读取模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 0,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r>"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": 74,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r>",
+       "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+      },
+      "out": ""
+     },
+     "next": 2,
+     "kind": "read",
+     "detail": "读取 · 从当前位置往后读，读完后位置移到第 74 字节"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": 74,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r>",
+      "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r 已关闭>",
+       "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+      },
+      "out": ""
+     },
+     "next": 4,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r 已关闭>",
+      "cfg": "{'name': '小明', 'level': 3, 'tags': ['python', '数学'], 'vip': False}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r 已关闭>",
+       "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': False}"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r 已关闭>",
+      "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': False}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 74,
+        "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "r",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json r 已关闭>",
+       "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+      },
+      "out": ""
+     },
+     "next": 6,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 6,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 74,
+       "text": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}",
+       "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "r",
+       "closed": true,
+       "encoding": "utf-8"
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json r 已关闭>",
+      "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 0
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json w>",
+       "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+      },
+      "out": ""
+     },
+     "next": 7,
+     "kind": "with",
+     "detail": "with open('config.json', 'w') · 写入（先清空）模式打开，块结束时自动关闭"
+    },
+    {
+     "line": 7,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 0
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json w>",
+      "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 0,
+        "text": "",
+        "hex": ""
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "w",
+        "closed": false,
+        "encoding": "utf-8",
+        "tell": null,
+        "pending": 73
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json w>",
+       "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+      },
+      "out": ""
+     },
+     "next": 6,
+     "kind": "write",
+     "detail": "写入 · 73 字节先放在缓冲区，磁盘上暂时还看不到"
+    },
+    {
+     "line": 6,
+     "event": "line",
+     "disk": {
+      "config.json": {
+       "bytes": 0,
+       "text": "",
+       "hex": ""
+      }
+     },
+     "handles": {
+      "f": {
+       "file": "config.json",
+       "mode": "w",
+       "closed": false,
+       "encoding": "utf-8",
+       "tell": null,
+       "pending": 73
+      }
+     },
+     "vars": {
+      "f": "<文件对象 config.json w>",
+      "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+     },
+     "out": "",
+     "after": {
+      "disk": {
+       "config.json": {
+        "bytes": 73,
+        "text": "{\"name\": \"小明\", \"level\": 4, \"tags\": [\"python\", \"数学\"], \"vip\": true}",
+        "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+       }
+      },
+      "handles": {
+       "f": {
+        "file": "config.json",
+        "mode": "w",
+        "closed": true,
+        "encoding": "utf-8"
+       }
+      },
+      "vars": {
+       "f": "<文件对象 config.json w 已关闭>",
+       "cfg": "{'name': '小明', 'level': 4, 'tags': ['python', '数学'], 'vip': True}"
+      },
+      "out": ""
+     },
+     "next": null,
+     "kind": "with",
+     "detail": "离开 with 块 · 自动调用 close()，缓冲区的内容写入磁盘"
+    }
+   ],
+   "out": "",
+   "error": null,
+   "setup": {
+    "config.json": "{\"name\": \"小明\", \"level\": 3, \"tags\": [\"python\", \"数学\"], \"vip\": false}"
+   },
+   "finalDisk": {
+    "config.json": {
+     "bytes": 73,
+     "text": "{\"name\": \"小明\", \"level\": 4, \"tags\": [\"python\", \"数学\"], \"vip\": true}",
+     "hex": "7b 22 6e 61 6d 65 22 3a 20 22 e5 b0 8f e6 98 8e 22 2c 20 22 6c 65 76 65"
+    }
+   }
+  },
+  {
+   "mode": "json",
+   "title": "JSON 格式错误",
+   "code": [
+    "import json",
+    "try:",
+    "    json.loads(\"{'name': '小明'}\")",
+    "except json.JSONDecodeError as e:",
+    "    print('格式错误:', e.msg)"
+   ],
+   "note": "JSON 要求字符串用双引号，单引号不合法，会抛出 JSONDecodeError。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 3,
+     "kind": "try",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 3,
+     "kind": "convert",
+     "detail": "json.dumps / loads · 在字符串和 Python 对象之间转换，不涉及文件"
+    },
+    {
+     "line": 3,
+     "event": "exception",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "exc": "JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 4,
+     "kind": "error",
+     "detail": "出错 · JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "e": "JSONDecodeError('Expecting property name enclosed in double quotes:..."
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "except",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "e": "JSONDecodeError('Expecting property name enclosed in double quotes:..."
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": "格式错误: Expecting property name enclosed in double quotes\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "格式错误: Expecting property name enclosed in double quotes\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {}
+  },
+  {
+   "mode": "json",
+   "title": "集合不能写成 JSON",
+   "code": [
+    "import json",
+    "try:",
+    "    json.dumps({'ids': {1, 2}})",
+    "except TypeError as e:",
+    "    print(e)"
+   ],
+   "note": "JSON 只支持 dict、list、str、int、float、bool、None（元组会转成数组）。集合等其他类型要先转换，比如 list(集合)。",
+   "steps": [
+    {
+     "line": 1,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 2,
+     "kind": "import",
+     "detail": "导入模块"
+    },
+    {
+     "line": 2,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 3,
+     "kind": "try",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 3,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 3,
+     "kind": "convert",
+     "detail": "json.dumps / loads · 在字符串和 Python 对象之间转换，不涉及文件"
+    },
+    {
+     "line": 3,
+     "event": "exception",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "exc": "TypeError: Object of type set is not JSON serializable",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": ""
+     },
+     "next": 4,
+     "kind": "error",
+     "detail": "出错 · TypeError: Object of type set is not JSON serializable"
+    },
+    {
+     "line": 4,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {},
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {
+       "e": "TypeError('Object of type set is not JSON serializable')"
+      },
+      "out": ""
+     },
+     "next": 5,
+     "kind": "except",
+     "detail": "执行这一行"
+    },
+    {
+     "line": 5,
+     "event": "line",
+     "disk": {},
+     "handles": {},
+     "vars": {
+      "e": "TypeError('Object of type set is not JSON serializable')"
+     },
+     "out": "",
+     "after": {
+      "disk": {},
+      "handles": {},
+      "vars": {},
+      "out": "Object of type set is not JSON serializable\n"
+     },
+     "next": null,
+     "kind": "stmt",
+     "detail": "执行这一行"
+    }
+   ],
+   "out": "Object of type set is not JSON serializable\n",
+   "error": null,
+   "setup": {},
+   "finalDisk": {}
+  }
+ ]
+}

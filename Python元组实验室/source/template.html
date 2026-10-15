@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Python 元组封装台 · 元组、嵌套元组与列表转换</title><style>/* KIT */
+/* STYLE */</style></head>
+<body class="iso" data-theme="light"><main>
+<header><a class="wordmark" href="#top">PY / LAB <span>基础实验 03</span></a><button id="theme" aria-label="切换至深色主题">深色模式</button></header>
+<section class="intro" id="top"><div class="eyebrow">A SMALL MACHINE FOR BIG IDEAS</div><h1>元组是一排上了封条的料槽。<br><span>能看、能取，但不能改。</span></h1><p>选一个预设示例：看拾取滑台按索引读取元组，封条如何拒绝写入，<br class="desktop">以及 <code>list()</code> 与 <code>tuple()</code> 怎样在两排料槽之间复制元素。</p></section>
+<div class="workspace">
+<section class="visual" aria-label="元组封装台">
+<figure><div class="iso-plate"><div class="card-head"><span>FIG. 03 / TUPLE SEALER</span><span>Python 元组封装台</span></div><div class="iso-stage" id="stage" tabindex="0" role="group" aria-label="元组封装台。左右方向键切换示例，空格键重播，Home 到首项，End 到末项。"><!-- FIGURE --></div><div class="card-foot"><span>← → 切换示例 · 空格重播</span><output data-readout>正在校准</output></div></div><figcaption><span class="legend"><i></i> 高亮 = 正在访问的元素</span><p>前排是元组（槽前上一行是正索引，下一行是负索引），压在上面的横杆和挂锁就是“不可变”的封条。后排没有封条，是可修改的列表。滑台上的竖旗落下、封条变亮，表示操作被拒绝。右侧托盘每一行是一个内层元组，各有自己的封条；左侧滑块选行 <code>i</code>，前方滑块选列 <code>j</code>。</p></figcaption></figure>
+<div class="binding"><span class="label">当前步骤</span><code id="step">准备</code><p id="step-note">滑台会按访问顺序逐个移动。</p></div>
+<div class="tour-bar"><span id="tour-status">空闲时自动浏览示例</span><span class="tour-buttons"><button id="replay">重播</button><button id="tour" aria-pressed="true">暂停巡览</button></span></div>
+</section>
+<aside class="controls">
+<section class="control-section"><div class="section-heading"><span>01</span><h2>选择主题</h2></div><div class="tabs" role="tablist" aria-label="主题"><button role="tab" data-mode="tuple">元组</button><button role="tab" data-mode="nest">嵌套元组</button><button role="tab" data-mode="convert">元组 ⇄ 列表</button></div><div id="examples" class="example-list" role="group" aria-label="预设示例"></div></section>
+<section class="control-section"><div class="section-heading"><span>02</span><h2>代码与结果</h2></div><div class="terminal"><div class="setup"><code id="setup"></code></div><div><pre id="code"></pre></div><div class="result"><span>结果</span><output id="result"></output></div></div><p id="note" class="note"></p><div id="loop-box" class="loop"><span class="label">等价的普通写法</span><pre id="loop"></pre></div><p id="identity" class="micro"></p></section>
+</aside></div>
+<section class="notes"><div class="section-heading"><span>FIELD NOTES</span><h2>把规则带走</h2></div><div class="notes-grid">
+<article><span>01 / 元组</span><h3>有序、不可变、靠逗号创建</h3><p>元组用逗号创建，括号通常只是让它更清楚：<code>t = 3, 1, 4</code> 也是元组。单元素要写 <code>(5,)</code>，<code>(5)</code> 只是整数 5；空元组写 <code>()</code>。</p><p>索引、切片、<code>len()</code>、<code>in</code>、<code>count()</code>、<code>index()</code> 都能用；赋值、<code>append</code>、<code>sort</code> 等修改操作都不行。<code>+</code> 和 <code>*</code> 会生成新元组。</p></article>
+<article><span>02 / 嵌套元组</span><h3>不可变的是“装着谁”</h3><p><code>n[i][j]</code> 先取内层元组，再取元素。元组不能让某个位置换成别的对象，但如果某个位置放的是列表，这个列表自身的内容仍然可以修改。</p><p>只含不可变对象的元组是可哈希的，能作为字典的键、放进集合；含有列表的元组则不可哈希。</p></article>
+<article><span>03 / 互相转换</span><h3>转换总是复制出一个新对象</h3><p><code>list(t)</code> 得到可修改的新列表，<code>tuple(lst)</code> 得到新的元组，原对象都不变。想“改”元组，就先转列表、改完再转回去。</p><p>转换只处理最外层：嵌套结构要逐层转换，比如 <code>[list(p) for p in n]</code>。<code>sorted()</code> 无论输入什么，都返回列表。</p></article>
+</div></section>
+<footer><p>离线教学装置 · Anatomy 等距 SVG · <span id="version"></span></p><p>所有示例结果都由真实 Python 预先计算并随页面内置；浏览器不执行任意 Python 代码。每个示例都在独立的环境中、从代码区第一行显示的初始数据开始运行。</p></footer>
+</main><script>/* SCRIPT */</script></body></html>

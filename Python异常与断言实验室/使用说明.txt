@@ -1,0 +1,63 @@
+Python 异常与断言实验室 · 使用说明
+==================================
+
+打开方式
+  双击 index.html，用浏览器（Chrome / Safari / Edge）打开即可。
+  完全离线，无需联网、无需安装任何东西。
+
+页面内容
+  一台等距“异常与断言读码台”机器：
+  · 十一块代码行板按行号排列；缩进越深越靠右，当前行抬起并高亮
+  · 左侧读码滑台指向当前行；异常发生时，滑台上的竖旗落下
+  · 右侧跳线连到下一步要执行的行；虚线 = 这次跳转是异常造成的
+  · 右上三个寄存器 = 调用栈：
+      最上面是正在执行的函数（栈顶），下面是等它返回的调用者；
+      亮起的警报块标出异常此刻停在哪一层，可以看到它一层层向上传播
+  · 纸带显示 print 的输出；程序因异常终止时会打印 Traceback
+
+四个主题，共 28 个预设程序
+  1. 常见异常（7 个）：ZeroDivisionError、ValueError、TypeError、
+     IndexError、KeyError、NameError、AttributeError
+  2. try / except（8 个）：基本捕获、as e、多个 except、一次捕获多种、
+     else、finally、类型不匹配时（finally 执行后异常继续抛出）、
+     父类捕获子类
+  3. 抛出与传播（6 个）：raise 主动抛出、异常沿调用栈向上传播、
+     在函数内部处理、finally 在 return 之前执行、except 中再次 raise、
+     自定义异常类
+  4. 断言（7 个）：条件成立、条件不成立、在函数中检查前提、
+     捕获 AssertionError、加括号永远成立的陷阱、python -O 删除 assert、
+     用户输入应该用 if + raise
+
+操作
+  · 右侧选主题、点程序；“上一步 / 播放 / 下一步 / 重播”按钮
+  · 点击图后：← → 单步，空格 播放/暂停，Home 回到开头，
+    End 跳到结束，PageDown / PageUp 切换程序
+  · 每一步都会说明：异常在哪一层的哪一行发生、是否被 except 捕获、
+    是否继续向上抛、finally / else 何时执行、assert 是否通过
+  · 右上角切换浅色 / 深色模式；“自动巡览”会在运行结束后切换下一个程序
+  · 系统开启“减少动态效果”时，直接显示运行结束的状态，可用按钮单步
+
+说明
+  · 每个程序都在真实 Python 3.10.21 中用 sys.settrace 跟踪，
+    记录每一步的行号、所在函数、调用栈、异常事件、变量和输出，
+    内置在页面中；浏览器并不执行任意 Python 代码。
+  · “python -O”示例以优化模式编译后运行，所以 assert 那一行根本不会执行。
+  · Python 跟踪时不会单独停在 else: 和 finally: 这两行，
+    而是直接进入块内第一行，页面会在那一步说明“进入 finally 块”。
+
+文件夹结构
+  index.html      成品（单文件，所有资源已内联）
+  source/         源码
+    truth.py        跟踪全部程序（含函数调用和异常事件），生成 truth.json
+    build.mjs       用 Anatomy kit 生成等距 SVG 并打包 index.html
+    live.js         交互、调用栈、跳线绘制与动画
+    template.html / style.css
+    test.py         独立复核：重新跟踪每个程序，逐步比对
+    browser-tests.json  浏览器交互测试脚本
+  验证/           验证截图（浅色、深色、手机、4 倍细节、线端检查）
+
+重新构建（需要 Node.js 和 Python 3.10 以上）
+  cd source
+  python3 truth.py
+  node build.mjs
+  python3 test.py

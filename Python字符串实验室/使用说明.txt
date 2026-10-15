@@ -1,0 +1,53 @@
+Python 字符串实验室 · 使用说明
+==============================
+
+打开方式
+  双击 index.html，用浏览器（Chrome / Safari / Edge）打开即可。
+  完全离线，无需联网、无需安装任何东西。
+
+页面内容
+  一台等距“字符串排字台”机器：
+  · 前排编号槽里每个铅字块 = 一个字符，初始是 s = 'Hi Python'
+    （␣ 表示空格；槽前上一行是正索引，下一行是负索引）
+    压在上面的横杆 + 挂锁 = 封条，表示字符串不可变
+  · 后排 = 字符串方法“浇铸”出的新字符串；前排原字符串始终不变
+  · 拾取滑台沿导轨移到正在读取的字符；竖旗落下、封条变亮 = 出错
+  · 右侧托盘 = split() 切出来的每一段；join() 再逐段取回拼接
+
+三个主题，共 26 个预设示例
+  1. 字符串基础（10 个）：索引、负索引、切片、反转 [::-1]、len()、
+     不可变（TypeError）、+ 拼接、in 判断、字符串不能加数字、f-string
+  2. 常用方法（11 个）：upper / lower、find（找不到返回 -1）、
+     index（找不到报 ValueError）、count、replace、startswith、
+     strip、isalpha、title
+  3. 分割与连接（5 个）：split()、split(',')、'-'.join(...)、
+     split 与 join 互逆、join 遇到数字报 TypeError
+
+操作
+  · 右侧选主题、点示例
+  · 点击图后：← → 切换示例，Home / End 跳到首/尾，空格或回车重播
+  · “重播”“暂停巡览”按钮；右上角切换浅色 / 深色模式
+  · 无人操作时会自动巡览所有示例
+  · 系统开启“减少动态效果”时，直接显示最终状态，不播放动画
+
+说明
+  · 所有结果都由真实 Python 3.10.21 预先运行得出，内置在页面中；
+    浏览器并不执行任意 Python 代码。
+  · 每个示例都在独立环境中、从代码区第一行的初始数据开始运行。
+
+文件夹结构
+  index.html      成品（单文件，所有资源已内联）
+  source/         源码
+    truth.py        用真实 Python 运行全部示例，并编排每一步动画
+    build.mjs       用 Anatomy kit 生成等距 SVG 并打包 index.html
+    live.js         交互、封条绘制与动画
+    template.html / style.css
+    test.mjs        内容测试：动画终态必须与 Python 结果一致
+    browser-tests.json  浏览器交互测试脚本
+  验证/           验证截图（浅色、深色、手机、4 倍细节、线端检查）
+
+重新构建（需要 Node.js 和 Python 3）
+  cd source
+  python3 truth.py
+  node build.mjs
+  node test.mjs

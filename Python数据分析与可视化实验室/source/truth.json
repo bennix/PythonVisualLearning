@@ -1,0 +1,3035 @@
+{
+ "python": "3.9.6",
+ "pandas": "2.1.4",
+ "matplotlib": "3.9.4",
+ "csv": "姓名,班级,性别,语文,数学,英语\n小明,一班,男,88,95,79\n小红,一班,女,92,81,94\n小刚,二班,男,75,98,68\n小丽,二班,女,85,77,90\n小强,一班,男,62,70,\n小芳,二班,女,96,89,85\n",
+ "salesCsv": "月份,销售额,成本\n1月,120,80\n2月,135,90\n3月,128,85\n4月,160,100\n5月,175,110\n6月,190,118\n",
+ "examples": [
+  {
+   "mode": "look",
+   "title": "read_csv 读入表格",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df",
+   "note": "pd.read_csv 读入 CSV，得到 DataFrame：有行索引（左边 0、1、2…）和列名。缺失的值显示为 NaN。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [],
+   "usedRows": [],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   }
+  },
+  {
+   "mode": "look",
+   "title": "head() 看前几行",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.head(3)",
+   "note": "head(n) 返回前 n 行（默认 5 行），先看一眼数据长什么样。tail(n) 看最后几行。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [],
+   "usedRows": [
+    0,
+    1,
+    2
+   ],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     3,
+     6
+    ]
+   }
+  },
+  {
+   "mode": "look",
+   "title": "shape 与 dtypes",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "print(df.shape)\ndf.dtypes",
+   "note": "shape 是 (行数, 列数)。dtypes 给出每列的类型：数字列是 int64 / float64，文字列是 object。有缺失值的整数列会变成 float64。",
+   "printed": "(6, 6)\n",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [],
+   "usedRows": [],
+   "result": {
+    "type": "Series",
+    "name": null,
+    "index": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "values": [
+     "object",
+     "object",
+     "object",
+     "int64",
+     "int64",
+     "float64"
+    ],
+    "dtype": "object",
+    "indexName": ""
+   }
+  },
+  {
+   "mode": "look",
+   "title": "describe() 统计概览",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.describe()",
+   "note": "describe() 对数字列计算个数、平均值、标准差、最小值、四分位数和最大值。count 少于行数说明有缺失值。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "语文",
+    "数学",
+    "英语"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "count",
+     "mean",
+     "std",
+     "min",
+     "25%",
+     "50%",
+     "75%",
+     "max"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "6.0",
+      "6.0",
+      "5.0"
+     ],
+     [
+      "83.0",
+      "85.0",
+      "83.2"
+     ],
+     [
+      "12.52",
+      "10.86",
+      "10.18"
+     ],
+     [
+      "62.0",
+      "70.0",
+      "68.0"
+     ],
+     [
+      "77.5",
+      "78.0",
+      "79.0"
+     ],
+     [
+      "86.5",
+      "85.0",
+      "85.0"
+     ],
+     [
+      "91.0",
+      "93.5",
+      "90.0"
+     ],
+     [
+      "96.0",
+      "98.0",
+      "94.0"
+     ]
+    ],
+    "dtypes": {
+     "语文": "float64",
+     "数学": "float64",
+     "英语": "float64"
+    },
+    "shape": [
+     8,
+     3
+    ]
+   }
+  },
+  {
+   "mode": "look",
+   "title": "取一列：df['数学']",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df['数学']",
+   "note": "用列名取一列，得到 Series（一维，带索引）。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "数学"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "Series",
+    "name": "数学",
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "values": [
+     "95",
+     "81",
+     "98",
+     "77",
+     "70",
+     "89"
+    ],
+    "dtype": "int64",
+    "indexName": ""
+   }
+  },
+  {
+   "mode": "look",
+   "title": "取多列",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df[['姓名', '数学']]",
+   "note": "传入列名列表（注意两层方括号），得到只含这几列的新 DataFrame。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "姓名",
+    "数学"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "数学"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "95"
+     ],
+     [
+      "小红",
+      "81"
+     ],
+     [
+      "小刚",
+      "98"
+     ],
+     [
+      "小丽",
+      "77"
+     ],
+     [
+      "小强",
+      "70"
+     ],
+     [
+      "小芳",
+      "89"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "数学": "int64"
+    },
+    "shape": [
+     6,
+     2
+    ]
+   }
+  },
+  {
+   "mode": "filter",
+   "title": "条件筛选",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df[df['数学'] >= 90]",
+   "note": "df['数学'] >= 90 得到一列 True/False，放进 df[...] 里只保留 True 的行。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "数学"
+   ],
+   "usedRows": [
+    0,
+    2
+   ],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "2"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     2,
+     6
+    ]
+   }
+  },
+  {
+   "mode": "filter",
+   "title": "多个条件 & |",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df[(df['班级'] == '一班') & (df['语文'] > 80)]",
+   "note": "多个条件用 &（且）、|（或）连接，每个条件都要加括号。不能用 and / or。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "班级",
+    "语文"
+   ],
+   "usedRows": [
+    0,
+    1
+   ],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     2,
+     6
+    ]
+   }
+  },
+  {
+   "mode": "filter",
+   "title": "loc 按标签取行列",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.loc[1:3, ['姓名', '英语']]",
+   "note": "loc[行标签, 列名]：按标签选择，切片 1:3 包含 3。iloc 按位置选择，切片不含结尾。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "姓名",
+    "英语"
+   ],
+   "usedRows": [
+    1,
+    2,
+    3
+   ],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "英语"
+    ],
+    "index": [
+     "1",
+     "2",
+     "3"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小红",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "90.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "英语": "float64"
+    },
+    "shape": [
+     3,
+     2
+    ]
+   }
+  },
+  {
+   "mode": "filter",
+   "title": "sort_values 排序",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.sort_values('数学', ascending=False)",
+   "note": "按某列排序，ascending=False 为降序。返回新表，原表不变；行索引跟着行一起走。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "数学"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "2",
+     "0",
+     "5",
+     "1",
+     "3",
+     "4"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   }
+  },
+  {
+   "mode": "filter",
+   "title": "新增计算列",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df['总分'] = df['语文'] + df['数学']\ndf[['姓名', '总分']]",
+   "note": "列之间可以直接做加减乘除，结果按行对齐。给新列名赋值就添加了一列。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "语文",
+    "数学"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "总分"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "183"
+     ],
+     [
+      "小红",
+      "173"
+     ],
+     [
+      "小刚",
+      "173"
+     ],
+     [
+      "小丽",
+      "162"
+     ],
+     [
+      "小强",
+      "132"
+     ],
+     [
+      "小芳",
+      "185"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "总分": "int64"
+    },
+    "shape": [
+     6,
+     2
+    ]
+   }
+  },
+  {
+   "mode": "stats",
+   "title": "mean / max 列统计",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df[['语文', '数学', '英语']].mean()",
+   "note": "mean() 按列求平均，结果是 Series。sum()、max()、min()、median() 用法相同。缺失值会被自动跳过。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "语文",
+    "数学",
+    "英语"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "Series",
+    "name": null,
+    "index": [
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "values": [
+     "83.0",
+     "85.0",
+     "83.2"
+    ],
+    "dtype": "float64",
+    "indexName": ""
+   }
+  },
+  {
+   "mode": "stats",
+   "title": "value_counts 计数",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df['班级'].value_counts()",
+   "note": "value_counts() 统计每个值出现了几次，按次数从多到少排列。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "班级"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "Series",
+    "name": "count",
+    "index": [
+     "一班",
+     "二班"
+    ],
+    "values": [
+     "3",
+     "3"
+    ],
+    "dtype": "int64",
+    "indexName": "班级"
+   }
+  },
+  {
+   "mode": "stats",
+   "title": "groupby 分组平均",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.groupby('班级')['数学'].mean()",
+   "note": "groupby('班级') 把行按班级分成几组，再对每组的数学求平均。分组 → 计算 → 合并，是数据分析最常用的操作。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "班级",
+    "数学"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "Series",
+    "name": "数学",
+    "index": [
+     "一班",
+     "二班"
+    ],
+    "values": [
+     "82.0",
+     "88.0"
+    ],
+    "dtype": "float64",
+    "indexName": "班级"
+   }
+  },
+  {
+   "mode": "stats",
+   "title": "groupby 多列多统计",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.groupby('性别')[['语文', '英语']].agg(['mean', 'max'])",
+   "note": "agg 一次计算多种统计，结果的列分两层：科目、统计方法。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "性别",
+    "语文",
+    "英语"
+   ],
+   "usedRows": [],
+   "result": {
+    "type": "DataFrame",
+    "columns": [
+     "语文 mean",
+     "语文 max",
+     "英语 mean",
+     "英语 max"
+    ],
+    "index": [
+     "女",
+     "男"
+    ],
+    "indexName": "性别",
+    "rows": [
+     [
+      "91.0",
+      "96",
+      "89.67",
+      "94.0"
+     ],
+     [
+      "75.0",
+      "88",
+      "73.5",
+      "79.0"
+     ]
+    ],
+    "dtypes": {
+     "语文 mean": "float64",
+     "语文 max": "int64",
+     "英语 mean": "float64",
+     "英语 max": "float64"
+    },
+    "shape": [
+     2,
+     4
+    ]
+   }
+  },
+  {
+   "mode": "stats",
+   "title": "isna 找缺失值",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df.isna().sum()",
+   "note": "isna() 把缺失位置标为 True，再 sum() 就是每列缺了几个。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [],
+   "usedRows": [],
+   "result": {
+    "type": "Series",
+    "name": null,
+    "index": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "values": [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1"
+    ],
+    "dtype": "int64",
+    "indexName": ""
+   }
+  },
+  {
+   "mode": "stats",
+   "title": "fillna 填补缺失",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')",
+   "code": "df['英语'].fillna(df['英语'].mean())",
+   "note": "fillna 用指定值填补缺失，这里用英语的平均分。dropna() 则直接删掉含缺失值的行。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "英语"
+   ],
+   "usedRows": [
+    4
+   ],
+   "result": {
+    "type": "Series",
+    "name": "英语",
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "values": [
+     "79.0",
+     "94.0",
+     "68.0",
+     "90.0",
+     "83.2",
+     "85.0"
+    ],
+    "dtype": "float64",
+    "indexName": ""
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "折线图 plot",
+   "setup": "import pandas as pd\nimport matplotlib.pyplot as plt\nsales = pd.read_csv('sales.csv')",
+   "code": "fig, ax = plt.subplots(figsize=(6, 3.4))\nax.plot(sales['月份'], sales['销售额'], marker='o')\nax.set_title('上半年销售额')\nax.set_xlabel('月份')\nax.set_ylabel('万元')",
+   "note": "折线图适合看随时间变化的趋势。plt.subplots() 得到画布 fig 和坐标轴 ax，在 ax 上画图、加标题和坐标轴标签。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "月份",
+     "销售额",
+     "成本"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "1月",
+      "120",
+      "80"
+     ],
+     [
+      "2月",
+      "135",
+      "90"
+     ],
+     [
+      "3月",
+      "128",
+      "85"
+     ],
+     [
+      "4月",
+      "160",
+      "100"
+     ],
+     [
+      "5月",
+      "175",
+      "110"
+     ],
+     [
+      "6月",
+      "190",
+      "118"
+     ]
+    ],
+    "dtypes": {
+     "月份": "object",
+     "销售额": "int64",
+     "成本": "int64"
+    },
+    "shape": [
+     6,
+     3
+    ]
+   },
+   "usedCols": [
+    "月份",
+    "销售额"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 385.46875 247.199125\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 247.199125 \nL 385.46875 247.199125 \nL 385.46875 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 43.46875 210.480375 \nL 378.26875 210.480375 \nL 378.26875 21.984375 \nL 43.46875 21.984375 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"58.686932\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"58.686932\" y=\"224.760063\" transform=\"rotate(-0 58.686932 224.760063)\">1月</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"119.559659\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"119.559659\" y=\"224.760063\" transform=\"rotate(-0 119.559659 224.760063)\">2月</text>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_3\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"180.432386\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"180.432386\" y=\"224.760063\" transform=\"rotate(-0 180.432386 224.760063)\">3月</text>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"241.305114\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"241.305114\" y=\"224.760063\" transform=\"rotate(-0 241.305114 224.760063)\">4月</text>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"302.177841\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"302.177841\" y=\"224.760063\" transform=\"rotate(-0 302.177841 224.760063)\">5月</text>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"363.050568\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"363.050568\" y=\"224.760063\" transform=\"rotate(-0 363.050568 224.760063)\">6月</text>\n     </g>\n    </g>\n    <g id=\"text_7\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"210.86875\" y=\"238.019438\" transform=\"rotate(-0 210.86875 238.019438)\">月份</text>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_7\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"201.912375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_8\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"205.552219\" transform=\"rotate(-0 36.46875 205.552219)\">120</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"177.432375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"181.072219\" transform=\"rotate(-0 36.46875 181.072219)\">130</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_9\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"152.952375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_10\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"156.592219\" transform=\"rotate(-0 36.46875 156.592219)\">140</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_10\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"128.472375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"132.112219\" transform=\"rotate(-0 36.46875 132.112219)\">150</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_11\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"103.992375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"107.632219\" transform=\"rotate(-0 36.46875 107.632219)\">160</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"79.512375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_13\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"83.152219\" transform=\"rotate(-0 36.46875 83.152219)\">170</text>\n     </g>\n    </g>\n    <g id=\"ytick_7\">\n     <g id=\"line2d_13\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"55.032375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_14\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"58.672219\" transform=\"rotate(-0 36.46875 58.672219)\">180</text>\n     </g>\n    </g>\n    <g id=\"ytick_8\">\n     <g id=\"line2d_14\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"30.552375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_15\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"34.192219\" transform=\"rotate(-0 36.46875 34.192219)\">190</text>\n     </g>\n    </g>\n    <g id=\"text_16\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"14.479688\" y=\"116.232375\" transform=\"rotate(-90 14.479688 116.232375)\">万元</text>\n    </g>\n   </g>\n   <g id=\"line2d_15\">\n    <path d=\"M 58.686932 201.912375 \nL 119.559659 165.192375 \nL 180.432386 182.328375 \nL 241.305114 103.992375 \nL 302.177841 67.272375 \nL 363.050568 30.552375 \n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square\"/>\n    <defs>\n     <path id=\"m960fa7915e\" d=\"M 0 3 \nC 0.795609 3 1.55874 2.683901 2.12132 2.12132 \nC 2.683901 1.55874 3 0.795609 3 0 \nC 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 \nC 1.55874 -2.683901 0.795609 -3 0 -3 \nC -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 \nC -2.683901 -1.55874 -3 -0.795609 -3 0 \nC -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 \nC -1.55874 2.683901 -0.795609 3 0 3 \nz\n\" style=\"stroke: #1f77b4\"/>\n    </defs>\n    <g clip-path=\"url(#pc62646c4d2)\">\n     <use xlink:href=\"#m960fa7915e\" x=\"58.686932\" y=\"201.912375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"119.559659\" y=\"165.192375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"180.432386\" y=\"182.328375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"241.305114\" y=\"103.992375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"302.177841\" y=\"67.272375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"363.050568\" y=\"30.552375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n    </g>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 43.46875 210.480375 \nL 43.46875 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 378.26875 210.480375 \nL 378.26875 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 43.46875 210.480375 \nL 378.26875 210.480375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 43.46875 21.984375 \nL 378.26875 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_17\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"210.86875\" y=\"15.984375\" transform=\"rotate(-0 210.86875 15.984375)\">上半年销售额</text>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pc62646c4d2\">\n   <rect x=\"43.46875\" y=\"21.984375\" width=\"334.8\" height=\"188.496\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "两条线与图例",
+   "setup": "import pandas as pd\nimport matplotlib.pyplot as plt\nsales = pd.read_csv('sales.csv')",
+   "code": "fig, ax = plt.subplots(figsize=(6, 3.4))\nax.plot(sales['月份'], sales['销售额'], marker='o', label='销售额')\nax.plot(sales['月份'], sales['成本'], marker='s', linestyle='--', label='成本')\nax.set_title('销售额与成本')\nax.legend()",
+   "note": "同一个 ax 上画多条线，用 label 命名，再调用 legend() 显示图例。linestyle='--' 是虚线。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "月份",
+     "销售额",
+     "成本"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "1月",
+      "120",
+      "80"
+     ],
+     [
+      "2月",
+      "135",
+      "90"
+     ],
+     [
+      "3月",
+      "128",
+      "85"
+     ],
+     [
+      "4月",
+      "160",
+      "100"
+     ],
+     [
+      "5月",
+      "175",
+      "110"
+     ],
+     [
+      "6月",
+      "190",
+      "118"
+     ]
+    ],
+    "dtypes": {
+     "月份": "object",
+     "销售额": "int64",
+     "成本": "int64"
+    },
+    "shape": [
+     6,
+     3
+    ]
+   },
+   "usedCols": [
+    "月份",
+    "销售额",
+    "成本"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 372.209375 233.904125\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 233.904125 \nL 372.209375 233.904125 \nL 372.209375 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 30.209375 210.44475 \nL 365.009375 210.44475 \nL 365.009375 21.94875 \nL 30.209375 21.94875 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"45.427557\" y=\"210.44475\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"45.427557\" y=\"224.724437\" transform=\"rotate(-0 45.427557 224.724437)\">1月</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"106.300284\" y=\"210.44475\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"106.300284\" y=\"224.724437\" transform=\"rotate(-0 106.300284 224.724437)\">2月</text>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_3\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"167.173011\" y=\"210.44475\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"167.173011\" y=\"224.724437\" transform=\"rotate(-0 167.173011 224.724437)\">3月</text>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"228.045739\" y=\"210.44475\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"228.045739\" y=\"224.724437\" transform=\"rotate(-0 228.045739 224.724437)\">4月</text>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"288.918466\" y=\"210.44475\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"288.918466\" y=\"224.724437\" transform=\"rotate(-0 288.918466 224.724437)\">5月</text>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"349.791193\" y=\"210.44475\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"349.791193\" y=\"224.724437\" transform=\"rotate(-0 349.791193 224.724437)\">6月</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_7\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"201.87675\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_7\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"205.516594\" transform=\"rotate(-0 23.209375 205.516594)\">80</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"170.720386\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_8\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"174.36023\" transform=\"rotate(-0 23.209375 174.36023)\">100</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_9\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"139.564023\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"143.203866\" transform=\"rotate(-0 23.209375 143.203866)\">120</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_10\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"108.407659\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_10\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"112.047503\" transform=\"rotate(-0 23.209375 112.047503)\">140</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_11\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"77.251295\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"80.891139\" transform=\"rotate(-0 23.209375 80.891139)\">160</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"46.094932\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"49.734776\" transform=\"rotate(-0 23.209375 49.734776)\">180</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"line2d_13\">\n    <path d=\"M 45.427557 139.564023 \nL 106.300284 116.19675 \nL 167.173011 127.101477 \nL 228.045739 77.251295 \nL 288.918466 53.884023 \nL 349.791193 30.51675 \n\" clip-path=\"url(#pded9ee9814)\" style=\"fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square\"/>\n    <defs>\n     <path id=\"m960fa7915e\" d=\"M 0 3 \nC 0.795609 3 1.55874 2.683901 2.12132 2.12132 \nC 2.683901 1.55874 3 0.795609 3 0 \nC 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 \nC 1.55874 -2.683901 0.795609 -3 0 -3 \nC -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 \nC -2.683901 -1.55874 -3 -0.795609 -3 0 \nC -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 \nC -1.55874 2.683901 -0.795609 3 0 3 \nz\n\" style=\"stroke: #1f77b4\"/>\n    </defs>\n    <g clip-path=\"url(#pded9ee9814)\">\n     <use xlink:href=\"#m960fa7915e\" x=\"45.427557\" y=\"139.564023\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"106.300284\" y=\"116.19675\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"167.173011\" y=\"127.101477\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"228.045739\" y=\"77.251295\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"288.918466\" y=\"53.884023\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#m960fa7915e\" x=\"349.791193\" y=\"30.51675\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n    </g>\n   </g>\n   <g id=\"line2d_14\">\n    <path d=\"M 45.427557 201.87675 \nL 106.300284 186.298568 \nL 167.173011 194.087659 \nL 228.045739 170.720386 \nL 288.918466 155.142205 \nL 349.791193 142.679659 \n\" clip-path=\"url(#pded9ee9814)\" style=\"fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ff7f0e; stroke-width: 1.5\"/>\n    <defs>\n     <path id=\"m2d560a20ae\" d=\"M -3 3 \nL 3 3 \nL 3 -3 \nL -3 -3 \nz\n\" style=\"stroke: #ff7f0e; stroke-linejoin: miter\"/>\n    </defs>\n    <g clip-path=\"url(#pded9ee9814)\">\n     <use xlink:href=\"#m2d560a20ae\" x=\"45.427557\" y=\"201.87675\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n     <use xlink:href=\"#m2d560a20ae\" x=\"106.300284\" y=\"186.298568\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n     <use xlink:href=\"#m2d560a20ae\" x=\"167.173011\" y=\"194.087659\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n     <use xlink:href=\"#m2d560a20ae\" x=\"228.045739\" y=\"170.720386\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n     <use xlink:href=\"#m2d560a20ae\" x=\"288.918466\" y=\"155.142205\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n     <use xlink:href=\"#m2d560a20ae\" x=\"349.791193\" y=\"142.679659\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n    </g>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 30.209375 210.44475 \nL 30.209375 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 365.009375 210.44475 \nL 365.009375 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 30.209375 210.44475 \nL 365.009375 210.44475 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 30.209375 21.94875 \nL 365.009375 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_13\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"197.609375\" y=\"15.94875\" transform=\"rotate(-0 197.609375 15.94875)\">销售额与成本</text>\n   </g>\n   <g id=\"legend_1\">\n    <g id=\"patch_7\">\n     <path d=\"M 37.209375 58.478437 \nL 99.209375 58.478437 \nQ 101.209375 58.478437 101.209375 56.478437 \nL 101.209375 28.94875 \nQ 101.209375 26.94875 99.209375 26.94875 \nL 37.209375 26.94875 \nQ 35.209375 26.94875 35.209375 28.94875 \nL 35.209375 56.478437 \nQ 35.209375 58.478437 37.209375 58.478437 \nz\n\" style=\"fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter\"/>\n    </g>\n    <g id=\"line2d_15\">\n     <path d=\"M 39.209375 34.739375 \nL 49.209375 34.739375 \nL 59.209375 34.739375 \n\" style=\"fill: none; stroke: #1f77b4; stroke-width: 1.5; stroke-linecap: square\"/>\n     <g>\n      <use xlink:href=\"#m960fa7915e\" x=\"49.209375\" y=\"34.739375\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     </g>\n    </g>\n    <g id=\"text_14\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"67.209375\" y=\"38.239375\" transform=\"rotate(-0 67.209375 38.239375)\">销售额</text>\n    </g>\n    <g id=\"line2d_16\">\n     <path d=\"M 39.209375 48.99875 \nL 49.209375 48.99875 \nL 59.209375 48.99875 \n\" style=\"fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ff7f0e; stroke-width: 1.5\"/>\n     <g>\n      <use xlink:href=\"#m2d560a20ae\" x=\"49.209375\" y=\"48.99875\" style=\"fill: #ff7f0e; stroke: #ff7f0e; stroke-linejoin: miter\"/>\n     </g>\n    </g>\n    <g id=\"text_15\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"67.209375\" y=\"52.49875\" transform=\"rotate(-0 67.209375 52.49875)\">成本</text>\n    </g>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pded9ee9814\">\n   <rect x=\"30.209375\" y=\"21.94875\" width=\"334.8\" height=\"188.496\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "柱状图 bar",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')\nimport matplotlib.pyplot as plt",
+   "code": "avg = df.groupby('班级')['数学'].mean()\nfig, ax = plt.subplots(figsize=(6, 3.4))\nax.bar(avg.index, avg.values, color=['#5b8c6a', '#c08a3e'])\nax.set_title('各班数学平均分')\nax.set_ylim(0, 100)",
+   "note": "柱状图适合比较不同类别的数值。常见流程：先用 pandas 分组统计，再把结果交给 Matplotlib 画图。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "班级",
+    "数学"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 372.209375 233.93975\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 233.93975 \nL 372.209375 233.93975 \nL 372.209375 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 30.209375 210.480375 \nL 365.009375 210.480375 \nL 365.009375 21.984375 \nL 30.209375 21.984375 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 45.427557 210.480375 \nL 180.700284 210.480375 \nL 180.700284 55.913655 \nL 45.427557 55.913655 \nz\n\" clip-path=\"url(#pe28d080c7a)\" style=\"fill: #5b8c6a\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 214.518466 210.480375 \nL 349.791193 210.480375 \nL 349.791193 44.603895 \nL 214.518466 44.603895 \nz\n\" clip-path=\"url(#pe28d080c7a)\" style=\"fill: #c08a3e\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"113.06392\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"113.06392\" y=\"224.760063\" transform=\"rotate(-0 113.06392 224.760063)\">一班</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"282.15483\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"282.15483\" y=\"224.760063\" transform=\"rotate(-0 282.15483 224.760063)\">二班</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_3\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"214.120219\" transform=\"rotate(-0 23.209375 214.120219)\">0</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"172.781175\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"176.421019\" transform=\"rotate(-0 23.209375 176.421019)\">20</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"135.081975\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"138.721819\" transform=\"rotate(-0 23.209375 138.721819)\">40</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"97.382775\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"101.022619\" transform=\"rotate(-0 23.209375 101.022619)\">60</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_7\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"59.683575\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_7\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"63.323419\" transform=\"rotate(-0 23.209375 63.323419)\">80</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"21.984375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_8\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"25.624219\" transform=\"rotate(-0 23.209375 25.624219)\">100</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 30.209375 210.480375 \nL 30.209375 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 365.009375 210.480375 \nL 365.009375 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_7\">\n    <path d=\"M 30.209375 210.480375 \nL 365.009375 210.480375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_8\">\n    <path d=\"M 30.209375 21.984375 \nL 365.009375 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_9\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"197.609375\" y=\"15.984375\" transform=\"rotate(-0 197.609375 15.984375)\">各班数学平均分</text>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pe28d080c7a\">\n   <rect x=\"30.209375\" y=\"21.984375\" width=\"334.8\" height=\"188.496\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "散点图 scatter",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')\nimport matplotlib.pyplot as plt",
+   "code": "fig, ax = plt.subplots(figsize=(6, 3.4))\nax.scatter(df['语文'], df['数学'], s=60)\nfor _, r in df.iterrows():\n    ax.annotate(r['姓名'], (r['语文'], r['数学']), xytext=(4, 4), textcoords='offset points')\nax.set_xlabel('语文')\nax.set_ylabel('数学')",
+   "note": "散点图看两个变量之间有没有关系：每个点是一个学生，横坐标语文、纵坐标数学。annotate 给点加文字标注。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "姓名",
+    "语文",
+    "数学"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 390.281818 235.148313\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 235.148313 \nL 390.281818 235.148313 \nL 390.281818 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 39.5 198.407688 \nL 374.3 198.407688 \nL 374.3 9.911688 \nL 39.5 9.911688 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"PathCollection_1\">\n    <defs>\n     <path id=\"ma545c2d927\" d=\"M 0 3.872983 \nC 1.027127 3.872983 2.012324 3.464901 2.738613 2.738613 \nC 3.464901 2.012324 3.872983 1.027127 3.872983 0 \nC 3.872983 -1.027127 3.464901 -2.012324 2.738613 -2.738613 \nC 2.012324 -3.464901 1.027127 -3.872983 0 -3.872983 \nC -1.027127 -3.872983 -2.012324 -3.464901 -2.738613 -2.738613 \nC -3.464901 -2.012324 -3.872983 -1.027127 -3.872983 0 \nC -3.872983 1.027127 -3.464901 2.012324 -2.738613 2.738613 \nC -2.012324 3.464901 -1.027127 3.872983 0 3.872983 \nz\n\" style=\"stroke: #1f77b4\"/>\n    </defs>\n    <g clip-path=\"url(#p2af37f504b)\">\n     <use xlink:href=\"#ma545c2d927\" x=\"287.466845\" y=\"36.839687\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#ma545c2d927\" x=\"323.274332\" y=\"122.519687\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#ma545c2d927\" x=\"171.092513\" y=\"18.479687\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#ma545c2d927\" x=\"260.61123\" y=\"146.999687\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#ma545c2d927\" x=\"54.718182\" y=\"189.839687\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n     <use xlink:href=\"#ma545c2d927\" x=\"359.081818\" y=\"73.559687\" style=\"fill: #1f77b4; stroke: #1f77b4\"/>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"81.573797\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"81.573797\" y=\"212.687375\" transform=\"rotate(-0 81.573797 212.687375)\">65</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"126.333155\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"126.333155\" y=\"212.687375\" transform=\"rotate(-0 126.333155 212.687375)\">70</text>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_3\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"171.092513\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"171.092513\" y=\"212.687375\" transform=\"rotate(-0 171.092513 212.687375)\">75</text>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"215.851872\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"215.851872\" y=\"212.687375\" transform=\"rotate(-0 215.851872 212.687375)\">80</text>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"260.61123\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"260.61123\" y=\"212.687375\" transform=\"rotate(-0 260.61123 212.687375)\">85</text>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"305.370588\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"305.370588\" y=\"212.687375\" transform=\"rotate(-0 305.370588 212.687375)\">90</text>\n     </g>\n    </g>\n    <g id=\"xtick_7\">\n     <g id=\"line2d_7\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"350.129947\" y=\"198.407688\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_7\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"350.129947\" y=\"212.687375\" transform=\"rotate(-0 350.129947 212.687375)\">95</text>\n     </g>\n    </g>\n    <g id=\"text_8\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"206.9\" y=\"225.968625\" transform=\"rotate(-0 206.9 225.968625)\">语文</text>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_8\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"39.5\" y=\"189.839687\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"32.5\" y=\"193.479531\" transform=\"rotate(-0 32.5 193.479531)\">70</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_9\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"39.5\" y=\"159.239687\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_10\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"32.5\" y=\"162.879531\" transform=\"rotate(-0 32.5 162.879531)\">75</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_10\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"39.5\" y=\"128.639687\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"32.5\" y=\"132.279531\" transform=\"rotate(-0 32.5 132.279531)\">80</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_11\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"39.5\" y=\"98.039687\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"32.5\" y=\"101.679531\" transform=\"rotate(-0 32.5 101.679531)\">85</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"39.5\" y=\"67.439687\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_13\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"32.5\" y=\"71.079531\" transform=\"rotate(-0 32.5 71.079531)\">90</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_13\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"39.5\" y=\"36.839687\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_14\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"32.5\" y=\"40.479531\" transform=\"rotate(-0 32.5 40.479531)\">95</text>\n     </g>\n    </g>\n    <g id=\"text_15\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"14.520312\" y=\"104.159688\" transform=\"rotate(-90 14.520312 104.159688)\">数学</text>\n    </g>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 39.5 198.407687 \nL 39.5 9.911687 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 374.3 198.407687 \nL 374.3 9.911687 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 39.5 198.407688 \nL 374.3 198.407688 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 39.5 9.911688 \nL 374.3 9.911688 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_16\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"291.466845\" y=\"32.839687\" transform=\"rotate(-0 291.466845 32.839687)\">小明</text>\n   </g>\n   <g id=\"text_17\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"327.274332\" y=\"118.519687\" transform=\"rotate(-0 327.274332 118.519687)\">小红</text>\n   </g>\n   <g id=\"text_18\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"175.092513\" y=\"14.479687\" transform=\"rotate(-0 175.092513 14.479687)\">小刚</text>\n   </g>\n   <g id=\"text_19\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"264.61123\" y=\"142.999687\" transform=\"rotate(-0 264.61123 142.999687)\">小丽</text>\n   </g>\n   <g id=\"text_20\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"58.718182\" y=\"185.839687\" transform=\"rotate(-0 58.718182 185.839687)\">小强</text>\n   </g>\n   <g id=\"text_21\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"363.081818\" y=\"69.559688\" transform=\"rotate(-0 363.081818 69.559688)\">小芳</text>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"p2af37f504b\">\n   <rect x=\"39.5\" y=\"9.911688\" width=\"334.8\" height=\"188.496\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "饼图 pie",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')\nimport matplotlib.pyplot as plt",
+   "code": "counts = df['性别'].value_counts()\nfig, ax = plt.subplots(figsize=(6, 3.4))\nax.pie(counts.values, labels=counts.index, autopct='%1.0f%%')\nax.set_title('男女比例')",
+   "note": "饼图显示各部分占整体的比例，autopct 在扇形上写百分比。类别很多时不宜用饼图。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "性别"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 202.896 217.631625\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 217.631625 \nL 202.896 217.631625 \nL 202.896 -0 \nL 0 -0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 176.8464 116.183625 \nC 176.8464 96.194395 168.89724 77.003425 154.76272 62.868905 \nC 140.6282 48.734385 121.43723 40.785225 101.448 40.785225 \nC 81.45877 40.785225 62.2678 48.734385 48.13328 62.868905 \nC 33.99876 77.003425 26.0496 96.194395 26.0496 116.183625 \nL 101.448 116.183625 \nz\n\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 26.0496 116.183625 \nC 26.0496 136.172855 33.99876 155.363825 48.13328 169.498345 \nC 62.2678 183.632865 81.45877 191.582025 101.448 191.582025 \nC 121.43723 191.582025 140.6282 183.632865 154.76272 169.498345 \nC 168.89724 155.363825 176.8464 136.172855 176.8464 116.183625 \nL 101.448 116.183625 \nz\n\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\"/>\n   <g id=\"matplotlib.axis_2\"/>\n   <g id=\"text_1\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"101.448\" y=\"35.895385\" transform=\"rotate(-0 101.448 35.895385)\">男</text>\n   </g>\n   <g id=\"text_2\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"101.448\" y=\"73.594585\" transform=\"rotate(-0 101.448 73.594585)\">50%</text>\n   </g>\n   <g id=\"text_3\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"101.448\" y=\"201.771865\" transform=\"rotate(-0 101.448 201.771865)\">女</text>\n   </g>\n   <g id=\"text_4\">\n    <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"101.448\" y=\"164.072665\" transform=\"rotate(-0 101.448 164.072665)\">50%</text>\n   </g>\n   <g id=\"text_5\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"101.448\" y=\"15.935625\" transform=\"rotate(-0 101.448 15.935625)\">男女比例</text>\n   </g>\n  </g>\n </g>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "直方图 hist",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')\nimport matplotlib.pyplot as plt",
+   "code": "fig, ax = plt.subplots(figsize=(6, 3.4))\nax.hist(df['语文'], bins=[60, 70, 80, 90, 100], edgecolor='white')\nax.set_title('语文成绩分布')\nax.set_xlabel('分数段')\nax.set_ylabel('人数')",
+   "note": "直方图把数值分成若干区间（bins），统计每个区间有几个数据，用来看分布。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "语文"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 390.1 247.199125\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 247.199125 \nL 390.1 247.199125 \nL 390.1 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 48.1 210.480375 \nL 382.9 210.480375 \nL 382.9 21.984375 \nL 48.1 21.984375 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 63.318182 210.480375 \nL 139.409091 210.480375 \nL 139.409091 120.720375 \nL 63.318182 120.720375 \nz\n\" clip-path=\"url(#p55a4d5a4d0)\" style=\"fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 139.409091 210.480375 \nL 215.5 210.480375 \nL 215.5 120.720375 \nL 139.409091 120.720375 \nz\n\" clip-path=\"url(#p55a4d5a4d0)\" style=\"fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 215.5 210.480375 \nL 291.590909 210.480375 \nL 291.590909 30.960375 \nL 215.5 30.960375 \nz\n\" clip-path=\"url(#p55a4d5a4d0)\" style=\"fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 291.590909 210.480375 \nL 367.681818 210.480375 \nL 367.681818 30.960375 \nL 291.590909 30.960375 \nz\n\" clip-path=\"url(#p55a4d5a4d0)\" style=\"fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"63.318182\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"63.318182\" y=\"224.760063\" transform=\"rotate(-0 63.318182 224.760063)\">60</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"101.363636\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"101.363636\" y=\"224.760063\" transform=\"rotate(-0 101.363636 224.760063)\">65</text>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_3\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"139.409091\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"139.409091\" y=\"224.760063\" transform=\"rotate(-0 139.409091 224.760063)\">70</text>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"177.454545\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"177.454545\" y=\"224.760063\" transform=\"rotate(-0 177.454545 224.760063)\">75</text>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"215.5\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"215.5\" y=\"224.760063\" transform=\"rotate(-0 215.5 224.760063)\">80</text>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"253.545455\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"253.545455\" y=\"224.760063\" transform=\"rotate(-0 253.545455 224.760063)\">85</text>\n     </g>\n    </g>\n    <g id=\"xtick_7\">\n     <g id=\"line2d_7\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"291.590909\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_7\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"291.590909\" y=\"224.760063\" transform=\"rotate(-0 291.590909 224.760063)\">90</text>\n     </g>\n    </g>\n    <g id=\"xtick_8\">\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"329.636364\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_8\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"329.636364\" y=\"224.760063\" transform=\"rotate(-0 329.636364 224.760063)\">95</text>\n     </g>\n    </g>\n    <g id=\"xtick_9\">\n     <g id=\"line2d_9\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"367.681818\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"367.681818\" y=\"224.760063\" transform=\"rotate(-0 367.681818 224.760063)\">100</text>\n     </g>\n    </g>\n    <g id=\"text_10\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"215.5\" y=\"238.019438\" transform=\"rotate(-0 215.5 238.019438)\">分数段</text>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_10\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"214.120219\" transform=\"rotate(-0 41.1 214.120219)\">0.00</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_11\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"188.040375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"191.680219\" transform=\"rotate(-0 41.1 191.680219)\">0.25</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"165.600375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_13\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"169.240219\" transform=\"rotate(-0 41.1 169.240219)\">0.50</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_13\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"143.160375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_14\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"146.800219\" transform=\"rotate(-0 41.1 146.800219)\">0.75</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_14\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"120.720375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_15\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"124.360219\" transform=\"rotate(-0 41.1 124.360219)\">1.00</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_15\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"98.280375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_16\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"101.920219\" transform=\"rotate(-0 41.1 101.920219)\">1.25</text>\n     </g>\n    </g>\n    <g id=\"ytick_7\">\n     <g id=\"line2d_16\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"75.840375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_17\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"79.480219\" transform=\"rotate(-0 41.1 79.480219)\">1.50</text>\n     </g>\n    </g>\n    <g id=\"ytick_8\">\n     <g id=\"line2d_17\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"53.400375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_18\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"57.040219\" transform=\"rotate(-0 41.1 57.040219)\">1.75</text>\n     </g>\n    </g>\n    <g id=\"ytick_9\">\n     <g id=\"line2d_18\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"48.1\" y=\"30.960375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_19\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"41.1\" y=\"34.600219\" transform=\"rotate(-0 41.1 34.600219)\">2.00</text>\n     </g>\n    </g>\n    <g id=\"text_20\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"14.479688\" y=\"116.232375\" transform=\"rotate(-90 14.479688 116.232375)\">人数</text>\n    </g>\n   </g>\n   <g id=\"patch_7\">\n    <path d=\"M 48.1 210.480375 \nL 48.1 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_8\">\n    <path d=\"M 382.9 210.480375 \nL 382.9 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_9\">\n    <path d=\"M 48.1 210.480375 \nL 382.9 210.480375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_10\">\n    <path d=\"M 48.1 21.984375 \nL 382.9 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_21\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"215.5\" y=\"15.984375\" transform=\"rotate(-0 215.5 15.984375)\">语文成绩分布</text>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"p55a4d5a4d0\">\n   <rect x=\"48.1\" y=\"21.984375\" width=\"334.8\" height=\"188.496\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "pandas 直接画图",
+   "setup": "import pandas as pd\ndf = pd.read_csv('scores.csv')\nimport matplotlib.pyplot as plt",
+   "code": "ax = df.set_index('姓名')[['语文', '数学', '英语']].plot(kind='bar', figsize=(6, 3.4))\nax.set_title('每人各科成绩')\nax.set_ylabel('分数')",
+   "note": "DataFrame.plot() 内部调用 Matplotlib，一行就能画出分组柱状图；返回的 ax 可以继续设置标题等。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "姓名",
+     "班级",
+     "性别",
+     "语文",
+     "数学",
+     "英语"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "小明",
+      "一班",
+      "男",
+      "88",
+      "95",
+      "79.0"
+     ],
+     [
+      "小红",
+      "一班",
+      "女",
+      "92",
+      "81",
+      "94.0"
+     ],
+     [
+      "小刚",
+      "二班",
+      "男",
+      "75",
+      "98",
+      "68.0"
+     ],
+     [
+      "小丽",
+      "二班",
+      "女",
+      "85",
+      "77",
+      "90.0"
+     ],
+     [
+      "小强",
+      "一班",
+      "男",
+      "62",
+      "70",
+      "NaN"
+     ],
+     [
+      "小芳",
+      "二班",
+      "女",
+      "96",
+      "89",
+      "85.0"
+     ]
+    ],
+    "dtypes": {
+     "姓名": "object",
+     "班级": "object",
+     "性别": "object",
+     "语文": "int64",
+     "数学": "int64",
+     "英语": "float64"
+    },
+    "shape": [
+     6,
+     6
+    ]
+   },
+   "usedCols": [
+    "姓名",
+    "语文",
+    "数学",
+    "英语"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 385.46875 257.93975\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 257.93975 \nL 385.46875 257.93975 \nL 385.46875 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 43.46875 210.480375 \nL 378.26875 210.480375 \nL 378.26875 21.984375 \nL 43.46875 21.984375 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 57.41875 210.480375 \nL 66.71875 210.480375 \nL 66.71875 49.278742 \nL 57.41875 49.278742 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 113.21875 210.480375 \nL 122.51875 210.480375 \nL 122.51875 41.951395 \nL 113.21875 41.951395 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 169.01875 210.480375 \nL 178.31875 210.480375 \nL 178.31875 73.09262 \nL 169.01875 73.09262 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 224.81875 210.480375 \nL 234.11875 210.480375 \nL 234.11875 54.774253 \nL 224.81875 54.774253 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_7\">\n    <path d=\"M 280.61875 210.480375 \nL 289.91875 210.480375 \nL 289.91875 96.906497 \nL 280.61875 96.906497 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_8\">\n    <path d=\"M 336.41875 210.480375 \nL 345.71875 210.480375 \nL 345.71875 34.624048 \nL 336.41875 34.624048 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_9\">\n    <path d=\"M 66.71875 210.480375 \nL 76.01875 210.480375 \nL 76.01875 36.455885 \nL 66.71875 36.455885 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"patch_10\">\n    <path d=\"M 122.51875 210.480375 \nL 131.81875 210.480375 \nL 131.81875 62.101599 \nL 122.51875 62.101599 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"patch_11\">\n    <path d=\"M 178.31875 210.480375 \nL 187.61875 210.480375 \nL 187.61875 30.960375 \nL 178.31875 30.960375 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"patch_12\">\n    <path d=\"M 234.11875 210.480375 \nL 243.41875 210.480375 \nL 243.41875 69.428946 \nL 234.11875 69.428946 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"patch_13\">\n    <path d=\"M 289.91875 210.480375 \nL 299.21875 210.480375 \nL 299.21875 82.251804 \nL 289.91875 82.251804 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"patch_14\">\n    <path d=\"M 345.71875 210.480375 \nL 355.01875 210.480375 \nL 355.01875 47.446906 \nL 345.71875 47.446906 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #ff7f0e\"/>\n   </g>\n   <g id=\"patch_15\">\n    <path d=\"M 76.01875 210.480375 \nL 85.31875 210.480375 \nL 85.31875 65.765273 \nL 76.01875 65.765273 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #2ca02c\"/>\n   </g>\n   <g id=\"patch_16\">\n    <path d=\"M 131.81875 210.480375 \nL 141.11875 210.480375 \nL 141.11875 38.287722 \nL 131.81875 38.287722 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #2ca02c\"/>\n   </g>\n   <g id=\"patch_17\">\n    <path d=\"M 187.61875 210.480375 \nL 196.91875 210.480375 \nL 196.91875 85.915477 \nL 187.61875 85.915477 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #2ca02c\"/>\n   </g>\n   <g id=\"patch_18\">\n    <path d=\"M 243.41875 210.480375 \nL 252.71875 210.480375 \nL 252.71875 45.615069 \nL 243.41875 45.615069 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #2ca02c\"/>\n   </g>\n   <g id=\"patch_19\">\n    <path d=\"M 299.21875 210.480375 \nL 308.51875 210.480375 \nL 308.51875 210.480375 \nL 299.21875 210.480375 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #2ca02c\"/>\n   </g>\n   <g id=\"patch_20\">\n    <path d=\"M 355.01875 210.480375 \nL 364.31875 210.480375 \nL 364.31875 54.774253 \nL 355.01875 54.774253 \nz\n\" clip-path=\"url(#pc62646c4d2)\" style=\"fill: #2ca02c\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"71.36875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif\" transform=\"translate(74.01875 237.480375) rotate(-90)\">小明</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"127.16875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif\" transform=\"translate(129.81875 237.480375) rotate(-90)\">小红</text>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_3\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"182.96875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif\" transform=\"translate(185.61875 237.480375) rotate(-90)\">小刚</text>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"238.76875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif\" transform=\"translate(241.41875 237.480375) rotate(-90)\">小丽</text>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"294.56875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif\" transform=\"translate(297.21875 237.480375) rotate(-90)\">小强</text>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"350.36875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif\" transform=\"translate(353.01875 237.480375) rotate(-90)\">小芳</text>\n     </g>\n    </g>\n    <g id=\"text_7\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"210.86875\" y=\"248.760063\" transform=\"rotate(-0 210.86875 248.760063)\">姓名</text>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_7\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"210.480375\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_8\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"214.120219\" transform=\"rotate(-0 36.46875 214.120219)\">0</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"173.84364\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"177.483484\" transform=\"rotate(-0 36.46875 177.483484)\">20</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_9\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"137.206906\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_10\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"140.846749\" transform=\"rotate(-0 36.46875 140.846749)\">40</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_10\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"100.570171\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"104.210015\" transform=\"rotate(-0 36.46875 104.210015)\">60</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_11\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"63.933436\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"67.57328\" transform=\"rotate(-0 36.46875 67.57328)\">80</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"43.46875\" y=\"27.296702\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_13\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"36.46875\" y=\"30.936545\" transform=\"rotate(-0 36.46875 30.936545)\">100</text>\n     </g>\n    </g>\n    <g id=\"text_14\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"14.479688\" y=\"116.232375\" transform=\"rotate(-90 14.479688 116.232375)\">分数</text>\n    </g>\n   </g>\n   <g id=\"patch_21\">\n    <path d=\"M 43.46875 210.480375 \nL 43.46875 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_22\">\n    <path d=\"M 378.26875 210.480375 \nL 378.26875 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_23\">\n    <path d=\"M 43.46875 210.480375 \nL 378.26875 210.480375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_24\">\n    <path d=\"M 43.46875 21.984375 \nL 378.26875 21.984375 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_15\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"210.86875\" y=\"15.984375\" transform=\"rotate(-0 210.86875 15.984375)\">每人各科成绩</text>\n   </g>\n   <g id=\"legend_1\">\n    <g id=\"patch_25\">\n     <path d=\"M 319.26875 72.825 \nL 371.26875 72.825 \nQ 373.26875 72.825 373.26875 70.825 \nL 373.26875 28.984375 \nQ 373.26875 26.984375 371.26875 26.984375 \nL 319.26875 26.984375 \nQ 317.26875 26.984375 317.26875 28.984375 \nL 317.26875 70.825 \nQ 317.26875 72.825 319.26875 72.825 \nz\n\" style=\"fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter\"/>\n    </g>\n    <g id=\"patch_26\">\n     <path d=\"M 321.26875 38.285938 \nL 341.26875 38.285938 \nL 341.26875 31.285938 \nL 321.26875 31.285938 \nz\n\" style=\"fill: #1f77b4\"/>\n    </g>\n    <g id=\"text_16\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"349.26875\" y=\"38.285938\" transform=\"rotate(-0 349.26875 38.285938)\">语文</text>\n    </g>\n    <g id=\"patch_27\">\n     <path d=\"M 321.26875 52.585938 \nL 341.26875 52.585938 \nL 341.26875 45.585938 \nL 321.26875 45.585938 \nz\n\" style=\"fill: #ff7f0e\"/>\n    </g>\n    <g id=\"text_17\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"349.26875\" y=\"52.585938\" transform=\"rotate(-0 349.26875 52.585938)\">数学</text>\n    </g>\n    <g id=\"patch_28\">\n     <path d=\"M 321.26875 66.845313 \nL 341.26875 66.845313 \nL 341.26875 59.845313 \nL 321.26875 59.845313 \nz\n\" style=\"fill: #2ca02c\"/>\n    </g>\n    <g id=\"text_18\">\n     <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start\" x=\"349.26875\" y=\"66.845313\" transform=\"rotate(-0 349.26875 66.845313)\">英语</text>\n    </g>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"pc62646c4d2\">\n   <rect x=\"43.46875\" y=\"21.984375\" width=\"334.8\" height=\"188.496\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  },
+  {
+   "mode": "plot",
+   "title": "子图 subplots",
+   "setup": "import pandas as pd\nimport matplotlib.pyplot as plt\nsales = pd.read_csv('sales.csv')",
+   "code": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.4, 3.2))\na1.bar(sales['月份'], sales['销售额'])\na1.set_title('销售额')\na2.plot(sales['月份'], sales['销售额'] - sales['成本'], marker='o', color='green')\na2.set_title('利润')\nfig.tight_layout()",
+   "note": "plt.subplots(1, 2) 在一张画布上并排放两个坐标轴，分别画图。tight_layout() 自动调整间距避免重叠。",
+   "printed": "",
+   "input": {
+    "type": "DataFrame",
+    "columns": [
+     "月份",
+     "销售额",
+     "成本"
+    ],
+    "index": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "indexName": "",
+    "rows": [
+     [
+      "1月",
+      "120",
+      "80"
+     ],
+     [
+      "2月",
+      "135",
+      "90"
+     ],
+     [
+      "3月",
+      "128",
+      "85"
+     ],
+     [
+      "4月",
+      "160",
+      "100"
+     ],
+     [
+      "5月",
+      "175",
+      "110"
+     ],
+     [
+      "6月",
+      "190",
+      "118"
+     ]
+    ],
+    "dtypes": {
+     "月份": "object",
+     "销售额": "int64",
+     "成本": "int64"
+    },
+    "shape": [
+     6,
+     3
+    ]
+   },
+   "usedCols": [
+    "月份",
+    "销售额",
+    "成本"
+   ],
+   "usedRows": [],
+   "svg": "<svg xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 452.978512 223.2\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n \n <defs>\n  <style type=\"text/css\">*{stroke-linejoin: round; stroke-linecap: butt}</style>\n </defs>\n <g id=\"figure_1\">\n  <g id=\"patch_1\">\n   <path d=\"M 0 223.2 \nL 452.978512 223.2 \nL 452.978512 0 \nL 0 0 \nz\n\" style=\"fill: #ffffff\"/>\n  </g>\n  <g id=\"axes_1\">\n   <g id=\"patch_2\">\n    <path d=\"M 30.209375 199.740625 \nL 223.093944 199.740625 \nL 223.093944 21.94875 \nL 30.209375 21.94875 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"patch_3\">\n    <path d=\"M 38.976855 199.740625 \nL 63.163008 199.740625 \nL 63.163008 92.798144 \nL 38.976855 92.798144 \nz\n\" clip-path=\"url(#p148386ffc8)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_4\">\n    <path d=\"M 69.209546 199.740625 \nL 93.395699 199.740625 \nL 93.395699 79.430334 \nL 69.209546 79.430334 \nz\n\" clip-path=\"url(#p148386ffc8)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_5\">\n    <path d=\"M 99.442237 199.740625 \nL 123.62839 199.740625 \nL 123.62839 85.668645 \nL 99.442237 85.668645 \nz\n\" clip-path=\"url(#p148386ffc8)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_6\">\n    <path d=\"M 129.674928 199.740625 \nL 153.861081 199.740625 \nL 153.861081 57.15065 \nL 129.674928 57.15065 \nz\n\" clip-path=\"url(#p148386ffc8)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_7\">\n    <path d=\"M 159.907619 199.740625 \nL 184.093772 199.740625 \nL 184.093772 43.78284 \nL 159.907619 43.78284 \nz\n\" clip-path=\"url(#p148386ffc8)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"patch_8\">\n    <path d=\"M 190.14031 199.740625 \nL 214.326463 199.740625 \nL 214.326463 30.41503 \nL 190.14031 30.41503 \nz\n\" clip-path=\"url(#p148386ffc8)\" style=\"fill: #1f77b4\"/>\n   </g>\n   <g id=\"matplotlib.axis_1\">\n    <g id=\"xtick_1\">\n     <g id=\"line2d_1\">\n      <defs>\n       <path id=\"m85571bd994\" d=\"M 0 0 \nL 0 3.5 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"51.069932\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_1\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"51.069932\" y=\"214.020312\" transform=\"rotate(-0 51.069932 214.020312)\">1月</text>\n     </g>\n    </g>\n    <g id=\"xtick_2\">\n     <g id=\"line2d_2\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"81.302623\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_2\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"81.302623\" y=\"214.020312\" transform=\"rotate(-0 81.302623 214.020312)\">2月</text>\n     </g>\n    </g>\n    <g id=\"xtick_3\">\n     <g id=\"line2d_3\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"111.535314\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_3\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"111.535314\" y=\"214.020312\" transform=\"rotate(-0 111.535314 214.020312)\">3月</text>\n     </g>\n    </g>\n    <g id=\"xtick_4\">\n     <g id=\"line2d_4\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"141.768005\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_4\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"141.768005\" y=\"214.020312\" transform=\"rotate(-0 141.768005 214.020312)\">4月</text>\n     </g>\n    </g>\n    <g id=\"xtick_5\">\n     <g id=\"line2d_5\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"172.000696\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_5\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"172.000696\" y=\"214.020312\" transform=\"rotate(-0 172.000696 214.020312)\">5月</text>\n     </g>\n    </g>\n    <g id=\"xtick_6\">\n     <g id=\"line2d_6\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"202.233387\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_6\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"202.233387\" y=\"214.020312\" transform=\"rotate(-0 202.233387 214.020312)\">6月</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_2\">\n    <g id=\"ytick_1\">\n     <g id=\"line2d_7\">\n      <defs>\n       <path id=\"m147da1add5\" d=\"M 0 0 \nL -3.5 0 \n\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </defs>\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_7\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"203.380469\" transform=\"rotate(-0 23.209375 203.380469)\">0</text>\n     </g>\n    </g>\n    <g id=\"ytick_2\">\n     <g id=\"line2d_8\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"177.460941\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_8\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"181.100785\" transform=\"rotate(-0 23.209375 181.100785)\">25</text>\n     </g>\n    </g>\n    <g id=\"ytick_3\">\n     <g id=\"line2d_9\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"155.181258\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_9\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"158.821102\" transform=\"rotate(-0 23.209375 158.821102)\">50</text>\n     </g>\n    </g>\n    <g id=\"ytick_4\">\n     <g id=\"line2d_10\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"132.901574\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_10\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"136.541418\" transform=\"rotate(-0 23.209375 136.541418)\">75</text>\n     </g>\n    </g>\n    <g id=\"ytick_5\">\n     <g id=\"line2d_11\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"110.621891\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_11\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"114.261734\" transform=\"rotate(-0 23.209375 114.261734)\">100</text>\n     </g>\n    </g>\n    <g id=\"ytick_6\">\n     <g id=\"line2d_12\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"88.342207\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_12\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"91.982051\" transform=\"rotate(-0 23.209375 91.982051)\">125</text>\n     </g>\n    </g>\n    <g id=\"ytick_7\">\n     <g id=\"line2d_13\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"66.062523\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_13\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"69.702367\" transform=\"rotate(-0 23.209375 69.702367)\">150</text>\n     </g>\n    </g>\n    <g id=\"ytick_8\">\n     <g id=\"line2d_14\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"30.209375\" y=\"43.78284\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_14\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"23.209375\" y=\"47.422684\" transform=\"rotate(-0 23.209375 47.422684)\">175</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"patch_9\">\n    <path d=\"M 30.209375 199.740625 \nL 30.209375 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_10\">\n    <path d=\"M 223.093944 199.740625 \nL 223.093944 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_11\">\n    <path d=\"M 30.209375 199.740625 \nL 223.093944 199.740625 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_12\">\n    <path d=\"M 30.209375 21.94875 \nL 223.093944 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_15\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"126.651659\" y=\"15.94875\" transform=\"rotate(-0 126.651659 15.94875)\">销售额</text>\n   </g>\n  </g>\n  <g id=\"axes_2\">\n   <g id=\"patch_13\">\n    <path d=\"M 252.893944 199.740625 \nL 445.778512 199.740625 \nL 445.778512 21.94875 \nL 252.893944 21.94875 \nz\n\" style=\"fill: #ffffff\"/>\n   </g>\n   <g id=\"matplotlib.axis_3\">\n    <g id=\"xtick_7\">\n     <g id=\"line2d_15\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"261.661424\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_16\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"261.661424\" y=\"214.020312\" transform=\"rotate(-0 261.661424 214.020312)\">1月</text>\n     </g>\n    </g>\n    <g id=\"xtick_8\">\n     <g id=\"line2d_16\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"296.731346\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_17\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"296.731346\" y=\"214.020312\" transform=\"rotate(-0 296.731346 214.020312)\">2月</text>\n     </g>\n    </g>\n    <g id=\"xtick_9\">\n     <g id=\"line2d_17\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"331.801267\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_18\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"331.801267\" y=\"214.020312\" transform=\"rotate(-0 331.801267 214.020312)\">3月</text>\n     </g>\n    </g>\n    <g id=\"xtick_10\">\n     <g id=\"line2d_18\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"366.871189\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_19\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"366.871189\" y=\"214.020312\" transform=\"rotate(-0 366.871189 214.020312)\">4月</text>\n     </g>\n    </g>\n    <g id=\"xtick_11\">\n     <g id=\"line2d_19\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"401.94111\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_20\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"401.94111\" y=\"214.020312\" transform=\"rotate(-0 401.94111 214.020312)\">5月</text>\n     </g>\n    </g>\n    <g id=\"xtick_12\">\n     <g id=\"line2d_20\">\n      <g>\n       <use xlink:href=\"#m85571bd994\" x=\"437.011032\" y=\"199.740625\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_21\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"437.011032\" y=\"214.020312\" transform=\"rotate(-0 437.011032 214.020312)\">6月</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"matplotlib.axis_4\">\n    <g id=\"ytick_9\">\n     <g id=\"line2d_21\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"191.659176\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_22\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"195.29902\" transform=\"rotate(-0 245.893944 195.29902)\">40</text>\n     </g>\n    </g>\n    <g id=\"ytick_10\">\n     <g id=\"line2d_22\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"166.404648\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_23\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"170.044492\" transform=\"rotate(-0 245.893944 170.044492)\">45</text>\n     </g>\n    </g>\n    <g id=\"ytick_11\">\n     <g id=\"line2d_23\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"141.150121\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_24\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"144.789964\" transform=\"rotate(-0 245.893944 144.789964)\">50</text>\n     </g>\n    </g>\n    <g id=\"ytick_12\">\n     <g id=\"line2d_24\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"115.895593\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_25\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"119.535437\" transform=\"rotate(-0 245.893944 119.535437)\">55</text>\n     </g>\n    </g>\n    <g id=\"ytick_13\">\n     <g id=\"line2d_25\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"90.641065\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_26\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"94.280909\" transform=\"rotate(-0 245.893944 94.280909)\">60</text>\n     </g>\n    </g>\n    <g id=\"ytick_14\">\n     <g id=\"line2d_26\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"65.386538\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_27\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"69.026381\" transform=\"rotate(-0 245.893944 69.026381)\">65</text>\n     </g>\n    </g>\n    <g id=\"ytick_15\">\n     <g id=\"line2d_27\">\n      <g>\n       <use xlink:href=\"#m147da1add5\" x=\"252.893944\" y=\"40.13201\" style=\"stroke: #000000; stroke-width: 0.8\"/>\n      </g>\n     </g>\n     <g id=\"text_28\">\n      <text style=\"font: 10px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end\" x=\"245.893944\" y=\"43.771854\" transform=\"rotate(-0 245.893944 43.771854)\">70</text>\n     </g>\n    </g>\n   </g>\n   <g id=\"line2d_28\">\n    <path d=\"M 261.661424 191.659176 \nL 296.731346 166.404648 \nL 331.801267 176.50646 \nL 366.871189 90.641065 \nL 401.94111 65.386538 \nL 437.011032 30.030199 \n\" clip-path=\"url(#pe2364ae142)\" style=\"fill: none; stroke: #008000; stroke-width: 1.5; stroke-linecap: square\"/>\n    <defs>\n     <path id=\"mf4e876aaaa\" d=\"M 0 3 \nC 0.795609 3 1.55874 2.683901 2.12132 2.12132 \nC 2.683901 1.55874 3 0.795609 3 0 \nC 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 \nC 1.55874 -2.683901 0.795609 -3 0 -3 \nC -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 \nC -2.683901 -1.55874 -3 -0.795609 -3 0 \nC -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 \nC -1.55874 2.683901 -0.795609 3 0 3 \nz\n\" style=\"stroke: #008000\"/>\n    </defs>\n    <g clip-path=\"url(#pe2364ae142)\">\n     <use xlink:href=\"#mf4e876aaaa\" x=\"261.661424\" y=\"191.659176\" style=\"fill: #008000; stroke: #008000\"/>\n     <use xlink:href=\"#mf4e876aaaa\" x=\"296.731346\" y=\"166.404648\" style=\"fill: #008000; stroke: #008000\"/>\n     <use xlink:href=\"#mf4e876aaaa\" x=\"331.801267\" y=\"176.50646\" style=\"fill: #008000; stroke: #008000\"/>\n     <use xlink:href=\"#mf4e876aaaa\" x=\"366.871189\" y=\"90.641065\" style=\"fill: #008000; stroke: #008000\"/>\n     <use xlink:href=\"#mf4e876aaaa\" x=\"401.94111\" y=\"65.386538\" style=\"fill: #008000; stroke: #008000\"/>\n     <use xlink:href=\"#mf4e876aaaa\" x=\"437.011032\" y=\"30.030199\" style=\"fill: #008000; stroke: #008000\"/>\n    </g>\n   </g>\n   <g id=\"patch_14\">\n    <path d=\"M 252.893944 199.740625 \nL 252.893944 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_15\">\n    <path d=\"M 445.778512 199.740625 \nL 445.778512 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_16\">\n    <path d=\"M 252.893944 199.740625 \nL 445.778512 199.740625 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"patch_17\">\n    <path d=\"M 252.893944 21.94875 \nL 445.778512 21.94875 \n\" style=\"fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square\"/>\n   </g>\n   <g id=\"text_29\">\n    <text style=\"font: 12px 'PingFang HK', 'Hiragino Sans GB', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle\" x=\"349.336228\" y=\"15.94875\" transform=\"rotate(-0 349.336228 15.94875)\">利润</text>\n   </g>\n  </g>\n </g>\n <defs>\n  <clipPath id=\"p148386ffc8\">\n   <rect x=\"30.209375\" y=\"21.94875\" width=\"192.884569\" height=\"177.791875\"/>\n  </clipPath>\n  <clipPath id=\"pe2364ae142\">\n   <rect x=\"252.893944\" y=\"21.94875\" width=\"192.884569\" height=\"177.791875\"/>\n  </clipPath>\n </defs>\n</svg>\n",
+   "result": {
+    "type": "plot"
+   }
+  }
+ ]
+}
